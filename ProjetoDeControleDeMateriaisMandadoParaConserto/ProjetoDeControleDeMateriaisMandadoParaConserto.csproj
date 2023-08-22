@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,14 +47,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="BancoConexao\Banco.cs" />
+    <Compile Include="Dao\DeleteDao.cs" />
+    <Compile Include="Dao\GravadorCsv.cs" />
+    <Compile Include="Dao\NumeroDao.cs" />
+    <Compile Include="Dao\ProcurarCodigo.cs" />
+    <Compile Include="Dao\SelectFiltro.cs" />
+    <Compile Include="Dao\SelectTabela.cs" />
+    <Compile Include="Dao\Teste.cs" />
+    <Compile Include="Forms\ArrastarArquivoCsv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\ArrastarArquivoCsv.Designer.cs">
+      <DependentUpon>ArrastarArquivoCsv.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FiltroMes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FiltroMes.Designer.cs">
+      <DependentUpon>FiltroMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProcurarCodigoT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProcurarCodigoT.Designer.cs">
+      <DependentUpon>ProcurarCodigoT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TelaInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TelaInicial.Designer.cs">
+      <DependentUpon>TelaInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Conserto.cs" />
+    <Compile Include="Model\Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\ArrastarArquivoCsv.resx">
+      <DependentUpon>ArrastarArquivoCsv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FiltroMes.resx">
+      <DependentUpon>FiltroMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProcurarCodigoT.resx">
+      <DependentUpon>ProcurarCodigoT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TelaInicial.resx">
+      <DependentUpon>TelaInicial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
