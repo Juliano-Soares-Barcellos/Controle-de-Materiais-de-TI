@@ -102,6 +102,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
+                Console.WriteLine(e.Message);
             }
             finally
             {
