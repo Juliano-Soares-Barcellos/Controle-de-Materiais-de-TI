@@ -39,23 +39,30 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 SelectFiltro selectFiltro = new SelectFiltro();
                 Dados = selectFiltro.carregarTabela(mesEscolhido, ano);
                 tabelaPivotada = selectFiltro.PivotData(Dados);
-
+                SelectTabela SelectTabel = new SelectTabela();
                 // Calcula o total de consertos e produtos com garantia
 
                 int MesConserto = selectFiltro.CalcularMesConserto(Dados);
 
-                int totalConserto = selectFiltro.CalcularTotalConserto(Dados);
+               // int totalConserto = selectFiltro.CalcularTotalConserto(Dados);
 
-                int totalProdutosComGarantia = selectFiltro.CalcularQuantidadeGarantia(Dados);
+               // int totalProdutosComGarantia = selectFiltro.CalcularQuantidadeGarantia(Dados);
 
+               List<int> Produtos=SelectTabel.HEADSETDISCADORConserto(Dados);
+                int Headset=Produtos[0];
+                int Discador=Produtos[1];
+                int Carrapatos=Produtos[2];
+
+                //
                 // Exibe a tabela pivotada no DataGridView
                 Tabela.DataSource = tabelaPivotada;
 
                 // Exibe o total de consertos e o número de produtos com garantia em MessageBox
                 MessageBox.Show("Total de Consertos neste mês: " + MesConserto + "\n" + "\n" +
-                                "Total de Produtos com Garantia: " + totalProdutosComGarantia + "\n" + "\n" +
-                                "total de vezes que os produtos desta lista foram consertados " + totalConserto,
-                                "                                                      Informações do mês !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                "Total de Headset: " + Headset+ "\n" + "\n" +
+                                "total de Discadores : " + Discador +"\n"+"\n"+
+                                "Total de Carrapatos :  "+ Carrapatos+"\n"+"\n"+
+                                "                   Informações do mês !!!");//+ MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 label4.Visible = true;
                 LabelGarantia.Visible = true;
@@ -64,8 +71,8 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 label5.Visible = true;
                 label6.Visible = true;
 
-                LabelGarantia.Text = totalProdutosComGarantia.ToString();
-                LabelConsertado.Text = totalConserto.ToString();
+               // LabelGarantia.Text = totalProdutosComGarantia.ToString();
+                //LabelConsertado.Text = totalConserto.ToString();
                 label7.Text = MesConserto.ToString();
             }
         }
@@ -119,6 +126,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             GravadorCsv g = new GravadorCsv();
             g.GravarCSV(tabelaPivotada);
         }
+
 
     }
 }

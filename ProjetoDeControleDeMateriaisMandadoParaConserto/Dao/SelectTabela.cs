@@ -236,7 +236,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             }
             else
             {
-                return "Erro";
+                return "0";
             }
 
         }

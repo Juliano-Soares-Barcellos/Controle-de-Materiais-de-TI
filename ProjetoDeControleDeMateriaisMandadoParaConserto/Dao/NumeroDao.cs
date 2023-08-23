@@ -20,11 +20,11 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             {
                 con = new Banco().Conexao();
                 con.Open();
-                string sql = "SELECT * FROM Produto AS p INNER JOIN Conserto AS c ON p.id = c.Produto_id WHERE Numero = @numero";
+                string sql = "SELECT * FROM Produto AS p LEFT JOIN Conserto AS c ON p.id = c.Produto_id WHERE Numero = @numero";
                 MySqlCommand comando = new MySqlCommand(sql, con);
                 comando.Parameters.AddWithValue("@numero", numero);
                 MySqlDataReader reader = comando.ExecuteReader();
-
+               int tamanho = reader.FieldCount;
                 while (reader.Read())
                 {
                     object s = reader["Id"];
@@ -37,6 +37,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                     resultados.Add(s);
                     s = reader["Data"];
                     resultados.Add(s);
+                        
                 }
 
             }
@@ -58,7 +59,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             {
                 con = new Banco().Conexao();
                 con.Open();
-                string sql = "UPDATE Produto AS p  INNER JOIN Conserto as c on p.id=c.Produto_id set p.quantidade_conserto = p.quantidade_conserto +1 where p.Numero= @numero";
+                string sql = "UPDATE Produto AS p  LEFT JOIN Conserto as c on p.id=c.Produto_id set p.quantidade_conserto = p.quantidade_conserto +1 where p.Numero= @numero";
                 MySqlCommand comando = new MySqlCommand(sql, con);
                 comando.Parameters.AddWithValue("@numero", numero);
                 comando.ExecuteNonQuery();
