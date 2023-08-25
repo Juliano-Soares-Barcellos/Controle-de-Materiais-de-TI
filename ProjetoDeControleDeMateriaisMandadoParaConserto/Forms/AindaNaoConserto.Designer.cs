@@ -43,8 +43,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.ConsertoTotal = new System.Windows.Forms.Label();
             this.LabelCarra = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelD = new System.Windows.Forms.Label();
+            this.labelh = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.LabelCarrapato = new System.Windows.Forms.Label();
@@ -67,8 +67,8 @@
             this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.LabelCarra);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.labelD);
+            this.panel1.Controls.Add(this.labelh);
             this.panel1.Controls.Add(this.checkBox2);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.LabelCarrapato);
@@ -109,7 +109,6 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.tableLayoutPanel3);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(-2, -2);
             this.panel2.Name = "panel2";
@@ -119,32 +118,34 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel3.Controls.Add(this.tableLayoutPanel3);
             this.panel3.Controls.Add(this.tableLayoutPanel1);
             this.panel3.Controls.Add(this.ConsertoTotal);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.ForeColor = System.Drawing.Color.Black;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(884, 83);
+            this.panel3.Size = new System.Drawing.Size(884, 298);
             this.panel3.TabIndex = 2;
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.35294F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.11765F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.textBox1, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.comboBox, 2, 1);
             this.tableLayoutPanel3.Controls.Add(this.label6, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.button1, 1, 2);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(105, 100);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(122, 91);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.39785F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.19355F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.Size = new System.Drawing.Size(680, 186);
             this.tableLayoutPanel3.TabIndex = 11;
             // 
@@ -156,7 +157,7 @@
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(3, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(316, 22);
+            this.label7.Size = new System.Drawing.Size(302, 22);
             this.label7.TabIndex = 1;
             this.label7.Text = "Codigo do material consertado :";
             // 
@@ -166,9 +167,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.textBox1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.textBox1.Location = new System.Drawing.Point(455, 3);
+            this.textBox1.Location = new System.Drawing.Point(392, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(222, 20);
+            this.textBox1.Size = new System.Drawing.Size(285, 20);
             this.textBox1.TabIndex = 2;
             // 
             // comboBox
@@ -181,9 +182,9 @@
             "HEADSET",
             "DISCADOR",
             "CARRAPATOS"});
-            this.comboBox.Location = new System.Drawing.Point(455, 80);
+            this.comboBox.Location = new System.Drawing.Point(392, 29);
             this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(222, 21);
+            this.comboBox.Size = new System.Drawing.Size(285, 21);
             this.comboBox.TabIndex = 4;
             this.comboBox.ValueMember = "as,d,f";
             // 
@@ -192,16 +193,16 @@
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Right;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(137, 77);
+            this.label6.Location = new System.Drawing.Point(123, 26);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(182, 45);
+            this.label6.Size = new System.Drawing.Size(182, 27);
             this.label6.TabIndex = 3;
             this.label6.Text = "Nome do material :";
             // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.Location = new System.Drawing.Point(349, 125);
+            this.button1.Location = new System.Drawing.Point(311, 56);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
@@ -252,24 +253,27 @@
             this.LabelCarra.Size = new System.Drawing.Size(86, 13);
             this.LabelCarra.TabIndex = 17;
             this.LabelCarra.Text = "CARRAPATOS :";
+            this.LabelCarra.Visible = false;
             // 
-            // label4
+            // labelD
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(130, 583);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "DISCADOR :";
+            this.labelD.AutoSize = true;
+            this.labelD.Location = new System.Drawing.Point(130, 583);
+            this.labelD.Name = "labelD";
+            this.labelD.Size = new System.Drawing.Size(69, 13);
+            this.labelD.TabIndex = 16;
+            this.labelD.Text = "DISCADOR :";
+            this.labelD.Visible = false;
             // 
-            // label1
+            // labelh
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 583);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "HEADSET :";
+            this.labelh.AutoSize = true;
+            this.labelh.Location = new System.Drawing.Point(34, 583);
+            this.labelh.Name = "labelh";
+            this.labelh.Size = new System.Drawing.Size(64, 13);
+            this.labelh.TabIndex = 15;
+            this.labelh.Text = "HEADSET :";
+            this.labelh.Visible = false;
             // 
             // checkBox2
             // 
@@ -301,6 +305,7 @@
             this.LabelCarrapato.Size = new System.Drawing.Size(35, 13);
             this.LabelCarrapato.TabIndex = 12;
             this.LabelCarrapato.Text = "label7";
+            this.LabelCarrapato.Visible = false;
             // 
             // LabelDiscador
             // 
@@ -310,6 +315,7 @@
             this.LabelDiscador.Size = new System.Drawing.Size(35, 13);
             this.LabelDiscador.TabIndex = 10;
             this.LabelDiscador.Text = "label7";
+            this.LabelDiscador.Visible = false;
             // 
             // LabelHeadset
             // 
@@ -319,6 +325,7 @@
             this.LabelHeadset.Size = new System.Drawing.Size(35, 13);
             this.LabelHeadset.TabIndex = 9;
             this.LabelHeadset.Text = "label7";
+            this.LabelHeadset.Visible = false;
             // 
             // BotaoProcurar
             // 
@@ -362,8 +369,8 @@
         private System.Windows.Forms.DataGridView Tabela;
         private System.Windows.Forms.Button BotaoProcurar;
         private System.Windows.Forms.Label LabelCarra;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelD;
+        private System.Windows.Forms.Label labelh;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;

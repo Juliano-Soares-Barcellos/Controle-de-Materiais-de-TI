@@ -98,8 +98,36 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             SelectTabela selectTabela = new SelectTabela();
             tabelaPivotada = selectTabela.PivotData(Dados);
             Tabela.DataSource = tabelaPivotada;
+            LabelsMostrar(Dados);
 
-            
+
+
+
+
+        }
+        public void LabelsMostrar(List<Object[]>  Dados)
+        {
+            SelectTabela SelectTabel = new SelectTabela();
+
+            List<int> Produtos = SelectTabel.HEADSETDISCADORConserto(Dados);
+            int Headset = Produtos[0];
+            int Discador = Produtos[1];
+            int Carrapatos = Produtos[2];
+            LabelHeadset.Visible=true;
+            LabelDiscador.Visible=true;
+            LabelCarrapato.Visible=true;
+            labelD.Visible = true;
+            LabelCarra.Visible= true;
+            labelh.Visible = true;
+
+            LabelHeadset.Text = Headset.ToString();
+            LabelDiscador.Text = Discador.ToString();
+            LabelCarrapato.Text = Carrapatos.ToString();
+
+
+
+
+
 
 
         }
