@@ -20,7 +20,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             {
                 con = new Banco().Conexao();
                 con.Open();
-                String sql = "INSERT INTO Produto(Nome, Numero, quantidade_conserto) VALUES (@Nome, @Numero, @Quantidade); SELECT LAST_INSERT_ID()";
+                String sql = "INSERT INTO Produto(Nome, Numero, quantidade_conserto) VALUES (@Nome, @Numero, @Quantidade+1); SELECT LAST_INSERT_ID()";
                 String sql2 = "INSERT INTO Conserto(Data, Produto_id) VALUES (@Data, @Produto_id)";
 
                 MySqlCommand comando = new MySqlCommand(sql, con);

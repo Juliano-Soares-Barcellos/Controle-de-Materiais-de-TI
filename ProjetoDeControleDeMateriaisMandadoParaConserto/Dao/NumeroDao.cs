@@ -20,7 +20,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             {
                 con = new Banco().Conexao();
                 con.Open();
-                string sql = "SELECT * FROM Produto AS p LEFT JOIN Conserto AS c ON p.id = c.Produto_id WHERE Numero = @numero";
+                string sql = "SELECT * FROM Produto AS p INNER JOIN Conserto AS c ON p.id = c.Produto_id WHERE Numero = @numero";
                 MySqlCommand comando = new MySqlCommand(sql, con);
                 comando.Parameters.AddWithValue("@numero", numero);
                 MySqlDataReader reader = comando.ExecuteReader();
@@ -53,13 +53,13 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             return resultados.ToArray();
         }
 
-        public void Update(string numero)
+        public void Update(string numero,string sql)
         {
             try
             {
                 con = new Banco().Conexao();
                 con.Open();
-                string sql = "UPDATE Produto AS p  LEFT JOIN Conserto as c on p.id=c.Produto_id set p.quantidade_conserto = p.quantidade_conserto +1 where p.Numero= @numero";
+                //string sql = "UPDATE Produto AS p  LEFT JOIN Conserto as c on p.id=c.Produto_id set p.quantidade_conserto = p.quantidade_conserto +1 where p.Numero= @numero";
                 MySqlCommand comando = new MySqlCommand(sql, con);
                 comando.Parameters.AddWithValue("@numero", numero);
                 comando.ExecuteNonQuery();
@@ -74,12 +74,12 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             }
         }
 
-        public void NovaData(int id)
+        public void NovaData(int id,String sql)
         {
             try
             {
                 con = new Banco().Conexao();
-                String sql = "INSERT INTO Conserto (Data,Produto_id) VALUES (@Data,@Produto_id)";
+                //String sql = "INSERT INTO Conserto (Data,Produto_id) VALUES (@Data,@Produto_id)";
                 con.Open();
                 MySqlCommand comando = new MySqlCommand(sql, con);
                 DateTime Data = DateTime.Now;

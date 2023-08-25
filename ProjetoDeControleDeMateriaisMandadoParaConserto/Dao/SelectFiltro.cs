@@ -14,7 +14,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
     {
         MySqlConnection con = null;
 
-        public List<Object[]> carregarTabela(int Mes, int Ano)
+        public List<Object[]> carregarTabela(int Mes, int Ano, string sql)
         {
             List<Object[]> resultados = new List<Object[]>();
 
@@ -22,7 +22,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             {
                 con = new Banco().Conexao();
                 con.Open();
-                string sql = "SELECT * FROM Produto as p inner join Conserto as c on p.id=c.Produto_id WHERE MONTH(DATE(c.Data)) = @Mes AND YEAR(DATE(c.Data)) = @Ano;";
+               // string sql = "SELECT * FROM Produto as p inner join Conserto as c on p.id=c.Produto_id WHERE MONTH(DATE(c.Data)) = @Mes AND YEAR(DATE(c.Data)) = @Ano;";
                 MySqlCommand comando = new MySqlCommand(sql, con);
                 comando.Parameters.AddWithValue("@Mes", Mes);
                 comando.Parameters.AddWithValue("@Ano", Ano);
@@ -149,7 +149,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             return totalComGarantia;
         }
 
-        private string CalcularGarantia(DateTime ultimaDataConserto)
+        public string CalcularGarantia(DateTime ultimaDataConserto)
         {
             if (ultimaDataConserto != DateTime.MinValue)
             {
@@ -168,7 +168,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                 return "Sem Garantia";
             }
         }
-        private string CalcularDias(DateTime teste)
+        public string CalcularDias(DateTime teste)
         {
             if (teste != DateTime.MinValue)
             {

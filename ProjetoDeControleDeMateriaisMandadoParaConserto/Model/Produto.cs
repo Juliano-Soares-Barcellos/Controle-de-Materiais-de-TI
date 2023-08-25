@@ -14,6 +14,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Model
 
         public String Numero { get; set; }
 
-        public int quantidade_conserto { get; set; } = 1;
+        public int quantidade_conserto { get; set; }
     }
 }

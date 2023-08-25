@@ -37,7 +37,8 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 int ano = Int32.Parse(anoSelecionado);
 
                 SelectFiltro selectFiltro = new SelectFiltro();
-                Dados = selectFiltro.carregarTabela(mesEscolhido, ano);
+                string sql = "SELECT * FROM Produto as p inner join Conserto as c on p.id=c.Produto_id WHERE MONTH(DATE(c.Data)) = @Mes AND YEAR(DATE(c.Data)) = @Ano;";
+                Dados = selectFiltro.carregarTabela(mesEscolhido, ano,sql);
                 tabelaPivotada = selectFiltro.PivotData(Dados);
                 SelectTabela SelectTabel = new SelectTabela();
                 // Calcula o total de consertos e produtos com garantia
@@ -127,6 +128,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             g.GravarCSV(tabelaPivotada);
         }
 
-
+      
     }
 }

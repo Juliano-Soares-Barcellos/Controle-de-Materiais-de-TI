@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 {
+
     public partial class ArrastarArquivoCsv : Form
     {
         private DataTable dataTable = new DataTable();
@@ -41,7 +42,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             if (files.Length > 0)
             {
                 string caminhoArquivo = files[0];
-                // label2.Text = Path.GetFileName(caminhoArquivo);
+               // label2.Text = Path.GetFileName(caminhoArquivo);
 
                 List<Object[]> arquivo = ExibirDadosDoCSV(caminhoArquivo);
                 Teste t = new Teste();
@@ -54,9 +55,11 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
                     if (encontrar.Length > 0)
                     {
-                        numeroDao.Update(numero);
+                       string sql = "UPDATE Produto AS p  INNER JOIN Conserto as c on p.id=c.Produto_id set p.quantidade_conserto = p.quantidade_conserto  where p.Numero= @numero";
+                        numeroDao.Update(numero,sql);
                         int idProduto = Convert.ToInt32(encontrar[0]);
-                        numeroDao.NovaData(idProduto);
+                        String sql1 = "INSERT INTO Conserto (Data,Produto_id) VALUES (@Data,@Produto_id)";
+                        numeroDao.NovaData(idProduto,sql1);
                     }
                     else
                     {
@@ -125,5 +128,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             DadosEnviados?.Invoke(this, e);
         }
 
+    
     }
 }
+

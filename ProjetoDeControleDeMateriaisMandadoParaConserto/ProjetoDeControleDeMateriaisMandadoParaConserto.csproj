@@ -48,13 +48,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BancoConexao\Banco.cs" />
+    <Compile Include="Dao\AindaNaoConsertoDao.cs" />
+    <Compile Include="Dao\ArquivoTxtDao.cs" />
     <Compile Include="Dao\DeleteDao.cs" />
     <Compile Include="Dao\GravadorCsv.cs" />
+    <Compile Include="Dao\InseriDataNaoConserto.cs" />
     <Compile Include="Dao\NumeroDao.cs" />
     <Compile Include="Dao\ProcurarCodigo.cs" />
     <Compile Include="Dao\SelectFiltro.cs" />
     <Compile Include="Dao\SelectTabela.cs" />
     <Compile Include="Dao\Teste.cs" />
+    <Compile Include="Forms\AindaNaoConserto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AindaNaoConserto.Designer.cs">
+      <DependentUpon>AindaNaoConserto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ArrastarArquivoCsv.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +92,9 @@
     <Compile Include="Model\Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AindaNaoConserto.resx">
+      <DependentUpon>AindaNaoConserto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ArrastarArquivoCsv.resx">
       <DependentUpon>ArrastarArquivoCsv.cs</DependentUpon>
     </EmbeddedResource>

@@ -89,5 +89,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 CarregarDadosNaTabela(TextDeletar.Text);
             }
         }
+
+       
     }
 }

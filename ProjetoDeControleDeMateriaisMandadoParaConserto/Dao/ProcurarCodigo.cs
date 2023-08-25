@@ -24,7 +24,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             //    string sql = "SELECT p.id, p.Nome, p.Numero, p.quantidade_conserto, GROUP_CONCAT(c.Data SEPARATOR ', ') AS Datas FROM Produto AS p INNER JOIN Conserto AS c ON p.id = c.Produto_id where p.Numero = @numero GROUP BY p.Nome ORDER BY c.Data ASC";
                   string sql = "SELECT p.id, p.Nome, p.Numero, p.quantidade_conserto, GROUP_CONCAT(c.Data SEPARATOR ', ') AS Datas FROM Produto AS p LEFT JOIN Conserto AS c ON p.id = c.Produto_id where p.Numero = @numero GROUP BY p.Nome ORDER BY c.Data ASC";
             
-  MySqlCommand comando = new MySqlCommand(sql, con);
+                MySqlCommand comando = new MySqlCommand(sql, con);
                 comando.Parameters.AddWithValue("@numero", Numero);
                 MySqlDataReader reader = comando.ExecuteReader();
 
