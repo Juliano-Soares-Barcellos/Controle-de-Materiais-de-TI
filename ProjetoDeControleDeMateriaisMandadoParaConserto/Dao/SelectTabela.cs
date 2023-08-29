@@ -123,10 +123,21 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                     {
                         newRow[$"DataConserto{i + 1}"] = datasConserto[i].ToString("dd/MM/yyyy"); // Formatando a data no formato desejado
                     }
+
                     DateTime ultimaDataConserto = datasConserto.Count > 0 ? datasConserto.Last() : DateTime.MinValue;
-                    newRow["Garantia"] = CalcularGarantia(ultimaDataConserto);
-                    newRow["Dias de Garantia"] = CalcularDias(ultimaDataConserto);
-                    pivotTable.Rows.Add(newRow);
+                    if (quantidadeConserto != 0)
+                    {
+                        newRow["Garantia"] = CalcularGarantia(ultimaDataConserto);
+                        newRow["Dias de Garantia"] = CalcularDias(ultimaDataConserto);
+                        pivotTable.Rows.Add(newRow);
+                    }
+                    else
+                    {
+                        newRow["Garantia"] = "Sem Garantia";
+                        newRow["Dias de Garantia"] = "sem garantia";
+                        pivotTable.Rows.Add(newRow);
+
+                    }
                 }
             }
             catch (Exception e)

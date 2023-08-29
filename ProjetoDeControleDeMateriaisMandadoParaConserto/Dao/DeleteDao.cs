@@ -46,7 +46,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                     int produtoId = Convert.ToInt32(ArrayDeletar[0][0].ToString());
                     int consertoId = Convert.ToInt32(ArrayDeletar[0][6].ToString());
 
-                    if (produtoStatus == 1)
+                    if (produtoStatus == 1 || produtoStatus == 0)
                     {
                         String sql0 = "delete from Conserto where Produto_id=@id;";
                         MySqlCommand deleteConserto = new MySqlCommand(sql0, con);
@@ -65,7 +65,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                         countConsertos.Parameters.AddWithValue("@id", produtoId);
                         int quantidadeConsertos = Convert.ToInt32(countConsertos.ExecuteScalar());
 
-                        if (quantidadeConsertos > 0)
+                        if (quantidadeConsertos >= 0)
                         {
                             // Obtém a data do último registro de Conserto relacionado ao produto
                             string sqlUltimaData = "SELECT MAX(Data) FROM Conserto WHERE Produto_id=@id;";

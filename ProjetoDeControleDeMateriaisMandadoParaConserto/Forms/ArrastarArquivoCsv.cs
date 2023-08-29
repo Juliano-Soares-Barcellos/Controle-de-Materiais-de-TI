@@ -48,23 +48,45 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 Teste t = new Teste();
                 NumeroDao numeroDao = new NumeroDao();
 
+
+
                 for (int i = 0; i < arquivo.Count; i++)
                 {
+                    String conserto = arquivo[i][2].ToString();
+                    int quantidade = int.Parse(conserto);
+
                     string numero = arquivo[i][1].ToString();
                     Object[] encontrar = numeroDao.EncontrarNumero(numero);
 
                     if (encontrar.Length > 0)
                     {
-                       string sql = "UPDATE Produto AS p  INNER JOIN Conserto as c on p.id=c.Produto_id set p.quantidade_conserto = p.quantidade_conserto  where p.Numero= @numero";
-                        numeroDao.Update(numero,sql);
+
+
+                        string sql = "UPDATE Produto AS p  INNER JOIN Conserto as c on p.id=c.Produto_id set p.quantidade_conserto = p.quantidade_conserto+1  where p.Numero= @numero";
+                        numeroDao.Update(numero, sql);
                         int idProduto = Convert.ToInt32(encontrar[0]);
                         String sql1 = "INSERT INTO Conserto (Data,Produto_id) VALUES (@Data,@Produto_id)";
-                        numeroDao.NovaData(idProduto,sql1);
+                        numeroDao.NovaData(idProduto, sql1);
+                        for (int j = 0; j < encontrar.Length; j++)
+                        {
+                            encontrar[j] = null;
+                        }
+
                     }
                     else
                     {
-                        t.InsereBancoArquivo(new List<Object[]> { arquivo[i] });
+                        if (quantidade == 0)
+                        {
+
+
+                            t.InsereBancoArquivo(new List<Object[]> { new Object[] { arquivo[i][0], arquivo[i][1], arquivo[i][2] } });
+                        }
+                        else
+                        {
+                            t.InsereBancoArquivo(new List<Object[]> { arquivo[i] });
+                        }
                     }
+
                 }
                 EnviarDadosDoArquivo();
 
@@ -128,7 +150,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             DadosEnviados?.Invoke(this, e);
         }
 
-    
+
     }
 }
 

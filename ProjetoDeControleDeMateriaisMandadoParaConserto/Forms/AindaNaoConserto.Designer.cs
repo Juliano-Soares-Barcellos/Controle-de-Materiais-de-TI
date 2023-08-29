@@ -32,16 +32,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Tabela = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.ConsertoTotal = new System.Windows.Forms.Label();
             this.LabelCarra = new System.Windows.Forms.Label();
             this.labelD = new System.Windows.Forms.Label();
             this.labelh = new System.Windows.Forms.Label();
@@ -51,6 +41,16 @@
             this.LabelDiscador = new System.Windows.Forms.Label();
             this.LabelHeadset = new System.Windows.Forms.Label();
             this.BotaoProcurar = new System.Windows.Forms.Button();
+            this.ConsertoTotal = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Tabela)).BeginInit();
@@ -114,136 +114,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(888, 302);
             this.panel2.TabIndex = 18;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.panel3.Controls.Add(this.tableLayoutPanel3);
-            this.panel3.Controls.Add(this.tableLayoutPanel1);
-            this.panel3.Controls.Add(this.ConsertoTotal);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.ForeColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(884, 298);
-            this.panel3.TabIndex = 2;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBox1, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.comboBox, 2, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label6, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.button1, 1, 2);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(122, 91);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(680, 186);
-            this.tableLayoutPanel3.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(302, 22);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Codigo do material consertado :";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.textBox1.Location = new System.Drawing.Point(392, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(285, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // comboBox
-            // 
-            this.comboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox.DisplayMember = "a";
-            this.comboBox.FormattingEnabled = true;
-            this.comboBox.Items.AddRange(new object[] {
-            "HEADSET",
-            "DISCADOR",
-            "CARRAPATOS"});
-            this.comboBox.Location = new System.Drawing.Point(392, 29);
-            this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(285, 21);
-            this.comboBox.TabIndex = 4;
-            this.comboBox.ValueMember = "as,d,f";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(123, 26);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(182, 27);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Nome do material :";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.Location = new System.Drawing.Point(311, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Cadatrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 85);
-            this.tableLayoutPanel1.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(219, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(445, 37);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Cadastro antes do conserto";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ConsertoTotal
-            // 
-            this.ConsertoTotal.AutoSize = true;
-            this.ConsertoTotal.Location = new System.Drawing.Point(83, 201);
-            this.ConsertoTotal.Name = "ConsertoTotal";
-            this.ConsertoTotal.Size = new System.Drawing.Size(0, 13);
-            this.ConsertoTotal.TabIndex = 9;
             // 
             // LabelCarra
             // 
@@ -336,6 +206,136 @@
             this.BotaoProcurar.Text = "Excluir";
             this.BotaoProcurar.UseVisualStyleBackColor = true;
             // 
+            // ConsertoTotal
+            // 
+            this.ConsertoTotal.AutoSize = true;
+            this.ConsertoTotal.Location = new System.Drawing.Point(83, 201);
+            this.ConsertoTotal.Name = "ConsertoTotal";
+            this.ConsertoTotal.Size = new System.Drawing.Size(0, 13);
+            this.ConsertoTotal.TabIndex = 9;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel3.Controls.Add(this.tableLayoutPanel3);
+            this.panel3.Controls.Add(this.ConsertoTotal);
+            this.panel3.Controls.Add(this.tableLayoutPanel1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.ForeColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(884, 298);
+            this.panel3.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.Location = new System.Drawing.Point(311, 56);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Cadatrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(123, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(182, 27);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Nome do material :";
+            // 
+            // comboBox
+            // 
+            this.comboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox.DisplayMember = "a";
+            this.comboBox.FormattingEnabled = true;
+            this.comboBox.Items.AddRange(new object[] {
+            "HEADSET",
+            "DISCADOR",
+            "CARRAPATOS"});
+            this.comboBox.Location = new System.Drawing.Point(392, 29);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(285, 21);
+            this.comboBox.TabIndex = 4;
+            this.comboBox.ValueMember = "as,d,f";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox1.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.textBox1.Location = new System.Drawing.Point(392, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(285, 20);
+            this.textBox1.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(302, 22);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Codigo do material consertado :";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.Controls.Add(this.label7, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.textBox1, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.comboBox, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label6, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.button1, 1, 2);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(122, 91);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(680, 186);
+            this.tableLayoutPanel3.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(219, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(445, 37);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Cadastro antes do conserto";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 85);
+            this.tableLayoutPanel1.TabIndex = 10;
+            // 
             // AindaNaoConserto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,16 +373,16 @@
         private System.Windows.Forms.Label labelh;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label ConsertoTotal;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label ConsertoTotal;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label5;
     }
 }

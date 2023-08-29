@@ -24,11 +24,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
 
 
-        //        tabelaPivotada = selectFiltro.PivotData(Dados);
-        //        Tabela.DataSource = tabelaPivotada;
-        //        
-        //    }
-        //}
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -61,22 +56,30 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     Dados.AddRange(novosDados);
 
                     //
-                    if (Dados.Count > 0)
+
+
+                    
+                    if (novosDados.Count > 0)
                     {
 
 
                         CarregarDadosNaTabela();
-                        MessageBox.Show("Produto consertado novamente !");
+                        MessageBox.Show("Produto encontrado no Banco !");
                     }
                     else
                     {
-                        MessageBox.Show("Produto consertado pela primeira vez !");
                         Produto produto = new Produto();
+                        DateTime Data = DateTime.Now;
+                        produto.id = 0;
                         produto.Nome = NomeMaterial;
                         produto.Numero = numero;
                         produto.quantidade_conserto = 0;
 
-             
+                        Object [] Produtos = new object [] { produto.id,produto.Nome,produto.Numero,produto.quantidade_conserto,Data };
+                        Dados.Add(Produtos);
+                        CarregarDadosNaTabela();
+                        MessageBox.Show("Produto não encontrado no nosso Banco de dados !");
+
                     }
                 }
                 else if (result == DialogResult.No)

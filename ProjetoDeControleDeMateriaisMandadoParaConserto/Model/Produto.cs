@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Model
 {
-    class Produto
+   public class Produto
     {
         public int id { get; set; }
 

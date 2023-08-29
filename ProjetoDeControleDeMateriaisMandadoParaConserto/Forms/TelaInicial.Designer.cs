@@ -49,6 +49,7 @@
             this.inserirArquivoCsvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filtrarPeloMêsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.d = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Tabela)).BeginInit();
@@ -259,7 +260,8 @@
             this.testeToolStripMenuItem,
             this.inserirArquivoCsvToolStripMenuItem,
             this.qToolStripMenuItem,
-            this.filtrarPeloMêsToolStripMenuItem});
+            this.filtrarPeloMêsToolStripMenuItem,
+            this.d});
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(50, 20);
             this.Menu.Text = "Menu";
@@ -291,6 +293,13 @@
             this.filtrarPeloMêsToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
             this.filtrarPeloMêsToolStripMenuItem.Text = "Filtrar Pelo Mês";
             this.filtrarPeloMêsToolStripMenuItem.Click += new System.EventHandler(this.filtrarPeloMêsToolStripMenuItem_Click);
+            // 
+            // d
+            // 
+            this.d.Name = "d";
+            this.d.Size = new System.Drawing.Size(259, 22);
+            this.d.Text = "Material para conserto csv";
+            this.d.Click += new System.EventHandler(this.d_Click);
             // 
             // TelaInicial
             // 
@@ -332,5 +341,6 @@
         private System.Windows.Forms.ToolStripMenuItem inserirArquivoCsvToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem qToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filtrarPeloMêsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem d;
     }
 }

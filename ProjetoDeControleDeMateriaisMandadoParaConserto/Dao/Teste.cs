@@ -71,33 +71,63 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                         string numero = valores[1].ToString();
                         int quantidadeConserto = Convert.ToInt32(valores[2]);
 
-                        comandoProduto.Parameters.Clear(); // Limpar parâmetros antes de cada inserção
-                        comandoProduto.Parameters.AddWithValue("@Nome", nome);
-                        comandoProduto.Parameters.AddWithValue("@Numero", numero);
-                        comandoProduto.Parameters.AddWithValue("@Quantidade", quantidadeConserto);
-                        comandoProduto.ExecuteNonQuery();
-
-
-                        // Verifica se há datas presentes no array de valores
-                        for (int i = 3; i < valores.Length; i++)
+                        if (quantidadeConserto == 0)
                         {
-                            if (DateTime.TryParse(valores[i].ToString(), out DateTime dataConserto))
+                            comandoProduto.Parameters.Clear(); // Limpar parâmetros antes de cada inserção
+                            comandoProduto.Parameters.AddWithValue("@Nome", nome);
+                            comandoProduto.Parameters.AddWithValue("@Numero", numero);
+                            comandoProduto.Parameters.AddWithValue("@Quantidade", quantidadeConserto + 1);
+                            comandoProduto.ExecuteNonQuery();
+                            int produtoId = Convert.ToInt32(comandoProduto.LastInsertedId);
+
+                            DateTime data = DateTime.Now;
+                            comandoConserto.Parameters.Clear();
+                            comandoConserto.Parameters.AddWithValue("@Data", data);
+                            comandoConserto.Parameters.AddWithValue("@Produto_id", produtoId);
+
+                            comandoConserto.ExecuteNonQuery();
+
+
+                        }
+                        else
+                        {
+                            comandoProduto.Parameters.Clear(); // Limpar parâmetros antes de cada inserção
+                            comandoProduto.Parameters.AddWithValue("@Nome", nome);
+                            comandoProduto.Parameters.AddWithValue("@Numero", numero);
+                            comandoProduto.Parameters.AddWithValue("@Quantidade", quantidadeConserto);
+                            comandoProduto.ExecuteNonQuery();
+
+
+                            // Verifica se há datas presentes no array de valores
+                            for (int i = 3; i < valores.Length; i++)
                             {
-                                int produtoId = Convert.ToInt32(comandoProduto.LastInsertedId);
+                                if (DateTime.TryParse(valores[i].ToString(), out DateTime dataConserto))
+                                {
+                                    int produtoId = Convert.ToInt32(comandoProduto.LastInsertedId);
 
-                                comandoConserto.Parameters.Clear(); // Limpar parâmetros antes de cada inserção
-                                comandoConserto.Parameters.AddWithValue("@Data", dataConserto); // Você precisa definir a data corretamente aqui
-                                comandoConserto.Parameters.AddWithValue("@Produto_id", produtoId);
+                                    comandoConserto.Parameters.Clear(); // Limpar parâmetros antes de cada inserção
+                                    comandoConserto.Parameters.AddWithValue("@Data", dataConserto); // Você precisa definir a data corretamente aqui
+                                    comandoConserto.Parameters.AddWithValue("@Produto_id", produtoId);
 
-                                comandoConserto.ExecuteNonQuery();
+                                    comandoConserto.ExecuteNonQuery();
+                                }
+                                else
+                                {
+                                    int produtoId = Convert.ToInt32(comandoProduto.LastInsertedId);
+                                    DateTime data = DateTime.Now;
+                                    comandoConserto.Parameters.Clear();
+                                    comandoConserto.Parameters.AddWithValue("@Data", data);
+                                    comandoConserto.Parameters.AddWithValue("@Produto_id", produtoId);
+
+                                    comandoConserto.ExecuteNonQuery();
+                                }
                             }
+
                         }
 
                     }
 
-
                 }
-
             }
             catch (Exception e)
             {

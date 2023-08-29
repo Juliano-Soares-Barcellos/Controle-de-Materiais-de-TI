@@ -163,6 +163,12 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             CarregarDadosNaTabela();
         }
 
-       
+     
+
+        private void d_Click(object sender, EventArgs e)
+        {
+            AindaNaoConserto a = new AindaNaoConserto();
+            a.Show();
+        }
     }
 }
