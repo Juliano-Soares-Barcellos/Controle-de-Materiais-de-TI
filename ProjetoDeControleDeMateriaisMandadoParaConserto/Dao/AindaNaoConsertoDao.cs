@@ -15,41 +15,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
     class AindaNaoConsertoDao
     {
         MySqlConnection con = null;
-
-        //public void inserirProduto(Produto Produto, naoconserto conserto)
-        //{
-        //    try
-        //    {
-        //        con = new Banco().Conexao();
-        //        con.Open();
-        //        String sql = "INSERT INTO Produto(Nome, Numero, quantidade_conserto) VALUES (@Nome, @Numero, @Quantidade); SELECT LAST_INSERT_ID()";
-        //        String sql2 = "INSERT INTO naoonserto(Data, Produto_id) VALUES (@Data, @Produto_id)";
-
-        //        MySqlCommand comando = new MySqlCommand(sql, con);
-        //        MySqlCommand incluir = new MySqlCommand(sql2, con);
-        //        comando.Parameters.AddWithValue("@Nome", Produto.Nome);
-        //        comando.Parameters.AddWithValue("@Numero", Produto.Numero);
-        //        comando.Parameters.AddWithValue("@Quantidade", Produto.quantidade_conserto);
-
-        //        int ProdutoId = Convert.ToInt32(comando.ExecuteScalar());
-        //        conserto.Produto_id.id = ProdutoId;
-
-        //        incluir.Parameters.AddWithValue("@Data", conserto.Data);
-        //        incluir.Parameters.AddWithValue("@Produto_id", conserto.Produto_id.id);
-
-        //        incluir.ExecuteNonQuery();
-        //    }
-        //    catch (MySqlException ex)
-        //    {
-
-        //        MessageBox.Show("Erro ao executar o comando SQL: " + ex.Message);
-        //        Console.WriteLine(ex.Message);
-        //    }
-        //    finally
-        //    {
-        //        con.Close();
-        //    }
-        //}
+        
         SelectFiltro s = new SelectFiltro();
 
         public void GravarCsv(List<object[]> dados)
@@ -87,6 +53,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                         string dataString = rowData[rowData.Length - 1].ToString();
                         string[] datas = dataString.Split(',');
                         int elemento = datas.Length;
+
                         DateTime dataAtual=DateTime.Now;
 
                         DateTime dataConserto = DateTime.MinValue;
@@ -118,14 +85,13 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                         writer.WriteLine(String.Join(";", row));
                     }
 
-                    Console.WriteLine("Dados salvos no arquivo CSV");
+                    MessageBox.Show("Dados salvos no arquivo CSV");
                     writer.Flush();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Desculpe, não foi possível gravar esses dados: " + ex.Message);
-                Console.WriteLine(ex.Message);
             }
 
 

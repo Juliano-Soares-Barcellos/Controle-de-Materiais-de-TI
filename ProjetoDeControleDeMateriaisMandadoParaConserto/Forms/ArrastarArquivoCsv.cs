@@ -38,7 +38,16 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         private void label2_DragDrop(object sender, DragEventArgs e)
         {
             Teste teste = new Teste();
+            string message = "Deseja fazer o Backup? Digite 's' para sim ou 'n' para não:";
+            string caption = "Confirmação";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+            DialogResult result = MessageBox.Show(message, caption, buttons);
+
+            bool fazerBackup = (result == DialogResult.Yes);
+
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
             if (files.Length > 0)
             {
                 string caminhoArquivo = files[0];
@@ -67,6 +76,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                         int idProduto = Convert.ToInt32(encontrar[0]);
                         String sql1 = "INSERT INTO Conserto (Data,Produto_id) VALUES (@Data,@Produto_id)";
                         numeroDao.NovaData(idProduto, sql1);
+
                         for (int j = 0; j < encontrar.Length; j++)
                         {
                             encontrar[j] = null;
@@ -75,15 +85,15 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     }
                     else
                     {
-                        if (quantidade == 0)
+                        if (quantidade == 0 && fazerBackup)
                         {
 
 
-                            t.InsereBancoArquivo(new List<Object[]> { new Object[] { arquivo[i][0], arquivo[i][1], arquivo[i][2] } });
+                            t.InsereBancoArquivo(new List<Object[]> { new Object[] { arquivo[i][0], arquivo[i][1], arquivo[i][2] } }, fazerBackup);
                         }
                         else
                         {
-                            t.InsereBancoArquivo(new List<Object[]> { arquivo[i] });
+                            t.InsereBancoArquivo(new List<Object[]> { arquivo[i] },fazerBackup);
                         }
                     }
 

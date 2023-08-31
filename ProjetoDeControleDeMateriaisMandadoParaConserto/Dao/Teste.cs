@@ -50,7 +50,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
         }
 
 
-        public void InsereBancoArquivo(List<Object[]> s)
+        public void InsereBancoArquivo(List<Object[]> s,Boolean backup)
         {
             try
             {
@@ -84,34 +84,39 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                             comandoConserto.Parameters.Clear();
                             comandoConserto.Parameters.AddWithValue("@Data", data);
                             comandoConserto.Parameters.AddWithValue("@Produto_id", produtoId);
-
                             comandoConserto.ExecuteNonQuery();
-
 
                         }
                         else
                         {
-                            comandoProduto.Parameters.Clear(); // Limpar parâmetros antes de cada inserção
+                            comandoProduto.Parameters.Clear();
                             comandoProduto.Parameters.AddWithValue("@Nome", nome);
                             comandoProduto.Parameters.AddWithValue("@Numero", numero);
-                            comandoProduto.Parameters.AddWithValue("@Quantidade", quantidadeConserto);
-                            comandoProduto.ExecuteNonQuery();
 
+                            if (backup)
+                            {
+                                comandoProduto.Parameters.AddWithValue("@Quantidade", quantidadeConserto);
+                            }
+                            else
+                            {
+                                comandoProduto.Parameters.AddWithValue("@Quantidade", quantidadeConserto+1);
+                            }
+                            comandoProduto.ExecuteNonQuery();
 
                             // Verifica se há datas presentes no array de valores
                             for (int i = 3; i < valores.Length; i++)
                             {
-                                if (DateTime.TryParse(valores[i].ToString(), out DateTime dataConserto))
-                                {
-                                    int produtoId = Convert.ToInt32(comandoProduto.LastInsertedId);
+                                    if (DateTime.TryParse(valores[i].ToString(), out DateTime dataConserto) && valores[i]!="")
+                                    {
+                                        int produtoId = Convert.ToInt32(comandoProduto.LastInsertedId);
+                                        comandoConserto.Parameters.Clear(); // Limpar parâmetros antes de cada inserção
+                                        comandoConserto.Parameters.AddWithValue("@Data", dataConserto); // Você precisa definir a data corretamente aqui
+                                        comandoConserto.Parameters.AddWithValue("@Produto_id", produtoId);
 
-                                    comandoConserto.Parameters.Clear(); // Limpar parâmetros antes de cada inserção
-                                    comandoConserto.Parameters.AddWithValue("@Data", dataConserto); // Você precisa definir a data corretamente aqui
-                                    comandoConserto.Parameters.AddWithValue("@Produto_id", produtoId);
+                                        comandoConserto.ExecuteNonQuery();
+                                    }
 
-                                    comandoConserto.ExecuteNonQuery();
-                                }
-                                else
+                                else if (backup == false)
                                 {
                                     int produtoId = Convert.ToInt32(comandoProduto.LastInsertedId);
                                     DateTime data = DateTime.Now;
@@ -120,7 +125,10 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                                     comandoConserto.Parameters.AddWithValue("@Produto_id", produtoId);
 
                                     comandoConserto.ExecuteNonQuery();
+
+                                    break;
                                 }
+
                             }
 
                         }
@@ -139,5 +147,39 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                 con.Close();
             }
         }
+
+        //public DateTime ObterUltimaDataConserto(int produtoId)
+        //{
+        //    DateTime ultimaData = DateTime.MinValue; 
+
+        //    try
+        //    {
+        //        con = new Banco().Conexao();
+        //        con.Open();
+
+        //        // Consulta SQL para obter a última data de conserto do produto
+        //        string sql = "SELECT MAX(Data) AS UltimaData FROM Conserto WHERE Produto_id = @produtoId";
+        //        MySqlCommand comando = new MySqlCommand(sql, con);
+        //        comando.Parameters.AddWithValue("@produtoId", produtoId);
+
+        //        object resultado = comando.ExecuteScalar();
+
+        //        if (resultado != null && resultado != DBNull.Value)
+        //        {
+        //            ultimaData = Convert.ToDateTime(resultado);
+        //        }
+        //    }
+        //    catch (MySqlException ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        con.Close();
+        //    }
+
+        //    return ultimaData;
+        //}
+
     }
 }

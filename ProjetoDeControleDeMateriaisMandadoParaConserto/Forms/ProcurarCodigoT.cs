@@ -31,7 +31,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         {
             if (textBox1.Equals(""))
             {
-                MessageBox.Show("Pro favor digite o numero");
+                MessageBox.Show("Por favor digite o numero");
             }
             else
             {

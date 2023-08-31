@@ -62,20 +62,18 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     if (novosDados.Count > 0)
                     {
 
-
                         CarregarDadosNaTabela();
                         MessageBox.Show("Produto encontrado no Banco !");
                     }
                     else
                     {
                         Produto produto = new Produto();
-                        DateTime Data = DateTime.Now;
                         produto.id = 0;
                         produto.Nome = NomeMaterial;
                         produto.Numero = numero;
                         produto.quantidade_conserto = 0;
 
-                        Object [] Produtos = new object [] { produto.id,produto.Nome,produto.Numero,produto.quantidade_conserto,Data };
+                        Object [] Produtos = new object [] { produto.id,produto.Nome,produto.Numero,produto.quantidade_conserto,"00" };
                         Dados.Add(Produtos);
                         CarregarDadosNaTabela();
                         MessageBox.Show("Produto não encontrado no nosso Banco de dados !");
