@@ -148,6 +148,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             return pivotTable;
         }
 
+
         public int CalcularTotalConserto(List<Object[]> dados)
         {
             int totalConserto = 0;
