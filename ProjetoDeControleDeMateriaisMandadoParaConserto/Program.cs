@@ -17,7 +17,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TelaInicial());
+            Application.Run(new RelacaoPcsConserto()); //(new TelaInicial());
         }
     }
 }

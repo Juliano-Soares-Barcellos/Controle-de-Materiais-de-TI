@@ -82,6 +82,12 @@
     <Compile Include="Forms\ProcurarCodigoT.Designer.cs">
       <DependentUpon>ProcurarCodigoT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RelacaoPcsConserto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RelacaoPcsConserto.Designer.cs">
+      <DependentUpon>RelacaoPcsConserto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TelaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProcurarCodigoT.resx">
       <DependentUpon>ProcurarCodigoT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RelacaoPcsConserto.resx">
+      <DependentUpon>RelacaoPcsConserto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TelaInicial.resx">
       <DependentUpon>TelaInicial.cs</DependentUpon>
