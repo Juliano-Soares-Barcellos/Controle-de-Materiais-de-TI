@@ -54,7 +54,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     if (encontrar.Length > 0)
                     {
                         MessageBox.Show("Produto consertado novamente !");
-                        string sql = "UPDATE Produto AS p  Inner JOIN Conserto as c on p.id=c.Produto_id set p.quantidade_conserto = p.quantidade_conserto+1  where p.Numero= @numero";
+                        string sql = "UPDATE Produto AS p  Inner JOIN Conserto as _computadorSaida on p.id=_computadorSaida.Produto_id set p.quantidade_conserto = p.quantidade_conserto+1  where p.Numero= @numero";
                         numeroDao.Update(numero,sql);
                         int idProduto = Convert.ToInt32(encontrar[0]);
                         String sql1 = "INSERT INTO Conserto (Data,Produto_id) VALUES (@Data,@Produto_id)";

@@ -50,6 +50,7 @@
     <Compile Include="BancoConexao\Banco.cs" />
     <Compile Include="Dao\AindaNaoConsertoDao.cs" />
     <Compile Include="Dao\ArquivoTxtDao.cs" />
+    <Compile Include="Dao\ComputadorDao.cs" />
     <Compile Include="Dao\DeleteDao.cs" />
     <Compile Include="Dao\GravadorCsv.cs" />
     <Compile Include="Dao\InseriDataNaoConserto.cs" />
@@ -100,10 +101,13 @@
     <Compile Include="Forms\TelaInicial.Designer.cs">
       <DependentUpon>TelaInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Computador.cs" />
+    <Compile Include="Model\ComputadorSaida.cs" />
     <Compile Include="Model\Conserto.cs" />
     <Compile Include="Model\Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Querys\Query.cs" />
     <EmbeddedResource Include="Forms\AindaNaoConserto.resx">
       <DependentUpon>AindaNaoConserto.cs</DependentUpon>
     </EmbeddedResource>

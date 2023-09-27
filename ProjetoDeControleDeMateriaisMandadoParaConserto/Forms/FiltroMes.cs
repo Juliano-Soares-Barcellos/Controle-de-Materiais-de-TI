@@ -37,7 +37,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 int ano = Int32.Parse(anoSelecionado);
 
                 SelectFiltro selectFiltro = new SelectFiltro();
-                string sql = "SELECT * FROM Produto as p inner join Conserto as c on p.id=c.Produto_id WHERE MONTH(DATE(c.Data)) = @Mes AND YEAR(DATE(c.Data)) = @Ano;";
+                string sql = "SELECT * FROM Produto as p inner join Conserto as _computadorSaida on p.id=_computadorSaida.Produto_id WHERE MONTH(DATE(_computadorSaida.Data)) = @Mes AND YEAR(DATE(_computadorSaida.Data)) = @Ano;";
                 Dados = selectFiltro.carregarTabela(mesEscolhido, ano,sql);
                 tabelaPivotada = selectFiltro.PivotData(Dados);
                 SelectTabela SelectTabel = new SelectTabela();

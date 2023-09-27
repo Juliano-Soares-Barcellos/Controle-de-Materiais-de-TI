@@ -23,7 +23,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             {
                 con = new Banco().Conexao();
                 con.Open();
-                string sql = "SELECT p.id, p.Nome, p.Numero, p.quantidade_conserto, GROUP_CONCAT(c.Data SEPARATOR ', ') AS Datas FROM Produto AS p INNER JOIN Conserto AS c ON p.id = c.Produto_id GROUP BY p.id, p.Nome, p.Numero, p.quantidade_conserto ORDER BY p.id, c.Data ASC";
+                string sql = "SELECT p.id, p.Nome, p.Numero, p.quantidade_conserto, GROUP_CONCAT(_computadorSaida.Data SEPARATOR ', ') AS Datas FROM Produto AS p INNER JOIN Conserto AS _computadorSaida ON p.id = _computadorSaida.Produto_id GROUP BY p.id, p.Nome, p.Numero, p.quantidade_conserto ORDER BY p.id, _computadorSaida.Data ASC";
                 MySqlCommand comando = new MySqlCommand(sql, con);
 
                 MySqlDataReader reader = comando.ExecuteReader();

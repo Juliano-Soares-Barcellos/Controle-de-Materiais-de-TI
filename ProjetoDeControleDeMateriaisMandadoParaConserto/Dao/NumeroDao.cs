@@ -20,7 +20,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             {
                 con = new Banco().Conexao();
                 con.Open();
-                string sql = "SELECT * FROM Produto AS p left JOIN Conserto AS c ON p.id = c.Produto_id WHERE Numero = @numero";
+                string sql = "SELECT * FROM Produto AS p left JOIN Conserto AS _computadorSaida ON p.id = _computadorSaida.Produto_id WHERE Numero = @numero";
                 MySqlCommand comando = new MySqlCommand(sql, con);
                 comando.Parameters.AddWithValue("@numero", numero);
                 MySqlDataReader reader = comando.ExecuteReader();

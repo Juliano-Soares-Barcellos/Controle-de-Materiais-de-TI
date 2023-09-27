@@ -34,12 +34,12 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Tmarca = new System.Windows.Forms.TextBox();
+            this.comboBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Tnome = new System.Windows.Forms.TextBox();
+            this.Tdescricao = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -98,6 +98,7 @@
             this.button1.TabStop = false;
             this.button1.Text = "Enter";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -110,8 +111,8 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.18262F));
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBox3, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.comboBox1, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.Tmarca, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.comboBox, 3, 1);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(68, 232);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
@@ -141,27 +142,27 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Marca :";
             // 
-            // textBox3
+            // Tmarca
             // 
-            this.textBox3.Location = new System.Drawing.Point(381, 3);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(170, 20);
-            this.textBox3.TabIndex = 1;
+            this.Tmarca.Location = new System.Drawing.Point(381, 3);
+            this.Tmarca.Multiline = true;
+            this.Tmarca.Name = "Tmarca";
+            this.Tmarca.Size = new System.Drawing.Size(170, 20);
+            this.Tmarca.TabIndex = 1;
             // 
-            // comboBox1
+            // comboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox.FormattingEnabled = true;
+            this.comboBox.Items.AddRange(new object[] {
             "Windowns 7",
             "Windowns 8",
             "Windowns 8.1",
             "Windowns 10",
             "Windowns 11"});
-            this.comboBox1.Location = new System.Drawing.Point(381, 53);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(170, 21);
-            this.comboBox1.TabIndex = 3;
+            this.comboBox.Location = new System.Drawing.Point(381, 53);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(170, 21);
+            this.comboBox.TabIndex = 3;
             // 
             // tableLayoutPanel2
             // 
@@ -173,8 +174,8 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.301915F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.47717F));
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox2, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.Tnome, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Tdescricao, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(68, 126);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -195,20 +196,20 @@
             this.label2.Text = "Numero do computador :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox1
+            // Tnome
             // 
-            this.textBox1.Location = new System.Drawing.Point(379, 3);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 20);
-            this.textBox1.TabIndex = 1;
+            this.Tnome.Location = new System.Drawing.Point(379, 3);
+            this.Tnome.Multiline = true;
+            this.Tnome.Name = "Tnome";
+            this.Tnome.Size = new System.Drawing.Size(172, 20);
+            this.Tnome.TabIndex = 1;
             // 
-            // textBox2
+            // Tdescricao
             // 
-            this.textBox2.Location = new System.Drawing.Point(379, 53);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(172, 20);
-            this.textBox2.TabIndex = 3;
+            this.Tdescricao.Location = new System.Drawing.Point(379, 53);
+            this.Tdescricao.Name = "Tdescricao";
+            this.Tdescricao.Size = new System.Drawing.Size(172, 20);
+            this.Tdescricao.TabIndex = 3;
             // 
             // label3
             // 
@@ -273,6 +274,7 @@
             this.computadorConsertadoToolStripMenuItem.Name = "computadorConsertadoToolStripMenuItem";
             this.computadorConsertadoToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.computadorConsertadoToolStripMenuItem.Text = "Computador Consertado";
+            this.computadorConsertadoToolStripMenuItem.Click += new System.EventHandler(this.computadorConsertadoToolStripMenuItem_Click);
             // 
             // tabelaDosComputadoresToolStripMenuItem
             // 
@@ -313,15 +315,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Tdescricao;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Tmarca;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Tnome;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;

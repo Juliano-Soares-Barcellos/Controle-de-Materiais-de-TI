@@ -1,4 +1,5 @@
 ﻿using ProjetoDeControleDeMateriaisMandadoParaConserto.Forms;
+using ProjetoDeControleDeMateriaisMandadoParaConserto.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,10 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto
         [STAThread]
         static void Main()
         {
+            ComputadorSaida s = new ComputadorSaida();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ComputadorConsertado()); //(new TelaInicial());
+            Application.Run(new RelacaoPcsConserto()); //(new TelaInicial());
         }
     }
 }

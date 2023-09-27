@@ -22,7 +22,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             {
                 con = new Banco().Conexao();
                 con.Open();
-               // string sql = "SELECT * FROM Produto as p inner join Conserto as c on p.id=c.Produto_id WHERE MONTH(DATE(c.Data)) = @Mes AND YEAR(DATE(c.Data)) = @Ano;";
+               // string sql = "SELECT * FROM Produto as p inner join Conserto as _computadorSaida on p.id=_computadorSaida.Produto_id WHERE MONTH(DATE(_computadorSaida.Data)) = @Mes AND YEAR(DATE(_computadorSaida.Data)) = @Ano;";
                 MySqlCommand comando = new MySqlCommand(sql, con);
                 comando.Parameters.AddWithValue("@Mes", Mes);
                 comando.Parameters.AddWithValue("@Ano", Ano);
