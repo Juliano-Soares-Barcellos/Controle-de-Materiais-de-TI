@@ -16,6 +16,9 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Model
 
         public Computador Computador_id { get; set; }
 
+
+        public int computadorEntrada_id { get; set; }
+
         public ComputadorSaida()
         {
             this.Computador_id = new Computador();

@@ -23,6 +23,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Model
 
         public String Programas { get; set; }
 
+
         public Computador(int id,String Nome,String Marca,String Sistema,String prog)
         {
             this.Id = id;

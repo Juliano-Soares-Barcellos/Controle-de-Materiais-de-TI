@@ -24,15 +24,10 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
 
             try
             {
-                MySqlCommand cmd = con.CreateCommand();
-                Transacao = con.BeginTransaction();
-                cmd.Transaction = Transacao;
-                //
                 sql = new Query(); // instanciando para usar a query da classe
-                cmd.CommandText = sql.Achou; //Achou é a query criada em outra classe, isto é um teste
+                MySqlCommand cmd = new MySqlCommand(sql.Achou, con);
                 cmd.Parameters.AddWithValue("@Nome", computador);
                 object tese = cmd.ExecuteScalar();
-                Transacao.Commit();
 
                 if (tese != null)
                 {
@@ -42,13 +37,11 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             }
             catch (MySqlException ex)
             {
-                Transacao.Rollback();
                 MessageBox.Show(ex.Message + "-----------" + ex.ToString());
                 con.Close();
             }
             finally
             {
-                Transacao.Dispose();
                 con.Close();
             }
             return id;
@@ -120,6 +113,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                 comandos.Parameters.AddWithValue("@Descricao", computador.DescricaoSaida);
                 comandos.Parameters.AddWithValue("@DataSaida", DateTime.Now);
                 comandos.Parameters.AddWithValue("@computador_id", computador.Computador_id.Id);
+                comandos.Parameters.AddWithValue("@computadorEntrada_id", computador.computadorEntrada_id);
                 comandos.ExecuteNonQuery();
                 Transacao.Commit();
             }
@@ -137,24 +131,60 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
 
         public void updaterComputador(Computador computador) //nao esqueca de me usar depois do InserirComputadorSaida
         {
+            con = new Banco().Conexaopcs();
+            con.Open();
             try
             {
-                con = new Banco().Conexaopcs();
-                con.Open();
-                String sele = "update computadorentrada set programas=@programas where id=@id;";
-                MySqlCommand comando = new MySqlCommand(sele, con);
+                MySqlCommand comando = con.CreateCommand();
+                Transacao = con.BeginTransaction();
+                comando.Transaction = Transacao;
+                sql = new Query();
+                comando.CommandText =sql.UpdateNosPrograma;
                 comando.Parameters.AddWithValue("@programas", computador.Programas);
                 comando.Parameters.AddWithValue("@id", computador.Id);
                 int rown = comando.ExecuteNonQuery();
+                Transacao.Commit();
                 Console.WriteLine(rown);
-
             }
             catch (MySqlException e)
             {
+                Transacao.Rollback();
                 MessageBox.Show(e.Message);
             }
             finally
             {
+                Transacao.Dispose();
+                con.Close();
+            }
+
+        }
+
+        public void updateSistema(Computador computador) //nao esqueca de me usar depois do InserirComputadorSaida
+        {
+            con = new Banco().Conexaopcs();
+            con.Open();
+            try
+            {
+                //aaaaaa
+                MySqlCommand comando = con.CreateCommand();
+                Transacao = con.BeginTransaction();
+                comando.Transaction = Transacao;
+                sql = new Query();
+                comando.CommandText = sql.UpdateNosSistemaOperacional;
+                comando.Parameters.AddWithValue("@Operacional", computador.Sistema);
+                comando.Parameters.AddWithValue("@id", computador.Id);
+                int rown = comando.ExecuteNonQuery();
+                Transacao.Commit();
+                Console.WriteLine(rown);
+            }
+            catch (MySqlException e)
+            {
+                Transacao.Rollback();
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                Transacao.Dispose();
                 con.Close();
             }
 
@@ -168,7 +198,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             try
             {
                 MySqlCommand dataentrada = con.CreateCommand();
-
                 Transacao = con.BeginTransaction();
                 dataentrada.Transaction = Transacao;
                 sql = new Query();
@@ -176,7 +205,8 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                 dataentrada.Parameters.AddWithValue("@Descricao", Descricao);
                 dataentrada.Parameters.AddWithValue("@data", DateTime.Now);
                 dataentrada.Parameters.AddWithValue("@id", id);
-                dataentrada.ExecuteNonQuery();
+                dataentrada.Parameters.AddWithValue("@computadorsaida_id", 1);
+                int rown=dataentrada.ExecuteNonQuery();
                 Transacao.Commit();
             }
 
@@ -200,27 +230,21 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             con.Open();
             try
             {
-                MySqlCommand cmd = con.CreateCommand();
-                Transacao = con.BeginTransaction();
-                cmd.Transaction = Transacao;
                 sql = new Query();
-                cmd.CommandText = sql.ResQuantiDataEntrada; //Achou é a query criada em outra classe, isto é um teste
+                MySqlCommand cmd = new MySqlCommand(sql.ResQuantiDataEntrada,con);
                 cmd.Parameters.AddWithValue("@data_id", computador.Computador_id.Id);
                 int TanhoDataEn = Convert.ToInt32(cmd.ExecuteScalar());
-                Transacao.Commit();
                 TamanhoDataSaida = this.TamanhoDataSaida(computador);
                 resultados.Add(TanhoDataEn);
                 resultados.Add(TamanhoDataSaida);
             }
             catch (MySqlException e)
             {
-                Transacao.Commit();
                 MessageBox.Show(e.Message);
 
             }
             finally
             {
-                Transacao.Dispose();
                 con.Close();
             }
             return resultados;
@@ -233,32 +257,60 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             con.Open();
             try
             {
-                MySqlCommand cmd = con.CreateCommand();
-                Transacao = con.BeginTransaction();
-                cmd.Transaction = Transacao;
                 sql = new Query();
-                cmd.CommandText = sql.ResQuantidadeDataSaida; //Achou é a query criada em outra classe, isto é um teste
+                MySqlCommand cmd = new MySqlCommand(sql.ResQuantidadeDataSaida,con);
                 cmd.Parameters.AddWithValue("@computador_id", computador.Computador_id.Id);
                 TanhoDataEn = Convert.ToInt32(cmd.ExecuteScalar());
-                Transacao.Commit();
 
             }
             catch (MySqlException e)
             {
-                Transacao.Rollback();
                 MessageBox.Show(e.Message);
 
             }
             finally
             {
-                Transacao.Dispose();
                 con.Close();
             }
 
             return TanhoDataEn;
         }
+
+        public int AcharIdDataEntrada(int IdData)
+        {
+            int id = 0;
+            con = new Banco().Conexaopcs();
+            con.Open();
+
+            try
+            {
+                //
+                sql = new Query(); // instanciando para usar a query da classe
+                MySqlCommand cmd = new MySqlCommand(sql.acharIdDataEntrada, con);
+                cmd.Parameters.AddWithValue("@idData", IdData);
+               object iddata = cmd.ExecuteScalar();
+
+                if (iddata != null && iddata.ToString().Equals("{}"))
+                {
+                    id = Convert.ToInt32(iddata);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message + ex.ToString());
+                con.Close();
+            }
+            finally
+            {
+                con.Close();
+            }
+            return id;
+        }
     }
 
 }
+
+
 
 

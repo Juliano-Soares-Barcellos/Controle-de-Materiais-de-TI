@@ -75,7 +75,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 {
                     MessageBox.Show("nenhum produto foi consertado !!! ");
                 }
-
                 CarregarDadosNaTabela();
             }
         }
@@ -85,7 +84,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             SelectTabela selectTabela = new SelectTabela();
             dados = selectTabela.carregarTabela();
             // Atualizar a propriedade TotalConserto
-
             // Exibe a tabela pivotada no DataGridView
             tabelaPivotada = selectTabela.PivotData(dados);
             Tabela.DataSource = tabelaPivotada;

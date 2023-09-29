@@ -32,10 +32,8 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Tmarca = new System.Windows.Forms.TextBox();
-            this.comboBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.Tnome = new System.Windows.Forms.TextBox();
@@ -47,6 +45,8 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.computadorConsertadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabelaDosComputadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -121,17 +121,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(679, 100);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(211, 22);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Sistema Operacional :";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -149,20 +138,6 @@
             this.Tmarca.Name = "Tmarca";
             this.Tmarca.Size = new System.Drawing.Size(170, 20);
             this.Tmarca.TabIndex = 1;
-            // 
-            // comboBox
-            // 
-            this.comboBox.FormattingEnabled = true;
-            this.comboBox.Items.AddRange(new object[] {
-            "Windowns 7",
-            "Windowns 8",
-            "Windowns 8.1",
-            "Windowns 10",
-            "Windowns 11"});
-            this.comboBox.Location = new System.Drawing.Point(381, 53);
-            this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(170, 21);
-            this.comboBox.TabIndex = 3;
             // 
             // tableLayoutPanel2
             // 
@@ -282,6 +257,31 @@
             this.tabelaDosComputadoresToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.tabelaDosComputadoresToolStripMenuItem.Text = "Tabela Dos Computadores";
             // 
+            // comboBox
+            // 
+            this.comboBox.FormattingEnabled = true;
+            this.comboBox.Items.AddRange(new object[] {
+            "Windowns 7",
+            "Windowns 8",
+            "Windowns 8.1",
+            "Windowns 10",
+            "Windowns 11"});
+            this.comboBox.Location = new System.Drawing.Point(381, 53);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(170, 21);
+            this.comboBox.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(211, 22);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Sistema Operacional :";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // RelacaoPcsConserto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,8 +320,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox Tmarca;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Tnome;
         private System.Windows.Forms.Button button1;
@@ -329,5 +327,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem computadorConsertadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tabelaDosComputadoresToolStripMenuItem;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox;
     }
 }

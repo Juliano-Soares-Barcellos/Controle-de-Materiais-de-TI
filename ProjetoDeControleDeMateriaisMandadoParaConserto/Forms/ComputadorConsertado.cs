@@ -14,11 +14,10 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
         public ComputadorConsertado()
         {
-        
             this._computadorDao = new ComputadorDao();
             this._computadorSaida = new ComputadorSaida();
-
             InitializeComponent();
+            Tnome.KeyPress += this.textBox1_KeyPress;
         }
 
         private void Benter_Click(object sender, EventArgs e)
@@ -52,17 +51,34 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     }
                     
                     _computador =new Computador(_computadorDao.AcharPcs(Tnome.Text),Tnome.Text,"","", selectedValues);
+                    
                     _computadorSaida.Computador_id = _computador;
-
+                    //
+                    
+                   
                     if (_computador.Id >= 1)
                     {
-                       List<int>Datas= _computadorDao.CompararTamanhoData(_computadorSaida);
+                        _computadorSaida.computadorEntrada_id = _computadorDao.AcharIdDataEntrada(_computador.Id);
+
+                        List<int>Datas= _computadorDao.CompararTamanhoData(_computadorSaida);
                         if (Datas.Count>1)
                         {
-                            if (Datas[1] < Datas[0])
+                            if (Datas[0] == Datas[1]+1)
                             {
-                                _computadorDao.InserirComputadorSaida(_computadorSaida);
-                                _computadorDao.updaterComputador(_computador);
+                                if (comboBox.SelectedItem == null)
+                                {
+                                    _computadorDao.InserirComputadorSaida(_computadorSaida);
+                                    _computadorDao.updaterComputador(_computador);
+                                    MessageBox.Show("Baixa efetuado com sucesso no computador : " + Tnome.Text);
+                                }
+                                else
+                                {
+                                    _computador.Sistema = comboBox.SelectedItem.ToString();
+                                    _computadorDao.updateSistema(_computador);
+                                    _computadorDao.InserirComputadorSaida(_computadorSaida);
+                                    _computadorDao.updaterComputador(_computador);
+                                    MessageBox.Show("Baixa efetuado com sucesso no computador : " + Tnome.Text);
+                                }
                             }
                             else
                             {
@@ -71,7 +87,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                         }
                         else
                         {
-                            MessageBox.Show("");
+                            MessageBox.Show("Contate o Pessoal de TI");
                         }
                     }
                     else
@@ -79,13 +95,20 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                         MessageBox.Show("Este computador nao existe");
 
                     }
-
-
                 }
                 else
                 {
-                    MessageBox.Show("Problemas ao inserir no banco, favor contatar os profissionais de TI");
+                    MessageBox.Show("Operacao cancelada com sucesso!");
                 }
+            }
+        }
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica se a tecla pressionada não é um dígito numérico ou a tecla de backspace
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                // Cancela o evento de pressionar a tecla
+                e.Handled = true;
             }
         }
     }
