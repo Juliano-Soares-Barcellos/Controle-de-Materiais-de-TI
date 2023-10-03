@@ -19,7 +19,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto
             ComputadorSaida s = new ComputadorSaida();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RelacaoPcsConserto()); //(new TelaInicial());
+            Application.Run(new Form1());
         }
     }
 }

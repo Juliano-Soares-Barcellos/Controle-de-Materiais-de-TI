@@ -49,7 +49,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
@@ -143,6 +143,7 @@
             // 
             // Tabela
             // 
+            this.Tabela.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Tabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Tabela.Location = new System.Drawing.Point(3, 257);
             this.Tabela.Name = "Tabela";

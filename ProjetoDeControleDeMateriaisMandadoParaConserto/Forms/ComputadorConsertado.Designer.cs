@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -44,7 +45,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -57,7 +57,7 @@
             // panel1
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.tableLayoutPanel5);
             this.panel1.Controls.Add(this.panel2);
@@ -89,6 +89,20 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(567, 40);
             this.tableLayoutPanel5.TabIndex = 6;
+            // 
+            // comboBox
+            // 
+            this.comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox.FormattingEnabled = true;
+            this.comboBox.Items.AddRange(new object[] {
+            "Windowns 7",
+            "Windowns 8",
+            "Windowns 10",
+            "Windowns 11"});
+            this.comboBox.Location = new System.Drawing.Point(319, 3);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(170, 21);
+            this.comboBox.TabIndex = 7;
             // 
             // label4
             // 
@@ -144,7 +158,7 @@
             // 
             this.CheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CheckBox.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.CheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.CheckBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CheckBox.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -274,20 +288,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Computadores para conserto";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // comboBox
-            // 
-            this.comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox.FormattingEnabled = true;
-            this.comboBox.Items.AddRange(new object[] {
-            "Windowns 7",
-            "Windowns 8",
-            "Windowns 10",
-            "Windowns 11"});
-            this.comboBox.Location = new System.Drawing.Point(319, 3);
-            this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(170, 21);
-            this.comboBox.TabIndex = 7;
             // 
             // ComputadorConsertado
             // 

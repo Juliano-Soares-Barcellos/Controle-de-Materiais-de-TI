@@ -45,7 +45,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(176)))), ((int)(((byte)(222)))));
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label2);
@@ -63,6 +63,7 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoScroll = true;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(176)))), ((int)(((byte)(222)))));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
@@ -79,8 +80,9 @@
             this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(176)))), ((int)(((byte)(222)))));
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(166, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(468, 37);
@@ -104,7 +106,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(176)))), ((int)(((byte)(222)))));
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -137,7 +139,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(176)))), ((int)(((byte)(222)))));
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -163,7 +165,9 @@
             this.Tabela.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Tabela.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Tabela.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.Tabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Tabela.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Tabela.Location = new System.Drawing.Point(90, 117);
             this.Tabela.Name = "Tabela";
             this.Tabela.Size = new System.Drawing.Size(652, 54);

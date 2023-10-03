@@ -38,6 +38,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.ConsertoTotal = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.LabelDiscador = new System.Windows.Forms.Label();
             this.LabelHeadset = new System.Windows.Forms.Label();
             this.BotaoProcurar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Tabela)).BeginInit();
@@ -62,7 +62,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(176)))), ((int)(((byte)(222)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Controls.Add(this.panel2);
@@ -97,6 +97,7 @@
             // 
             // Tabela
             // 
+            this.Tabela.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.Tabela.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Tabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Tabela.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -117,7 +118,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(176)))), ((int)(((byte)(222)))));
             this.panel3.Controls.Add(this.tableLayoutPanel3);
             this.panel3.Controls.Add(this.ConsertoTotal);
             this.panel3.Controls.Add(this.tableLayoutPanel1);
@@ -157,6 +158,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(3, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(302, 22);
@@ -195,11 +197,23 @@
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Right;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(123, 26);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(182, 27);
             this.label6.TabIndex = 3;
             this.label6.Text = "Nome do material :";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.Location = new System.Drawing.Point(311, 76);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 29);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Cadatrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ConsertoTotal
             // 
@@ -211,6 +225,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(176)))), ((int)(((byte)(222)))));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
@@ -228,7 +243,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(219, 24);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(445, 37);
@@ -269,6 +284,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
+            this.checkBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.checkBox2.Location = new System.Drawing.Point(715, 579);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(106, 17);
@@ -280,12 +296,14 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(176)))), ((int)(((byte)(222)))));
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.checkBox1.Location = new System.Drawing.Point(535, 583);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(113, 17);
             this.checkBox1.TabIndex = 13;
             this.checkBox1.Text = "Gravar Dados Csv";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.UseVisualStyleBackColor = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // LabelCarrapato
@@ -326,17 +344,6 @@
             this.BotaoProcurar.TabIndex = 5;
             this.BotaoProcurar.Text = "Excluir";
             this.BotaoProcurar.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.Location = new System.Drawing.Point(311, 76);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 29);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Cadatrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AindaNaoConserto
             // 

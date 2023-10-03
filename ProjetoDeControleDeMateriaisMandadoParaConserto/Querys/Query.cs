@@ -24,6 +24,12 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Querys
 
       public String UpdateNosPrograma = "update computadorentrada set programas=@programas where id=@id;";
 
-        public String UpdateNosSistemaOperacional = "update computadorentrada set SistemaOperacional=@Operacional where id=@id;";
+      public String UpdateNosSistemaOperacional = "update computadorentrada set SistemaOperacional=@Operacional where id=@id;";
+
+      public String selectTabela = "SELECT c.data,c.Descricao,entrada.Nome,entrada.Marca,entrada.SistemaOperacional,entrada.Programas,d.DataSaida,d.Descricao FROM computadorentrada AS entrada left JOIN datadeentrada AS c ON  c.data_id =entrada.id LEFT JOIN computadorsaida  AS d ON d.computadorEntrada_id=c.id;";
+
+      public String FiltroPorNumero= "SELECT c.data,c.Descricao,entrada.Nome,entrada.Marca,entrada.SistemaOperacional,entrada.Programas,d.DataSaida,d.Descricao FROM computadorentrada AS entrada left JOIN datadeentrada AS c ON  c.data_id =entrada.id LEFT JOIN computadorsaida  AS d ON d.computadorEntrada_id=c.id where entrada.nome=@numero;";
+
+      public String FiltroPorSistema= "SELECT c.data,c.Descricao,entrada.Nome,entrada.Marca,entrada.SistemaOperacional,entrada.Programas,d.DataSaida,d.Descricao FROM computadorentrada AS entrada left JOIN datadeentrada AS c ON  c.data_id =entrada.id LEFT JOIN computadorsaida  AS d ON d.computadorEntrada_id=c.id where entrada.SistemaOperacional=@sistema;";
     }
 }

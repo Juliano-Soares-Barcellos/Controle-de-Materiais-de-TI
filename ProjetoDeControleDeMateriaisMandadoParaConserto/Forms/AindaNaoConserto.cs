@@ -91,6 +91,8 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         {
             ArquivoTxtDao arquivo = new ArquivoTxtDao();
             arquivo.GeararArquivoTxt(LabelHeadset.Text);
+            checkBox2.Checked = false;
+
         }
 
         private void CarregarDadosNaTabela()
@@ -164,6 +166,8 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         {
             AindaNaoConsertoDao aindaNaoConsertoDa = new AindaNaoConsertoDao();
             aindaNaoConsertoDa.GravarCsv(Dados);
+            checkBox1.Checked = false;
         }
+        
     }
 }

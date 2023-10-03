@@ -81,7 +81,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
         private void CarregarDadosNaTabela()
         {
-            SelectTabela selectTabela = new SelectTabela();
+           SelectTabela selectTabela = new SelectTabela();
             dados = selectTabela.carregarTabela();
             // Atualizar a propriedade TotalConserto
             // Exibe a tabela pivotada no DataGridView
@@ -167,6 +167,26 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         {
             AindaNaoConserto a = new AindaNaoConserto();
             a.Show();
+        }
+
+    
+
+        private void mandarParaConsertoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RelacaoPcsConserto r = new RelacaoPcsConserto();
+            r.Show();
+        }
+
+        private void computadorConsertadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ComputadorConsertado c = new ComputadorConsertado();
+            c.Show();
+        }
+
+        private void verComputadoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ComputadorForm cf = new ComputadorForm();
+            cf.Show();
         }
     }
 }

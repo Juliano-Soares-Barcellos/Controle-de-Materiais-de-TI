@@ -290,7 +290,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                 cmd.Parameters.AddWithValue("@idData", IdData);
                object iddata = cmd.ExecuteScalar();
 
-                if (iddata != null && iddata.ToString().Equals("{}"))
+                if (iddata != null || !iddata.ToString().Equals("{}"))
                 {
                     id = Convert.ToInt32(iddata);
                 }
