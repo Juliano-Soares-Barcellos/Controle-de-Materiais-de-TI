@@ -1,12 +1,8 @@
 ﻿using ProjetoDeControleDeMateriaisMandadoParaConserto.Dao;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
@@ -16,6 +12,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         private List<Object[]> select;
 
         private DataTable teste;
+        private Form1 f;
 
         public ComputadorForm()
         {
@@ -29,14 +26,12 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             TabelaDao t = new TabelaDao();
             select = t.TodaTabela();
             this.MinhasColunas();
-
             foreach (var item in select)
             {
 
                 teste.Rows.Add(item);
 
             }
-
             Tabela.DataSource = teste;
 
         }
@@ -88,8 +83,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
 
 
-
-
         public void Apagar()
         {
             teste.Reset();
@@ -127,16 +120,18 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 this.MinhasColunas();
                 foreach (var item in select)
                 {
-
                     teste.Rows.Add(item);
-
                 }
-
                 Tabela.DataSource = teste;
                 Tabela.RowPrePaint += new DataGridViewRowPrePaintEventHandler(MudaCor);
-
             }
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            GravadorCsv s = new GravadorCsv();
+            s.GravarCSV(teste);
+            checkBox1.Checked=false;
+        }
     }
 }

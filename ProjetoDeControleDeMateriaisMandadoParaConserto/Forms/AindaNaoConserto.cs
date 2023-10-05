@@ -16,8 +16,10 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
     {
         private List<Object[]> Dados;
         DataTable tabelaPivotada;
-        public AindaNaoConserto()
+        private Form1 f;
+        public AindaNaoConserto(Form1 f)
         {
+            this.f = f;
             InitializeComponent();
             Dados = new List<Object[]>();
         }
@@ -168,6 +170,17 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             aindaNaoConsertoDa.GravarCsv(Dados);
             checkBox1.Checked = false;
         }
-        
+
+        private void AindaNaoConserto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (f.IsDisposed == false)
+            {
+                f.Close();
+            }
+            else
+            {
+                f.Close();
+            }
+        }
     }
 }

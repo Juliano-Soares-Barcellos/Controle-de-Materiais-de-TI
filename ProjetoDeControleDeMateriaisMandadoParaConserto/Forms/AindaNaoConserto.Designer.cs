@@ -353,6 +353,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "AindaNaoConserto";
             this.Text = "AindaNaoConserto";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AindaNaoConserto_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

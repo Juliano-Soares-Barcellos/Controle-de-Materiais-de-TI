@@ -86,19 +86,22 @@
             // 
             this.paraConsertoToolStripMenuItem.Name = "paraConsertoToolStripMenuItem";
             this.paraConsertoToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
-            this.paraConsertoToolStripMenuItem.Text = "Para Conserto";
+            this.paraConsertoToolStripMenuItem.Text = "Enviar para Conserto";
+            this.paraConsertoToolStripMenuItem.Click += new System.EventHandler(this.paraConsertoToolStripMenuItem_Click);
             // 
             // consertadoToolStripMenuItem
             // 
             this.consertadoToolStripMenuItem.Name = "consertadoToolStripMenuItem";
             this.consertadoToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.consertadoToolStripMenuItem.Text = "Consertado";
+            this.consertadoToolStripMenuItem.Click += new System.EventHandler(this.consertadoToolStripMenuItem_Click);
             // 
             // listaDeTodosComputadoresToolStripMenuItem
             // 
             this.listaDeTodosComputadoresToolStripMenuItem.Name = "listaDeTodosComputadoresToolStripMenuItem";
             this.listaDeTodosComputadoresToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.listaDeTodosComputadoresToolStripMenuItem.Text = "Lista De todos computadores";
+            this.listaDeTodosComputadoresToolStripMenuItem.Click += new System.EventHandler(this.listaDeTodosComputadoresToolStripMenuItem_Click);
             // 
             // fonesEHeadsetToolStripMenuItem
             // 
@@ -123,14 +126,16 @@
             // procurarPorCodigoToolStripMenuItem
             // 
             this.procurarPorCodigoToolStripMenuItem.Name = "procurarPorCodigoToolStripMenuItem";
-            this.procurarPorCodigoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.procurarPorCodigoToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.procurarPorCodigoToolStripMenuItem.Text = "Por Codigo";
+            this.procurarPorCodigoToolStripMenuItem.Click += new System.EventHandler(this.procurarPorCodigoToolStripMenuItem_Click);
             // 
             // porMêsToolStripMenuItem
             // 
             this.porMêsToolStripMenuItem.Name = "porMêsToolStripMenuItem";
-            this.porMêsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.porMêsToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.porMêsToolStripMenuItem.Text = "Por mês";
+            this.porMêsToolStripMenuItem.Click += new System.EventHandler(this.porMêsToolStripMenuItem_Click);
             // 
             // quantidadeDeMateriaConsertadoToolStripMenuItem
             // 
@@ -153,12 +158,14 @@
             this.inserirArquivoCsvToolStripMenuItem.Name = "inserirArquivoCsvToolStripMenuItem";
             this.inserirArquivoCsvToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.inserirArquivoCsvToolStripMenuItem.Text = "Inserir Arquivo csv";
+            this.inserirArquivoCsvToolStripMenuItem.Click += new System.EventHandler(this.inserirArquivoCsvToolStripMenuItem_Click);
             // 
             // criarArquivoAntesConsertoToolStripMenuItem
             // 
             this.criarArquivoAntesConsertoToolStripMenuItem.Name = "criarArquivoAntesConsertoToolStripMenuItem";
             this.criarArquivoAntesConsertoToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.criarArquivoAntesConsertoToolStripMenuItem.Text = "Criar Arquivo antes Conserto";
+            this.criarArquivoAntesConsertoToolStripMenuItem.Click += new System.EventHandler(this.criarArquivoAntesConsertoToolStripMenuItem_Click);
             // 
             // inserirFoneToolStripMenuItem
             // 

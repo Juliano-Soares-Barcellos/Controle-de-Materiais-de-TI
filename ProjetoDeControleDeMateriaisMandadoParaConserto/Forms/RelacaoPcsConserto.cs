@@ -17,9 +17,11 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         private Computador Computador;
         private ComputadorSaida _ComputadorSai;
         private ComputadorDao _computadorDao;
+        private Form1 f;
 
-        public RelacaoPcsConserto()
+        public RelacaoPcsConserto(Form1 f)
         {
+            this.f = f;
             this._computadorDao = new ComputadorDao();
             InitializeComponent();
             Tnome.KeyPress += this.textBox1_KeyPress;
@@ -116,6 +118,20 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             {
                 e.Handled = true;
             }
+        }
+
+        private void RelacaoPcsConserto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (f.IsDisposed == false)
+            {
+                f.Close();
+            }
+        }
+
+        private void tabelaDosComputadoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ComputadorForm f = new ComputadorForm();
+            f.Show();
         }
     }
 }

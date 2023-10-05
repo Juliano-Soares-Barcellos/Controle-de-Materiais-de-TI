@@ -281,6 +281,7 @@
             this.tabelaDosComputadoresToolStripMenuItem.Name = "tabelaDosComputadoresToolStripMenuItem";
             this.tabelaDosComputadoresToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.tabelaDosComputadoresToolStripMenuItem.Text = "Tabela Dos Computadores";
+            this.tabelaDosComputadoresToolStripMenuItem.Click += new System.EventHandler(this.tabelaDosComputadoresToolStripMenuItem_Click);
             // 
             // RelacaoPcsConserto
             // 
@@ -293,6 +294,7 @@
             this.MinimumSize = new System.Drawing.Size(680, 300);
             this.Name = "RelacaoPcsConserto";
             this.Text = "RelacaoPcsConserto";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RelacaoPcsConserto_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);

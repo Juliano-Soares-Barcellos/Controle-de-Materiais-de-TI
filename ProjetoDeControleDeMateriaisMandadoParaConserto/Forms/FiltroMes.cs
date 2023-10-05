@@ -126,6 +126,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         {
             GravadorCsv g = new GravadorCsv();
             g.GravarCSV(tabelaPivotada);
+            checkBox1.Checked = false;
         }
 
       

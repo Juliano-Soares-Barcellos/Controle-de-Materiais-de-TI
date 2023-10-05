@@ -14,11 +14,13 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 {
     public partial class TelaInicial : Form
     {
+        private Form1 fecha;
         private DataTable tabelaPivotada;
         private List<Object[]> dados;
 
-        public TelaInicial()
+        public TelaInicial(Form1 f)
         {
+            this.fecha = f;
             InitializeComponent();
             textBox1.KeyPress += textBox1_KeyPress;
             CarregarDadosNaTabela();
@@ -108,6 +110,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         {
             GravadorCsv g = new GravadorCsv();
             g.GravarCSV(tabelaPivotada);
+            checkBox1.Checked = false;
         }
 
 
@@ -155,38 +158,31 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             p.ProdutoExcluido += ProcurarProdutoExcluido;
             p.Show();
         }
+
         private void ArrastarArquivoCsv_DadosEnviados(object sender, EventArgs e)
         {
             // Atualize a tabela na tela inicial quando os dados do arquivo forem enviados
             CarregarDadosNaTabela();
         }
 
-     
-
         private void d_Click(object sender, EventArgs e)
         {
-            AindaNaoConserto a = new AindaNaoConserto();
+            Form1 f = new Form1();
+            AindaNaoConserto a = new AindaNaoConserto(f);
             a.Show();
         }
 
-    
 
-        private void mandarParaConsertoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void TelaInicial_FormClosing(object sender, FormClosingEventArgs e)
         {
-            RelacaoPcsConserto r = new RelacaoPcsConserto();
-            r.Show();
-        }
-
-        private void computadorConsertadoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ComputadorConsertado c = new ComputadorConsertado();
-            c.Show();
-        }
-
-        private void verComputadoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ComputadorForm cf = new ComputadorForm();
-            cf.Show();
+            if (fecha.IsDisposed == false)
+            {
+                fecha.Close();
+            }
+            else
+            {
+                fecha.Close();
+            }
         }
     }
 }

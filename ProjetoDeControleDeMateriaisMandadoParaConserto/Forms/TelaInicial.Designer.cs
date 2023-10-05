@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Tabela = new System.Windows.Forms.DataGridView();
@@ -50,10 +50,6 @@
             this.qToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filtrarPeloMêsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.d = new System.Windows.Forms.ToolStripMenuItem();
-            this.computadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mandarParaConsertoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.computadorConsertadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verComputadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Tabela)).BeginInit();
@@ -105,36 +101,36 @@
             this.Tabela.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Tabela.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Tabela.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Tabela.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Tabela.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.Tabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Tabela.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Tabela.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Tabela.DefaultCellStyle = dataGridViewCellStyle5;
             this.Tabela.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Tabela.Location = new System.Drawing.Point(3, 3);
             this.Tabela.Name = "Tabela";
             this.Tabela.ReadOnly = true;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Tabela.RowHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Tabela.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.Tabela.Size = new System.Drawing.Size(963, 373);
             this.Tabela.TabIndex = 6;
             // 
@@ -268,8 +264,7 @@
             this.inserirArquivoCsvToolStripMenuItem,
             this.qToolStripMenuItem,
             this.filtrarPeloMêsToolStripMenuItem,
-            this.d,
-            this.computadorToolStripMenuItem});
+            this.d});
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(50, 20);
             this.Menu.Text = "Menu";
@@ -309,37 +304,6 @@
             this.d.Text = "Material para conserto csv";
             this.d.Click += new System.EventHandler(this.d_Click);
             // 
-            // computadorToolStripMenuItem
-            // 
-            this.computadorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mandarParaConsertoToolStripMenuItem,
-            this.computadorConsertadoToolStripMenuItem,
-            this.verComputadoresToolStripMenuItem});
-            this.computadorToolStripMenuItem.Name = "computadorToolStripMenuItem";
-            this.computadorToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
-            this.computadorToolStripMenuItem.Text = "Computador";
-            // 
-            // mandarParaConsertoToolStripMenuItem
-            // 
-            this.mandarParaConsertoToolStripMenuItem.Name = "mandarParaConsertoToolStripMenuItem";
-            this.mandarParaConsertoToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.mandarParaConsertoToolStripMenuItem.Text = "Mandar para conserto ";
-            this.mandarParaConsertoToolStripMenuItem.Click += new System.EventHandler(this.mandarParaConsertoToolStripMenuItem_Click);
-            // 
-            // computadorConsertadoToolStripMenuItem
-            // 
-            this.computadorConsertadoToolStripMenuItem.Name = "computadorConsertadoToolStripMenuItem";
-            this.computadorConsertadoToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.computadorConsertadoToolStripMenuItem.Text = "Computador Consertado";
-            this.computadorConsertadoToolStripMenuItem.Click += new System.EventHandler(this.computadorConsertadoToolStripMenuItem_Click);
-            // 
-            // verComputadoresToolStripMenuItem
-            // 
-            this.verComputadoresToolStripMenuItem.Name = "verComputadoresToolStripMenuItem";
-            this.verComputadoresToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.verComputadoresToolStripMenuItem.Text = "Ver Computadores ";
-            this.verComputadoresToolStripMenuItem.Click += new System.EventHandler(this.verComputadoresToolStripMenuItem_Click);
-            // 
             // TelaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,6 +312,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "TelaInicial";
             this.Text = "TelaInicial";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaInicial_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -381,9 +346,5 @@
         private System.Windows.Forms.ToolStripMenuItem qToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filtrarPeloMêsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem d;
-        private System.Windows.Forms.ToolStripMenuItem computadorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mandarParaConsertoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem computadorConsertadoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verComputadoresToolStripMenuItem;
     }
 }

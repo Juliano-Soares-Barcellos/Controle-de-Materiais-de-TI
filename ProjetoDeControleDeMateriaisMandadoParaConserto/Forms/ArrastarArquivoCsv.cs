@@ -12,7 +12,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
     public partial class ArrastarArquivoCsv : Form
     {
         private DataTable dataTable = new DataTable();
-
         public ArrastarArquivoCsv()
         {
             InitializeComponent();
@@ -139,7 +138,8 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         }
         private void ArrastarArquivoCsv_FormClosed(object sender, FormClosedEventArgs e)
         {
-            TelaInicial telaInicial = new TelaInicial();
+            Form1 f = new Form1();
+            TelaInicial telaInicial = new TelaInicial(f);
             EnviarDadosDoArquivo();
             telaInicial.Show();
         }

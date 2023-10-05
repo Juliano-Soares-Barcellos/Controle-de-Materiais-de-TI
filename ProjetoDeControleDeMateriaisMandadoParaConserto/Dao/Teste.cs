@@ -106,7 +106,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                             // Verifica se há datas presentes no array de valores
                             for (int i = 3; i < valores.Length; i++)
                             {
-                                    if (DateTime.TryParse(valores[i].ToString(), out DateTime dataConserto) && valores[i]!="")
+                                    if (DateTime.TryParse(valores[i].ToString(), out DateTime dataConserto) && !valores[i].Equals(""))
                                     {
                                         int produtoId = Convert.ToInt32(comandoProduto.LastInsertedId);
                                         comandoConserto.Parameters.Clear(); // Limpar parâmetros antes de cada inserção
