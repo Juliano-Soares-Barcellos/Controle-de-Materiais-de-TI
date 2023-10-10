@@ -2,12 +2,8 @@
 using ProjetoDeControleDeMateriaisMandadoParaConserto.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
@@ -15,7 +11,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
     public partial class AindaNaoConserto : Form
     {
         private List<Object[]> Dados;
-        DataTable tabelaPivotada;
+        private DataTable tabelaPivotada;
         private Form1 f;
         public AindaNaoConserto(Form1 f)
         {
@@ -56,10 +52,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     string NomeMaterial = comboBox.SelectedItem.ToString();
                     List<Object[]> novosDados = procurarCodigo.carregarTabela(numero);
                     Dados.AddRange(novosDados);
-
-                    //
-
-
                     
                     if (novosDados.Count > 0)
                     {
@@ -75,7 +67,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                         produto.Numero = numero;
                         produto.quantidade_conserto = 0;
 
-                        Object [] Produtos = new object [] { produto.id,produto.Nome,produto.Numero,produto.quantidade_conserto,"00" };
+                        Object[] Produtos = new object[] { produto.id, produto.Nome, produto.Numero, produto.quantidade_conserto, "00" };
                         Dados.Add(Produtos);
                         CarregarDadosNaTabela();
                         MessageBox.Show("Produto não encontrado no nosso Banco de dados !");
@@ -99,7 +91,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
         private void CarregarDadosNaTabela()
         {
-          
+
             SelectTabela selectTabela = new SelectTabela();
             tabelaPivotada = selectTabela.PivotData(Dados);
             Tabela.DataSource = tabelaPivotada;
@@ -110,7 +102,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
 
         }
-        public void LabelsMostrar(List<Object[]>  Dados)
+        public void LabelsMostrar(List<Object[]> Dados)
         {
             SelectTabela SelectTabel = new SelectTabela();
 
@@ -118,22 +110,16 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             int Headset = Produtos[0];
             int Discador = Produtos[1];
             int Carrapatos = Produtos[2];
-            LabelHeadset.Visible=true;
-            LabelDiscador.Visible=true;
-            LabelCarrapato.Visible=true;
+            LabelHeadset.Visible = true;
+            LabelDiscador.Visible = true;
+            LabelCarrapato.Visible = true;
             labelD.Visible = true;
-            LabelCarra.Visible= true;
+            LabelCarra.Visible = true;
             labelh.Visible = true;
 
             LabelHeadset.Text = Headset.ToString();
             LabelDiscador.Text = Discador.ToString();
             LabelCarrapato.Text = Carrapatos.ToString();
-
-
-
-
-
-
 
         }
 
@@ -149,7 +135,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
                 if (result == DialogResult.Yes)
                 {
-                    foreach (object[] rowData in Dados.ToList()) 
+                    foreach (object[] rowData in Dados.ToList())
                     {
                         if (rowData.Contains(coluna1))
                         {

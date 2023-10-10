@@ -180,17 +180,12 @@
             // 
             this.comboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox.DisplayMember = "a";
+            this.comboBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox.FormattingEnabled = true;
-            this.comboBox.Items.AddRange(new object[] {
-            "HEADSET",
-            "DISCADOR",
-            "CARRAPATOS"});
             this.comboBox.Location = new System.Drawing.Point(392, 29);
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(285, 21);
             this.comboBox.TabIndex = 4;
-            this.comboBox.ValueMember = "as,d,f";
             // 
             // label6
             // 
