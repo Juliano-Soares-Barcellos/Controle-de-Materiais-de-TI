@@ -4,6 +4,7 @@ using ProjetoDeControleDeMateriaisMandadoParaConserto.Model;
 using ProjetoDeControleDeMateriaisMandadoParaConserto.Querys;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
@@ -306,6 +307,46 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                 con.Close();
             }
             return id;
+        }
+
+
+        public List<String> carregarCombobox()
+        {
+            List<String> resultados = new List<String>();
+
+            try
+            {
+                con = new Banco().Conexaopcs();
+                con.Open();
+                 string sql = "select Marca from computadorentrada ;";
+                MySqlCommand comando = new MySqlCommand(sql, con);
+             
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    String marca = reader["Marca"].ToString();
+
+                    if (!resultados.Contains(marca))
+                    { 
+                    resultados.Add(marca);
+                    }
+                }
+
+           
+                reader.Close();
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return resultados;
         }
     }
 

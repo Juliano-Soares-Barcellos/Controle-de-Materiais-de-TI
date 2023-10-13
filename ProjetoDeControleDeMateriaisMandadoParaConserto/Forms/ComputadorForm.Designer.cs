@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComputadorForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -43,13 +44,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ConsertoTotal = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.Menu = new System.Windows.Forms.ToolStripMenuItem();
-            this.testeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inserirArquivoCsvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.qToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.filtrarPeloMêsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.d = new System.Windows.Forms.ToolStripMenuItem();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox = new System.Windows.Forms.ComboBox();
@@ -61,7 +55,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Tabela)).BeginInit();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,7 +75,6 @@
             this.panel2.Controls.Add(this.tableLayoutPanel1);
             this.panel2.Controls.Add(this.ConsertoTotal);
             this.panel2.Controls.Add(this.checkBox1);
-            this.panel2.Controls.Add(this.menuStrip1);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -163,7 +155,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 13;
-            this.button2.Text = "Cadastrar";
+            this.button2.Text = "Procurar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -173,7 +165,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(-5, 7);
+            this.label2.Location = new System.Drawing.Point(3, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(225, 22);
             this.label2.TabIndex = 1;
@@ -196,7 +188,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -238,58 +230,6 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Menu});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1193, 24);
-            this.menuStrip1.TabIndex = 7;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // Menu
-            // 
-            this.Menu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.testeToolStripMenuItem,
-            this.inserirArquivoCsvToolStripMenuItem,
-            this.qToolStripMenuItem,
-            this.filtrarPeloMêsToolStripMenuItem,
-            this.d});
-            this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(50, 20);
-            this.Menu.Text = "Menu";
-            // 
-            // testeToolStripMenuItem
-            // 
-            this.testeToolStripMenuItem.Name = "testeToolStripMenuItem";
-            this.testeToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
-            this.testeToolStripMenuItem.Text = "Procurar codigo";
-            // 
-            // inserirArquivoCsvToolStripMenuItem
-            // 
-            this.inserirArquivoCsvToolStripMenuItem.Name = "inserirArquivoCsvToolStripMenuItem";
-            this.inserirArquivoCsvToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
-            this.inserirArquivoCsvToolStripMenuItem.Text = "Inserir Arquivo csv";
-            // 
-            // qToolStripMenuItem
-            // 
-            this.qToolStripMenuItem.Name = "qToolStripMenuItem";
-            this.qToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
-            this.qToolStripMenuItem.Text = "Quantidade de Materia Consertado";
-            // 
-            // filtrarPeloMêsToolStripMenuItem
-            // 
-            this.filtrarPeloMêsToolStripMenuItem.Name = "filtrarPeloMêsToolStripMenuItem";
-            this.filtrarPeloMêsToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
-            this.filtrarPeloMêsToolStripMenuItem.Text = "Filtrar Pelo Mês";
-            // 
-            // d
-            // 
-            this.d.Name = "d";
-            this.d.Size = new System.Drawing.Size(259, 22);
-            this.d.Text = "Material para conserto csv";
-            // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -308,7 +248,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Cadatrar";
+            this.button1.Text = "Procurar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -347,8 +287,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1193, 343);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ComputadorForm";
-            this.Text = "n";
+            this.Text = "Visualização dos Computadores";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -358,8 +299,6 @@
             this.panel3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
@@ -378,13 +317,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label ConsertoTotal;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem Menu;
-        private System.Windows.Forms.ToolStripMenuItem testeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inserirArquivoCsvToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem qToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem filtrarPeloMêsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem d;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox;

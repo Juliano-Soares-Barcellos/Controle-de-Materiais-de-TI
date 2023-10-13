@@ -180,11 +180,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(735, 561);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(751, 599);
             this.MinimumSize = new System.Drawing.Size(751, 599);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Bem Vindo ao sistema de  gerenciamentos  de materiais de TI";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

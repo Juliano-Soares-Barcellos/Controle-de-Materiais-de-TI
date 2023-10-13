@@ -2,18 +2,12 @@
 using ProjetoDeControleDeMateriaisMandadoParaConserto.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 {
     public partial class RelacaoPcsConserto : Form
-    {  
+    {
         private Computador Computador;
         private ComputadorSaida _ComputadorSai;
         private ComputadorDao _computadorDao;
@@ -25,11 +19,17 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             this._computadorDao = new ComputadorDao();
             InitializeComponent();
             Tnome.KeyPress += this.textBox1_KeyPress;
+            comboboxpreenchida();
+
+
+
         }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Tnome.Text.Equals("") || Tdescricao.Equals("") || Tmarca.Equals(""))
+            if (Tnome.Text.Equals("") || Tdescricao.Equals(""))
             {
                 MessageBox.Show("Por favor preencha todos os campos ");
             }
@@ -45,27 +45,28 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     Computador = new Computador();
                     Computador.Descricao = Tdescricao.Text;
 
-                    int VerificarId=_computadorDao.AcharPcs(Tnome.Text);
+                    int VerificarId = _computadorDao.AcharPcs(Tnome.Text);
                     Computador.Id = VerificarId;
-                    
+
                     if (VerificarId >= 1)
                     {
                         _ComputadorSai = new ComputadorSaida();
                         _ComputadorSai.Computador_id = Computador;
-                       List<int> datas=_computadorDao.CompararTamanhoData(_ComputadorSai);
+                        List<int> datas = _computadorDao.CompararTamanhoData(_ComputadorSai);
                         if (datas.Count >= 1)
                         {
-                            if (datas[0] == datas[1] )
+                            if (datas[0] == datas[1])
                             {
                                 if (comboBox.SelectedItem == null)
                                 {
                                     _computadorDao.InsereDataEntrada(Tdescricao.Text, VerificarId);
-                                    MessageBox.Show("Eu existo");
+
                                 }
                                 else
                                 {
+
                                     _computadorDao.InsereDataEntrada(Tdescricao.Text, VerificarId);
-                                    Computador.Sistema= comboBox.SelectedItem.ToString();
+                                    Computador.Sistema = comboBox.SelectedItem.ToString();
                                     _computadorDao.updateSistema(Computador);
 
                                 }
@@ -78,31 +79,51 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     }
                     else
                     {
-                        if (comboBox.SelectedItem==null)
+                        if (!comboBox1.Text.ToString().Equals("") || comboBox1.SelectedItem != null)
                         {
-                            this.Computador = new Computador(VerificarId, Tnome.Text, Tmarca.Text, "", "");
-                            _computadorDao.inserirComputadorEntrada(Computador, Tdescricao.Text, DateTime.Now);
+                            string marca = "";
+                            if (comboBox1.SelectedItem != null)
+                            {
+                                marca = comboBox1.SelectedItem.ToString();
+                            }
+                            else
+                            {
+                                marca = comboBox1.Text.ToString();
+                            }
+
+                            if (comboBox.SelectedItem == null)
+                            {
+                                String c = comboBox1.Text.ToString();
+
+                                this.Computador = new Computador(VerificarId, Tnome.Text, marca, "", "");
+                                _computadorDao.inserirComputadorEntrada(Computador, Tdescricao.Text, DateTime.Now);
+                            }
+                            else
+                            {
+                                this.Computador = new Computador(VerificarId, Tnome.Text, marca, comboBox.SelectedItem.ToString(), "");
+                                _computadorDao.inserirComputadorEntrada(Computador, Tdescricao.Text, DateTime.Now);
+
+                            }
+
+
                         }
                         else
                         {
-                            this.Computador = new Computador(VerificarId, Tnome.Text, Tmarca.Text, comboBox.SelectedItem.ToString(), "");
-                            _computadorDao.inserirComputadorEntrada(Computador, Tdescricao.Text, DateTime.Now);
-
+                            MessageBox.Show("Preencha o modelo ou selecione um item");
                         }
-
-
                     }
-                      
+
+
+                    comboboxpreenchida();
                 }
                 else
                 {
                     MessageBox.Show("Problemas ao inserir no banco, favor contatar os profissionais de TI");
                 }
 
-                Tnome.Text = "";
                 comboBox.SelectedIndex = -1;
+                comboBox1.SelectedIndex = -1;
                 Tdescricao.Text = "";
-                Tmarca.Text = "";
             }
         }
 
@@ -133,5 +154,19 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             ComputadorForm f = new ComputadorForm();
             f.Show();
         }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        public void comboboxpreenchida()
+        {
+            foreach (String item in _computadorDao.carregarCombobox())
+            {
+                comboBox1.Items.Add(item);
+            }
+        }
+
     }
 }

@@ -65,19 +65,26 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             }
             else
             {
+
                 this.Apagar();
                 TabelaDao t = new TabelaDao();
                 select = t.pegarNumnero(textBox1.Text);
-                this.MinhasColunas();
-                foreach (var item in select)
+
+                if (select.Count == 0)
                 {
-
-                    teste.Rows.Add(item);
-
+                    MessageBox.Show("Computador não encontrado !");
                 }
+                else
+                {
+                    this.MinhasColunas();
+                    foreach (var item in select)
+                    {
+                        teste.Rows.Add(item);
+                    }
 
-                Tabela.DataSource = teste;
-                Tabela.RowPrePaint += new DataGridViewRowPrePaintEventHandler(MudaCor);
+                    Tabela.DataSource = teste;
+                    Tabela.RowPrePaint += new DataGridViewRowPrePaintEventHandler(MudaCor);
+                }
             }
         }
 
@@ -99,7 +106,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             teste.Columns.Add("Data Entrada", typeof(DateTime));
             teste.Columns.Add("Problema Apresentado", typeof(String));
             teste.Columns.Add("Numero", typeof(String));
-            teste.Columns.Add("Marca", typeof(String));
+            teste.Columns.Add("Modelo", typeof(String));
             teste.Columns.Add("Sistema Operacional", typeof(String));
             teste.Columns.Add("Programas", typeof(String));
             teste.Columns.Add("Data de Saida", typeof(DateTime));
@@ -118,20 +125,31 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 TabelaDao t = new TabelaDao();
                 select = t.pegarSistema(comboBox.SelectedItem.ToString());
                 this.MinhasColunas();
+
                 foreach (var item in select)
                 {
                     teste.Rows.Add(item);
                 }
+
                 Tabela.DataSource = teste;
                 Tabela.RowPrePaint += new DataGridViewRowPrePaintEventHandler(MudaCor);
             }
+
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             GravadorCsv s = new GravadorCsv();
-            s.GravarCSV(teste);
-            checkBox1.Checked=false;
+            
+            if (teste.Columns.Count==0)
+            {
+                MessageBox.Show("Impossivel gravar a tabela zerada");
+            }
+            else
+            {
+                s.GravarCSV(teste);
+                checkBox1.Checked = false;
+            }
         }
     }
 }
