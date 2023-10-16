@@ -183,6 +183,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox.FormattingEnabled = true;
+            this.comboBox.Items.AddRange(new object[] {
+            "HEADSET",
+            "DISCADOR"});
             this.comboBox.Location = new System.Drawing.Point(392, 29);
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(285, 21);
@@ -307,9 +310,8 @@
             this.LabelCarrapato.AutoSize = true;
             this.LabelCarrapato.Location = new System.Drawing.Point(247, 623);
             this.LabelCarrapato.Name = "LabelCarrapato";
-            this.LabelCarrapato.Size = new System.Drawing.Size(35, 13);
+            this.LabelCarrapato.Size = new System.Drawing.Size(0, 13);
             this.LabelCarrapato.TabIndex = 12;
-            this.LabelCarrapato.Text = "label7";
             this.LabelCarrapato.Visible = false;
             // 
             // LabelDiscador
@@ -317,9 +319,8 @@
             this.LabelDiscador.AutoSize = true;
             this.LabelDiscador.Location = new System.Drawing.Point(146, 623);
             this.LabelDiscador.Name = "LabelDiscador";
-            this.LabelDiscador.Size = new System.Drawing.Size(35, 13);
+            this.LabelDiscador.Size = new System.Drawing.Size(0, 13);
             this.LabelDiscador.TabIndex = 10;
-            this.LabelDiscador.Text = "label7";
             this.LabelDiscador.Visible = false;
             // 
             // LabelHeadset
@@ -327,9 +328,8 @@
             this.LabelHeadset.AutoSize = true;
             this.LabelHeadset.Location = new System.Drawing.Point(44, 623);
             this.LabelHeadset.Name = "LabelHeadset";
-            this.LabelHeadset.Size = new System.Drawing.Size(35, 13);
+            this.LabelHeadset.Size = new System.Drawing.Size(0, 13);
             this.LabelHeadset.TabIndex = 9;
-            this.LabelHeadset.Text = "label7";
             this.LabelHeadset.Visible = false;
             // 
             // BotaoProcurar

@@ -45,9 +45,9 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
                 int MesConserto = selectFiltro.CalcularMesConserto(Dados);
 
-               // int totalConserto = selectFiltro.CalcularTotalConserto(Dados);
+                int totalConserto = selectFiltro.CalcularTotalConserto(Dados);
 
-               // int totalProdutosComGarantia = selectFiltro.CalcularQuantidadeGarantia(Dados);
+                int totalProdutosComGarantia = selectFiltro.CalcularQuantidadeGarantia(Dados);
 
                List<int> Produtos=SelectTabel.HEADSETDISCADORConserto(Dados);
                 int Headset=Produtos[0];
@@ -72,8 +72,8 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 label5.Visible = true;
                 label6.Visible = true;
 
-               // LabelGarantia.Text = totalProdutosComGarantia.ToString();
-                //LabelConsertado.Text = totalConserto.ToString();
+                LabelGarantia.Text = totalProdutosComGarantia.ToString();
+                LabelConsertado.Text = totalConserto.ToString();
                 label7.Text = MesConserto.ToString();
             }
         }
@@ -129,6 +129,9 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             checkBox1.Checked = false;
         }
 
-      
+        private void LabelGarantia_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

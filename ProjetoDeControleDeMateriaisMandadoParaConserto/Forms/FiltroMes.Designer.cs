@@ -121,6 +121,7 @@
             this.LabelGarantia.TabIndex = 9;
             this.LabelGarantia.Text = "label7";
             this.LabelGarantia.Visible = false;
+            this.LabelGarantia.Click += new System.EventHandler(this.LabelGarantia_Click);
             // 
             // label5
             // 

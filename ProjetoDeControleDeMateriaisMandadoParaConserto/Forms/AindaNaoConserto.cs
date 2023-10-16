@@ -52,7 +52,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     string NomeMaterial = comboBox.SelectedItem.ToString();
                     List<Object[]> novosDados = procurarCodigo.carregarTabela(numero);
                     Dados.AddRange(novosDados);
-                    
+
                     if (novosDados.Count > 0)
                     {
 
@@ -84,8 +84,39 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
             ArquivoTxtDao arquivo = new ArquivoTxtDao();
-            arquivo.GeararArquivoTxt(LabelHeadset.Text);
-            checkBox2.Checked = false;
+            int headset = 0;
+            int carrapato = 0;
+            int discador = 0;
+
+            foreach (DataGridViewRow row in Tabela.Rows)
+            {
+                if (row.Cells[3].Value != null)
+                {
+                    String garantia = row.Cells[3].Value.ToString();
+
+                    if (garantia == "Com Garantia")
+                    {
+                        String material = row.Cells[0].Value.ToString();
+                        switch (material)
+                        {
+                            case "HEADSET":
+                                headset++;
+                                break;
+
+                            case "DISCADOR":
+                                discador++;
+                                break;
+
+                            case "CARRAPATOS":
+                                carrapato++;
+                                break;
+                        }
+                    }
+                }
+            }
+            arquivo.GeararArquivoTxt(LabelHeadset.Text,LabelDiscador.Text,LabelCarrapato.Text,headset,discador,carrapato);
+
+            checkBox2.Checked=false;
 
         }
 
@@ -154,6 +185,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         {
             AindaNaoConsertoDao aindaNaoConsertoDa = new AindaNaoConsertoDao();
             aindaNaoConsertoDa.GravarCsv(Dados);
+            ArquivoTxtDao arquivo = new ArquivoTxtDao();
             checkBox1.Checked = false;
         }
 

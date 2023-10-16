@@ -15,8 +15,8 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         public ArrastarArquivoCsv()
         {
             InitializeComponent();
-            MessageBox.Show("Atencão !!! \n para importar arquivo o mesmo deve ser do tipo CSV, o arquivo nao deve conter nome de coluna \n " +
-                "o arquivo deve conter uma ordem de nome,numero,quantidade_conserto e a data");
+            MessageBox.Show("Atencão !!! \n para importar arquivo, o mesmo deve ser do tipo CSV, o arquivo deve conter os nomes das coluna \n " +
+                "o arquivo deve conter uma ordem de nome,numero,quantidade_conserto e a data,não interessa se a coluna da data estiver mais de uma data");
             DragEnter += label2_DragEnter;
             DragDrop += label2_DragDrop;
         }
@@ -154,13 +154,10 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             OnDadosEnviados(EventArgs.Empty);
         }
 
-
         protected virtual void OnDadosEnviados(EventArgs e)
         {
             DadosEnviados?.Invoke(this, e);
         }
-
-
     }
 }
 

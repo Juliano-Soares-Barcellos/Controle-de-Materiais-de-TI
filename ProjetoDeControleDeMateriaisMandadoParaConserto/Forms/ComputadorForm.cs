@@ -47,8 +47,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 Tabela.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.PaleTurquoise;
             }
 
-
-
             this.Tabela.GridColor = Color.BlueViolet;
         }
 
@@ -140,7 +138,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             GravadorCsv s = new GravadorCsv();
-            
             if (teste.Columns.Count==0)
             {
                 MessageBox.Show("Impossivel gravar a tabela zerada");
@@ -148,8 +145,8 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             else
             {
                 s.GravarCSV(teste);
-                checkBox1.Checked = false;
             }
+            checkBox1.Checked = false;
         }
     }
 }
