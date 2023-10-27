@@ -36,7 +36,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
         private void label2_DragDrop(object sender, DragEventArgs e)
         {
-            Teste teste = new Teste();
+            InsersaoDbPlanilha teste = new InsersaoDbPlanilha();
             string message = "Deseja fazer o Backup? Digite 's' para sim ou 'n' para não:";
             string caption = "Confirmação";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -53,7 +53,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                // label2.Text = Path.GetFileName(caminhoArquivo);
 
                 List<Object[]> arquivo = ExibirDadosDoCSV(caminhoArquivo);
-                Teste t = new Teste();
+                InsersaoDbPlanilha t = new InsersaoDbPlanilha();
                 NumeroDao numeroDao = new NumeroDao();
 
 
@@ -139,7 +139,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         private void ArrastarArquivoCsv_FormClosed(object sender, FormClosedEventArgs e)
         {
             Form1 f = new Form1();
-            TelaInicial telaInicial = new TelaInicial(f);
+            TelaCadastramentoFones telaInicial = new TelaCadastramentoFones(f);
             EnviarDadosDoArquivo();
             telaInicial.Show();
         }

@@ -79,7 +79,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             try
             {
                 con = new Banco().Conexao();
-                //String sql = "INSERT INTO Conserto (Data,Produto_id) VALUES (@Data,@Produto_id)";
                 con.Open();
                 MySqlCommand comando = new MySqlCommand(sql, con);
                 DateTime Data = DateTime.Now;
@@ -87,7 +86,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                 comando.Parameters.AddWithValue("@Data", Data);
                 comando.Parameters.AddWithValue("Produto_id", id);
                 comando.ExecuteNonQuery();
-
             }
             catch (MySqlException ex)
             {

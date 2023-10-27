@@ -118,6 +118,45 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                 MySqlCommand comando = new MySqlCommand(sql.FiltroPorSistema, con);
                 comando.Parameters.AddWithValue("@sistema", sistema);
 
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Object[] row = new Object[reader.FieldCount];
+
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        row[i] = reader[i];
+                    }
+
+                    resultados.Add(row);
+                }
+
+                reader.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return resultados;
+        }
+
+        public List<Object[]> ssd()
+        {
+            con = new Banco().Conexaopcs();
+            con.Open();
+
+            List<Object[]> resultados = new List<Object[]>();
+
+            try
+            {
+                sql = new Query();
+                MySqlCommand comando = new MySqlCommand(sql.filtrossd, con);
 
                 MySqlDataReader reader = comando.ExecuteReader();
 
@@ -148,6 +187,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
         }
     }
 }
+
 
 
 

@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 {
-    public partial class TelaInicial : Form
+    public partial class TelaCadastramentoFones : Form
     {
         private Form1 fecha;
         private DataTable tabelaPivotada;
         private List<Object[]> dados;
 
-        public TelaInicial(Form1 f)
+        public TelaCadastramentoFones(Form1 f)
         {
             this.fecha = f;
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 if (result == DialogResult.Yes)
                 {
                     NumeroDao numeroDao = new NumeroDao();
-                    Teste t = new Teste();
+                    InsersaoDbPlanilha t = new InsersaoDbPlanilha();
                     string numero = textBox1.Text;
                     string NomeMaterial = comboBox.SelectedItem.ToString();
                     Object[] encontrar = numeroDao.EncontrarNumero(numero);

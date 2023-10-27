@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
 {
-    class Teste
+    class InsersaoDbPlanilha
     {
         MySqlConnection con = null;
 

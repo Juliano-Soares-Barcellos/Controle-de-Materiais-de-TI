@@ -21,12 +21,10 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string caminhoArquivo = saveFileDialog.FileName;
-
                     // Cria e escreve o conteúdo no arquivo
                     using (StreamWriter writer = new StreamWriter(caminhoArquivo, false, Encoding.UTF8))
                     {
                         List<String> texto = new List<String>();
-
                         texto.Add($"Quantidade de Headset: {headset}, headset na garantia: {quantidadeHeadset}");
                         texto.Add($"Quantidade de Discador: {Discador}, Discador na garantia: {quantidadeDiscador}");
                         texto.Add($"Quantidade de Carrapato: {Carrapato}, Carrapato na garantia: {quantidadeCarrapatos}");
@@ -35,9 +33,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                         {
                             writer.WriteLine(item);
                         }
-
                     }
-
                     MessageBox.Show("Arquivo criado com sucesso.");
                 }
             }

@@ -37,7 +37,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             {
 
                 NumeroDao numeroDao = new NumeroDao();
-                Teste t = new Teste();
+                InsersaoDbPlanilha t = new InsersaoDbPlanilha();
                 string numero = textBox1.Text;
                 Object[] encontrar = numeroDao.EncontrarNumero(numero);
 

@@ -39,7 +39,6 @@
             this.procurarFoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procurarPorCodigoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porMêsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quantidadeDeMateriaConsertadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arquivoCsvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserirArquivoCsvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.criarArquivoAntesConsertoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,7 +106,6 @@
             // 
             this.fonesEHeadsetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.procurarFoneToolStripMenuItem,
-            this.quantidadeDeMateriaConsertadoToolStripMenuItem,
             this.arquivoCsvToolStripMenuItem,
             this.inserirFoneToolStripMenuItem});
             this.fonesEHeadsetToolStripMenuItem.Name = "fonesEHeadsetToolStripMenuItem";
@@ -120,7 +118,7 @@
             this.procurarPorCodigoToolStripMenuItem,
             this.porMêsToolStripMenuItem});
             this.procurarFoneToolStripMenuItem.Name = "procurarFoneToolStripMenuItem";
-            this.procurarFoneToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
+            this.procurarFoneToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.procurarFoneToolStripMenuItem.Text = "Procurar Fone";
             // 
             // procurarPorCodigoToolStripMenuItem
@@ -137,19 +135,13 @@
             this.porMêsToolStripMenuItem.Text = "Por mês";
             this.porMêsToolStripMenuItem.Click += new System.EventHandler(this.porMêsToolStripMenuItem_Click);
             // 
-            // quantidadeDeMateriaConsertadoToolStripMenuItem
-            // 
-            this.quantidadeDeMateriaConsertadoToolStripMenuItem.Name = "quantidadeDeMateriaConsertadoToolStripMenuItem";
-            this.quantidadeDeMateriaConsertadoToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
-            this.quantidadeDeMateriaConsertadoToolStripMenuItem.Text = "Quantidade de materia Consertado";
-            // 
             // arquivoCsvToolStripMenuItem
             // 
             this.arquivoCsvToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inserirArquivoCsvToolStripMenuItem,
             this.criarArquivoAntesConsertoToolStripMenuItem});
             this.arquivoCsvToolStripMenuItem.Name = "arquivoCsvToolStripMenuItem";
-            this.arquivoCsvToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
+            this.arquivoCsvToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.arquivoCsvToolStripMenuItem.Text = "Arquivo ";
             this.arquivoCsvToolStripMenuItem.Click += new System.EventHandler(this.arquivoCsvToolStripMenuItem_Click);
             // 
@@ -170,7 +162,7 @@
             // inserirFoneToolStripMenuItem
             // 
             this.inserirFoneToolStripMenuItem.Name = "inserirFoneToolStripMenuItem";
-            this.inserirFoneToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
+            this.inserirFoneToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.inserirFoneToolStripMenuItem.Text = "Inserir fone ";
             this.inserirFoneToolStripMenuItem.Click += new System.EventHandler(this.inserirFoneToolStripMenuItem_Click);
             // 
@@ -206,7 +198,6 @@
         private System.Windows.Forms.ToolStripMenuItem procurarFoneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem procurarPorCodigoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem porMêsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quantidadeDeMateriaConsertadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem arquivoCsvToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inserirArquivoCsvToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem criarArquivoAntesConsertoToolStripMenuItem;

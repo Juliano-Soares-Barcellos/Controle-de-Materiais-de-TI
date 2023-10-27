@@ -31,5 +31,9 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Querys
       public String FiltroPorNumero= "SELECT c.data,c.Descricao,entrada.Nome,entrada.Marca,entrada.SistemaOperacional,entrada.Programas,d.DataSaida,d.Descricao FROM computadorentrada AS entrada left JOIN datadeentrada AS c ON  c.data_id =entrada.id LEFT JOIN computadorsaida  AS d ON d.computadorEntrada_id=c.id where entrada.nome=@numero;";
 
       public String FiltroPorSistema= "SELECT c.data,c.Descricao,entrada.Nome,entrada.Marca,entrada.SistemaOperacional,entrada.Programas,d.DataSaida,d.Descricao FROM computadorentrada AS entrada left JOIN datadeentrada AS c ON  c.data_id =entrada.id LEFT JOIN computadorsaida  AS d ON d.computadorEntrada_id=c.id where entrada.SistemaOperacional=@sistema;";
+
+      public String filtrossd = "SELECT c.data, c.Descricao, entrada.Nome, entrada.Marca, entrada.SistemaOperacional, entrada.Programas, d.DataSaida, d.Descricao FROM computadorentrada AS entrada left JOIN datadeentrada AS c ON c.data_id = entrada.id LEFT JOIN computadorsaida AS d ON d.computadorEntrada_id= c.id where d.Descricao like '%ssd%';";
+
+
     }
 }

@@ -42,7 +42,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
 
                 if (ArrayDeletar.Count > 0)
                 {
-                    // Usa variáveis para facilitar a leitura e evitar acessar diretamente por índices
+                 
                     int produtoStatus = Convert.ToInt32(ArrayDeletar[0][3].ToString());
                     int produtoId = Convert.ToInt32(ArrayDeletar[0][0].ToString());
 
@@ -64,7 +64,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
 
                         if (produtoStatus == 1 || produtoStatus == 0)
                         {
-                                                        String sql0 = "delete from Conserto where Produto_id=@id;";
+                            String sql0 = "delete from Conserto where Produto_id=@id;";
                             MySqlCommand deleteConserto = new MySqlCommand(sql0, con);
                             deleteConserto.Parameters.AddWithValue("@id", consertoId);
                             deleteConserto.ExecuteNonQuery();

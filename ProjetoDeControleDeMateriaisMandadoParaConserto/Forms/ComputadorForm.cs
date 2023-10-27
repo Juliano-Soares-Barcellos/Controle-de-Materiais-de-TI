@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
@@ -19,6 +20,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             InitializeComponent();
             carregarTabela();
             Tabela.RowPrePaint += new DataGridViewRowPrePaintEventHandler(MudaCor);
+           
         }
 
         public void carregarTabela()
@@ -148,5 +150,23 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             }
             checkBox1.Checked = false;
         }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            this.Apagar();
+            TabelaDao t = new TabelaDao();
+            select = t.ssd();
+            this.MinhasColunas();
+
+            foreach (var item in select)
+            {
+                teste.Rows.Add(item);
+            }
+
+            Tabela.DataSource = teste;
+            Tabela.RowPrePaint += new DataGridViewRowPrePaintEventHandler(MudaCor);
+            checkBox2.Checked = false;
+        }
+
     }
 }

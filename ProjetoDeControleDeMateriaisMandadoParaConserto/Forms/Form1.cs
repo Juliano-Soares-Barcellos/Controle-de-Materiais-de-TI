@@ -24,7 +24,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
         private void inserirFoneToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TelaInicial t = new TelaInicial(this);
+            TelaCadastramentoFones t = new TelaCadastramentoFones(this);
             t.Show();
             this.Hide();
         }

@@ -124,7 +124,7 @@
             this.panel2.Controls.Add(this.tableLayoutPanel3);
             this.panel2.Location = new System.Drawing.Point(141, 276);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(416, 204);
+            this.panel2.Size = new System.Drawing.Size(416, 219);
             this.panel2.TabIndex = 5;
             // 
             // tableLayoutPanel3
@@ -134,13 +134,13 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.53903F));
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.CheckBox, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(105, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(105, 7);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.84615F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 153F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 179F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(231, 192);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(231, 207);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // label5
@@ -150,7 +150,7 @@
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(221, 39);
+            this.label5.Size = new System.Drawing.Size(221, 28);
             this.label5.TabIndex = 5;
             this.label5.Text = "Programas Instalados :";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -171,10 +171,11 @@
             "Supervisao",
             "Atendimento",
             "Pacote Office",
-            "VNC"});
-            this.CheckBox.Location = new System.Drawing.Point(66, 42);
+            "VNC",
+            "Libre Office"});
+            this.CheckBox.Location = new System.Drawing.Point(66, 31);
             this.CheckBox.Name = "CheckBox";
-            this.CheckBox.Size = new System.Drawing.Size(162, 147);
+            this.CheckBox.Size = new System.Drawing.Size(162, 168);
             this.CheckBox.TabIndex = 3;
             // 
             // tableLayoutPanel4
@@ -184,7 +185,7 @@
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Controls.Add(this.Benter, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(213, 495);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(214, 501);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.68421F));

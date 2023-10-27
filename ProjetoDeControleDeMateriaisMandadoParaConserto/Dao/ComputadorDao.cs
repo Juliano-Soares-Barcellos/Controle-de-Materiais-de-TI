@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿
+using MySql.Data.MySqlClient;
 using ProjetoDeControleDeMateriaisMandadoParaConserto.BancoConexao;
 using ProjetoDeControleDeMateriaisMandadoParaConserto.Model;
 using ProjetoDeControleDeMateriaisMandadoParaConserto.Querys;

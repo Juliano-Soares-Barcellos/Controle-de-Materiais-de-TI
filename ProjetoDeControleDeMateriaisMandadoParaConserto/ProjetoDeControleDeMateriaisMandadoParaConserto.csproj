@@ -108,11 +108,11 @@
     <Compile Include="Forms\RelacaoPcsConserto.Designer.cs">
       <DependentUpon>RelacaoPcsConserto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TelaInicial.cs">
+    <Compile Include="Forms\TelaCadastramentoFones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\TelaInicial.Designer.cs">
-      <DependentUpon>TelaInicial.cs</DependentUpon>
+    <Compile Include="Forms\TelaCadastramentoFones.Designer.cs">
+      <DependentUpon>TelaCadastramentoFones.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Computador.cs" />
     <Compile Include="Model\ComputadorSaida.cs" />
@@ -145,8 +145,8 @@
     <EmbeddedResource Include="Forms\RelacaoPcsConserto.resx">
       <DependentUpon>RelacaoPcsConserto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TelaInicial.resx">
-      <DependentUpon>TelaInicial.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\TelaCadastramentoFones.resx">
+      <DependentUpon>TelaCadastramentoFones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -156,6 +156,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -174,6 +175,9 @@
     <PackageReference Include="EPPlus.Core">
       <Version>1.5.4</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagem\nova.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
