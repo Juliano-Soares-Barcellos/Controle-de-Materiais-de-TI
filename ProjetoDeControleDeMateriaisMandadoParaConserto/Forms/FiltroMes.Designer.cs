@@ -28,53 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FiltroMes));
-            this.panel1 = new System.Windows.Forms.Panel();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.LabelConsertado = new System.Windows.Forms.Label();
-            this.LabelGarantia = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.Tabela = new System.Windows.Forms.DataGridView();
-            this.BotaoProcurar = new System.Windows.Forms.Button();
-            this.ComboBoxAno = new System.Windows.Forms.ComboBox();
-            this.ComboBoxMes = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.BtnGrafico = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.LbVerifica = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Carregar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbxGrafico = new System.Windows.Forms.ComboBox();
+            this.ComboMes2 = new System.Windows.Forms.ComboBox();
+            this.TextAno = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.LbAté = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.ComboMes1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.graficoBox = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Tabela)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.graficoBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.LabelConsertado);
-            this.panel1.Controls.Add(this.LabelGarantia);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.Tabela);
-            this.panel1.Controls.Add(this.BotaoProcurar);
-            this.panel1.Controls.Add(this.ComboBoxAno);
-            this.panel1.Controls.Add(this.ComboBoxMes);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(488, 660);
-            this.panel1.TabIndex = 1;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.Tabela);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.label16);
+            this.panel2.Location = new System.Drawing.Point(1, 120);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(476, 655);
+            this.panel2.TabIndex = 3;
+            this.panel2.Visible = false;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(199, 614);
+            this.checkBox1.Location = new System.Drawing.Point(199, 608);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(92, 17);
             this.checkBox1.TabIndex = 13;
@@ -82,66 +105,65 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // label7
+            // label8
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(386, 495);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "label7";
-            this.label7.Visible = false;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(386, 495);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "label8";
+            this.label8.Visible = false;
             // 
-            // label6
+            // label9
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 545);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(266, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Total de vezes que estes produtos foram consertados :";
-            this.label6.Visible = false;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(25, 545);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(266, 13);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Total de vezes que estes produtos foram consertados :";
+            this.label9.Visible = false;
             // 
-            // LabelConsertado
+            // label10
             // 
-            this.LabelConsertado.AutoSize = true;
-            this.LabelConsertado.Location = new System.Drawing.Point(386, 545);
-            this.LabelConsertado.Name = "LabelConsertado";
-            this.LabelConsertado.Size = new System.Drawing.Size(35, 13);
-            this.LabelConsertado.TabIndex = 10;
-            this.LabelConsertado.Text = "label7";
-            this.LabelConsertado.Visible = false;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(386, 545);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 13);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "label7";
+            this.label10.Visible = false;
             // 
-            // LabelGarantia
+            // label11
             // 
-            this.LabelGarantia.AutoSize = true;
-            this.LabelGarantia.Location = new System.Drawing.Point(386, 448);
-            this.LabelGarantia.Name = "LabelGarantia";
-            this.LabelGarantia.Size = new System.Drawing.Size(35, 13);
-            this.LabelGarantia.TabIndex = 9;
-            this.LabelGarantia.Text = "label7";
-            this.LabelGarantia.Visible = false;
-            this.LabelGarantia.Click += new System.EventHandler(this.LabelGarantia_Click);
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(386, 448);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(35, 13);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "label7";
+            this.label11.Visible = false;
             // 
-            // label5
+            // label12
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 495);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(162, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "produtos Consertado neste mês :";
-            this.label5.Visible = false;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(25, 495);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(162, 13);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "produtos Consertado neste mês :";
+            this.label12.Visible = false;
             // 
-            // label4
+            // label13
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 448);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Total de produtos na garantia";
-            this.label4.Visible = false;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(25, 448);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(146, 13);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Total de produtos na garantia";
+            this.label13.Visible = false;
             // 
             // Tabela
             // 
@@ -152,20 +174,20 @@
             this.Tabela.Size = new System.Drawing.Size(485, 174);
             this.Tabela.TabIndex = 6;
             // 
-            // BotaoProcurar
+            // button1
             // 
-            this.BotaoProcurar.Location = new System.Drawing.Point(260, 209);
-            this.BotaoProcurar.Name = "BotaoProcurar";
-            this.BotaoProcurar.Size = new System.Drawing.Size(75, 23);
-            this.BotaoProcurar.TabIndex = 5;
-            this.BotaoProcurar.Text = "Procurar";
-            this.BotaoProcurar.UseVisualStyleBackColor = true;
-            this.BotaoProcurar.Click += new System.EventHandler(this.BotaoProcurar_Click);
+            this.button1.Location = new System.Drawing.Point(260, 209);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Procurar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ComboBoxAno
+            // comboBox1
             // 
-            this.ComboBoxAno.FormattingEnabled = true;
-            this.ComboBoxAno.Items.AddRange(new object[] {
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
             "2023",
             "2024",
             "2025",
@@ -174,16 +196,16 @@
             "2028",
             "2029",
             "2030"});
-            this.ComboBoxAno.Location = new System.Drawing.Point(218, 163);
-            this.ComboBoxAno.Name = "ComboBoxAno";
-            this.ComboBoxAno.Size = new System.Drawing.Size(173, 21);
-            this.ComboBoxAno.TabIndex = 4;
+            this.comboBox1.Location = new System.Drawing.Point(218, 163);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(173, 21);
+            this.comboBox1.TabIndex = 4;
             // 
-            // ComboBoxMes
+            // comboBox2
             // 
-            this.ComboBoxMes.FormattingEnabled = true;
-            this.ComboBoxMes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ComboBoxMes.Items.AddRange(new object[] {
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.comboBox2.Items.AddRange(new object[] {
             "Janeiro",
             "Fevereiro",
             "Março",
@@ -196,73 +218,322 @@
             "Outubro",
             "Novembro",
             "Dezembro"});
-            this.ComboBoxMes.Location = new System.Drawing.Point(218, 105);
-            this.ComboBoxMes.Name = "ComboBoxMes";
-            this.ComboBoxMes.Size = new System.Drawing.Size(173, 21);
-            this.ComboBoxMes.TabIndex = 3;
+            this.comboBox2.Location = new System.Drawing.Point(218, 105);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(173, 21);
+            this.comboBox2.TabIndex = 3;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(68, 165);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(129, 19);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Escolha o Ano :";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(68, 107);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(131, 19);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Escolha o mes :";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(22, 27);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(439, 31);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Verificacao de Gasto de Conserto Por Mes :";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.label17);
+            this.panel3.Controls.Add(this.BtnGrafico);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.LbVerifica);
+            this.panel3.Location = new System.Drawing.Point(1, 1);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(744, 116);
+            this.panel3.TabIndex = 4;
+            // 
+            // label17
+            // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label17.Enabled = false;
+            this.label17.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(54, 8);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(632, 42);
+            this.label17.TabIndex = 7;
+            this.label17.Text = "Escolha uma das Opcões";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BtnGrafico
+            // 
+            this.BtnGrafico.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.BtnGrafico.Location = new System.Drawing.Point(430, 76);
+            this.BtnGrafico.Name = "BtnGrafico";
+            this.BtnGrafico.Size = new System.Drawing.Size(178, 32);
+            this.BtnGrafico.TabIndex = 6;
+            this.BtnGrafico.Text = "Verificar por Gráficos";
+            this.BtnGrafico.UseVisualStyleBackColor = true;
+            this.BtnGrafico.Click += new System.EventHandler(this.testbtn_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(152, 76);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(178, 32);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Verificar  Materiais Por Meses";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // LbVerifica
+            // 
+            this.LbVerifica.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LbVerifica.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.LbVerifica.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbVerifica.Location = new System.Drawing.Point(131, -361);
+            this.LbVerifica.Name = "LbVerifica";
+            this.LbVerifica.Size = new System.Drawing.Size(432, 42);
+            this.LbVerifica.TabIndex = 4;
+            this.LbVerifica.Text = "Verificar Consertos";
+            this.LbVerifica.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.Carregar);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.cbxGrafico);
+            this.panel1.Controls.Add(this.ComboMes2);
+            this.panel1.Controls.Add(this.TextAno);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.LbAté);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.ComboMes1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.graficoBox);
+            this.panel1.Location = new System.Drawing.Point(1, 120);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(756, 626);
+            this.panel1.TabIndex = 5;
+            // 
+            // Carregar
+            // 
+            this.Carregar.Location = new System.Drawing.Point(343, 157);
+            this.Carregar.Name = "Carregar";
+            this.Carregar.Size = new System.Drawing.Size(96, 28);
+            this.Carregar.TabIndex = 15;
+            this.Carregar.Text = "Carregar";
+            this.Carregar.UseVisualStyleBackColor = true;
+            this.Carregar.Click += new System.EventHandler(this.Carregar_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(180, 108);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(200, 23);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Selecione o tipo de gráfico :";
+            // 
+            // cbxGrafico
+            // 
+            this.cbxGrafico.FormattingEnabled = true;
+            this.cbxGrafico.Items.AddRange(new object[] {
+            "Pie",
+            "Column",
+            "Line",
+            "Spline",
+            "Area"});
+            this.cbxGrafico.Location = new System.Drawing.Point(417, 113);
+            this.cbxGrafico.Name = "cbxGrafico";
+            this.cbxGrafico.Size = new System.Drawing.Size(121, 21);
+            this.cbxGrafico.TabIndex = 13;
+            this.cbxGrafico.Text = "Selecione";
+            // 
+            // ComboMes2
+            // 
+            this.ComboMes2.FormattingEnabled = true;
+            this.ComboMes2.Items.AddRange(new object[] {
+            "Janeiro",
+            "Fevereiro",
+            "Março",
+            "Abril",
+            "Maio",
+            "Junho",
+            "Julho",
+            "Agosto",
+            "Setembro",
+            "Outubro",
+            "Novembro",
+            "Dezembro"});
+            this.ComboMes2.Location = new System.Drawing.Point(367, 59);
+            this.ComboMes2.Name = "ComboMes2";
+            this.ComboMes2.Size = new System.Drawing.Size(121, 21);
+            this.ComboMes2.TabIndex = 12;
+            this.ComboMes2.Text = "Mês";
+            // 
+            // TextAno
+            // 
+            this.TextAno.Location = new System.Drawing.Point(602, 62);
+            this.TextAno.Mask = "####";
+            this.TextAno.Name = "TextAno";
+            this.TextAno.Size = new System.Drawing.Size(100, 20);
+            this.TextAno.TabIndex = 11;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(68, 165);
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(513, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 19);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Escolha o Ano :";
+            this.label3.Size = new System.Drawing.Size(46, 23);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Ano :";
+            // 
+            // LbAté
+            // 
+            this.LbAté.AutoSize = true;
+            this.LbAté.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbAté.Location = new System.Drawing.Point(305, 59);
+            this.LbAté.Name = "LbAté";
+            this.LbAté.Size = new System.Drawing.Size(40, 23);
+            this.LbAté.TabIndex = 9;
+            this.LbAté.Text = "Até :";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(68, 107);
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(54, 1);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Escolha o mes :";
+            this.label2.Size = new System.Drawing.Size(648, 46);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Grafico";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ComboMes1
+            // 
+            this.ComboMes1.FormattingEnabled = true;
+            this.ComboMes1.Items.AddRange(new object[] {
+            "Janeiro",
+            "Fevereiro",
+            "Março",
+            "Abril",
+            "Maio",
+            "Junho",
+            "Julho",
+            "Agosto",
+            "Setembro",
+            "Outubro",
+            "Novembro",
+            "Dezembro"});
+            this.ComboMes1.Location = new System.Drawing.Point(154, 59);
+            this.ComboMes1.Name = "ComboMes1";
+            this.ComboMes1.Size = new System.Drawing.Size(121, 21);
+            this.ComboMes1.TabIndex = 3;
+            this.ComboMes1.Text = "Mês";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 27);
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(50, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(439, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Verificacao de Gasto de Conserto Por Mes :";
+            this.label1.Size = new System.Drawing.Size(98, 23);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Escolha De :";
             // 
-            // FiltroMes
+            // graficoBox
+            // 
+            chartArea6.Name = "ChartArea1";
+            this.graficoBox.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.graficoBox.Legends.Add(legend6);
+            this.graficoBox.Location = new System.Drawing.Point(3, 191);
+            this.graficoBox.Name = "graficoBox";
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.graficoBox.Series.Add(series6);
+            this.graficoBox.Size = new System.Drawing.Size(753, 432);
+            this.graficoBox.TabIndex = 0;
+            this.graficoBox.Text = "chart1";
+            // 
+            // FiltroMes2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 660);
+            this.ClientSize = new System.Drawing.Size(745, 112);
             this.Controls.Add(this.panel1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FiltroMes";
-            this.Text = "FiltroMes";
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Name = "FiltroMes2";
+            this.Text = "FiltroMes2";
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Tabela)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Tabela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graficoBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridView Tabela;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button BtnGrafico;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label LbVerifica;
+        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label LabelConsertado;
-        private System.Windows.Forms.Label LabelGarantia;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView Tabela;
-        private System.Windows.Forms.Button BotaoProcurar;
-        private System.Windows.Forms.ComboBox ComboBoxAno;
-        private System.Windows.Forms.ComboBox ComboBoxMes;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart graficoBox;
+        private System.Windows.Forms.ComboBox ComboMes2;
+        private System.Windows.Forms.MaskedTextBox TextAno;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label LbAté;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox ComboMes1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbxGrafico;
+        private System.Windows.Forms.Button Carregar;
     }
 }

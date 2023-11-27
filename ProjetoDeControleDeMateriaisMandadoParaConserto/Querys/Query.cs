@@ -34,6 +34,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Querys
 
       public String filtrossd = "SELECT c.data, c.Descricao, entrada.Nome, entrada.Marca, entrada.SistemaOperacional, entrada.Programas, d.DataSaida, d.Descricao FROM computadorentrada AS entrada left JOIN datadeentrada AS c ON c.data_id = entrada.id LEFT JOIN computadorsaida AS d ON d.computadorEntrada_id= c.id where d.Descricao like '%ssd%';";
 
-
+        public String FiltroGrafico = "select count(conserto.data),conserto.data from produto inner join conserto on  produto.id=conserto.Produto_id where conserto.data  BETWEEN @data1 AND @data2  group by conserto.data;";
     }
 }

@@ -118,7 +118,7 @@
             this.procurarPorCodigoToolStripMenuItem,
             this.porMêsToolStripMenuItem});
             this.procurarFoneToolStripMenuItem.Name = "procurarFoneToolStripMenuItem";
-            this.procurarFoneToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.procurarFoneToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.procurarFoneToolStripMenuItem.Text = "Procurar Fone";
             // 
             // procurarPorCodigoToolStripMenuItem
@@ -141,7 +141,7 @@
             this.inserirArquivoCsvToolStripMenuItem,
             this.criarArquivoAntesConsertoToolStripMenuItem});
             this.arquivoCsvToolStripMenuItem.Name = "arquivoCsvToolStripMenuItem";
-            this.arquivoCsvToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arquivoCsvToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.arquivoCsvToolStripMenuItem.Text = "Arquivo ";
             this.arquivoCsvToolStripMenuItem.Click += new System.EventHandler(this.arquivoCsvToolStripMenuItem_Click);
             // 
@@ -162,7 +162,7 @@
             // inserirFoneToolStripMenuItem
             // 
             this.inserirFoneToolStripMenuItem.Name = "inserirFoneToolStripMenuItem";
-            this.inserirFoneToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inserirFoneToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.inserirFoneToolStripMenuItem.Text = "Inserir fone ";
             this.inserirFoneToolStripMenuItem.Click += new System.EventHandler(this.inserirFoneToolStripMenuItem_Click);
             // 

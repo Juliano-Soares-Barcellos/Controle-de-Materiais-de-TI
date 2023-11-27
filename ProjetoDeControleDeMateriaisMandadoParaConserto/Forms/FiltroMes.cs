@@ -1,81 +1,56 @@
 ﻿using ProjetoDeControleDeMateriaisMandadoParaConserto.Dao;
+using ProjetoDeControleDeMateriaisMandadoParaConserto.Querys;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 {
     public partial class FiltroMes : Form
     {
-        DataTable tabelaPivotada;
         private List<Object[]> Dados;
+        private DataTable tabelaPivotada;
         public FiltroMes()
         {
             InitializeComponent();
+            this.MaximumSize = new System.Drawing.Size(761, 150);
+            this.MinimumSize = new System.Drawing.Size(761, 150);
         }
 
-
-        private void BotaoProcurar_Click(object sender, EventArgs e)
+        private void testbtn_Click(object sender, EventArgs e)
         {
-            int AnoNao = ComboBoxAno.SelectedIndex;
-            int MesNao = ComboBoxMes.SelectedIndex;
-            if (AnoNao < 0 || MesNao < 0)
-            {
-                MessageBox.Show("Por favor selecione os dois ComboBox: ");
-            }
-            else
-            {
-                String mesSelecionado = (String)ComboBoxMes.SelectedItem;
-                String anoSelecionado = (String)ComboBoxAno.SelectedItem;
-                int mesEscolhido = obterNumeroMes(mesSelecionado);
-                int ano = Int32.Parse(anoSelecionado);
+            panel1.Visible = true;
+            panel2.Visible = false;
+            button2.Visible = true;
+            BtnGrafico.Visible = false;
 
-                SelectFiltro selectFiltro = new SelectFiltro();
-                string sql = "SELECT * FROM Produto as p inner join Conserto as _computadorSaida on p.id=_computadorSaida.Produto_id WHERE MONTH(DATE(_computadorSaida.Data)) = @Mes AND YEAR(DATE(_computadorSaida.Data)) = @Ano;";
-                Dados = selectFiltro.carregarTabela(mesEscolhido, ano,sql);
-                tabelaPivotada = selectFiltro.PivotData(Dados);
-                SelectTabela SelectTabel = new SelectTabela();
-                // Calcula o total de consertos e produtos com garantia
+            this.panel3.Size = new System.Drawing.Size(756, 116);
+            this.panel1.Size = new System.Drawing.Size(756, 626);
+            this.Size = new System.Drawing.Size(770, 776);
+            this.MaximumSize = new System.Drawing.Size(770, 776);
+            this.MinimumSize = new System.Drawing.Size(770, 776);
 
-                int MesConserto = selectFiltro.CalcularMesConserto(Dados);
+            button2.Left = 300;
 
-                int totalConserto = selectFiltro.CalcularTotalConserto(Dados);
+        }
 
-                int totalProdutosComGarantia = selectFiltro.CalcularQuantidadeGarantia(Dados);
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = true;
+            panel1.Visible = false;
+            button2.Visible = false;
+            BtnGrafico.Visible = true;
 
-               List<int> Produtos=SelectTabel.HEADSETDISCADORConserto(Dados);
-                int Headset=Produtos[0];
-                int Discador=Produtos[1];
-                int Carrapatos=Produtos[2];
+            this.panel3.Size = new System.Drawing.Size(510, 116);
+            this.panel2.Size = new System.Drawing.Size(510, 661);
+            this.Size = new System.Drawing.Size(529, 814);
+            this.MaximumSize = new System.Drawing.Size(529, 814);
+            this.MinimumSize = new System.Drawing.Size(529, 814);
+            BtnGrafico.Left = 180;
 
-                //
-                // Exibe a tabela pivotada no DataGridView
-                Tabela.DataSource = tabelaPivotada;
 
-                // Exibe o total de consertos e o número de produtos com garantia em MessageBox
-                MessageBox.Show("Total de Consertos neste mês: " + MesConserto + "\n" + "\n" +
-                                "Total de Headset: " + Headset+ "\n" + "\n" +
-                                "total de Discadores : " + Discador +"\n"+"\n"+
-                                "Total de Carrapatos :  "+ Carrapatos+"\n"+"\n"+
-                                "                   Informações do mês !!!");//+ MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                label4.Visible = true;
-                LabelGarantia.Visible = true;
-                LabelConsertado.Visible = true;
-                label7.Visible = true;
-                label5.Visible = true;
-                label6.Visible = true;
-
-                LabelGarantia.Text = totalProdutosComGarantia.ToString();
-                LabelConsertado.Text = totalConserto.ToString();
-                label7.Text = MesConserto.ToString();
-            }
         }
 
         public int obterNumeroMes(string mesSelecionado)
@@ -121,6 +96,246 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             }
             return 0;
         }
+        public String obterStringMes(int mesN)
+        {
+            switch (mesN)
+            {
+                case 1:
+                    return "Janeiro";
+
+                case 2:
+                    return "Fevereiro";
+
+                case 3:
+                    return "Março";
+
+                case 4:
+                    return "Abril";
+
+                case 5:
+                    return "Maio";
+
+                case 6:
+                    return "Junho";
+
+                case 7:
+                    return "Julho";
+
+                case 8:
+                    return "Agosto";
+
+                case 9:
+                    return "Setembro";
+
+                case 10:
+                    return "Outubro";
+
+                case 11:
+                    return "Novembro";
+
+                case 12:
+                    return "Dezembro";
+
+            }
+            return "";
+        }
+
+
+
+        private void Carregar_Click(object sender, EventArgs e)
+        {
+            String PrimeiroMes = (String)ComboMes1.SelectedItem;
+            String SegundoMes = (String)ComboMes2.SelectedItem;
+            String GraficoSelecionado = (String)cbxGrafico.SelectedItem;
+            int MesNumero1 = obterNumeroMes(PrimeiroMes);
+            int MesNumero2 = obterNumeroMes(SegundoMes);
+            String AnoString = TextAno.Text;
+            int ano = Convert.ToInt32(AnoString);
+
+
+            if (MesNumero2 < MesNumero1)
+            {
+                int MesPassagem = MesNumero1;
+                MesNumero1 = MesNumero2;
+                MesNumero2 = MesPassagem;
+            }
+
+            if (MesNumero1 < 0 || MesNumero2 < 0 || GraficoSelecionado.Equals(""))
+            {
+                MessageBox.Show("Por favor preencha todos os campos");
+
+            }
+            else
+            {
+                if (ano <= 2022 || ano > DateTime.Now.Year)
+                {
+                    MessageBox.Show("Por favor preencha um ano válido");
+
+                }
+                else
+                {
+                    SelectFiltro selectFiltro = new SelectFiltro();
+                    string data1 = $"{ano}-{MesNumero1:D2}-00";
+                    string data2 = $"{ano}-{MesNumero2:D2}-31";
+                    Query query = new Query();
+                    String sql = query.FiltroGrafico;
+                    Dados = selectFiltro.BuscaPreenchimentoGrafico(data1, data2, sql);
+                    graficoBox.Series.Clear();
+                    graficoBox.Titles.Clear();
+                    graficoBox.Legends.Clear();
+
+                    for (int i = 0; i < Dados.Count; i++)
+                    {
+                        DateTime Datas = (DateTime)Dados[i][1];
+                        int data = Convert.ToInt32(Datas.Month);
+                        String Mes = obterStringMes(data);
+
+
+
+                        switch (cbxGrafico.Text)
+                        {
+                            case "Pie":
+
+                                if (graficoBox.Series.Count <= 0)
+                                {
+                                    graficoBox.Series.Add(cbxGrafico.Text);
+                                }
+                                graficoBox.Legends.Add($"{Mes}");
+                                DataPoint dataPoint = new DataPoint();
+                                dataPoint.SetValueY(Dados[i][0]);
+                                dataPoint.AxisLabel = Dados[i][0].ToString();
+                                dataPoint.LegendText = Mes;
+
+                                graficoBox.Series[0].Points.Add(dataPoint);
+                                graficoBox.Series[0].ChartType = SeriesChartType.Pie;
+                                break;
+
+                            case "Column":
+                                if (graficoBox.Series.Count <= 0)
+                                {
+                                    graficoBox.Series.Add(cbxGrafico.Text);
+                                }
+
+                                graficoBox.Legends.Add($"{Mes}");
+                                Series series = new Series(Dados[i][0].ToString());
+                                series.Points.Add(Double.Parse(Dados[i][0].ToString()));
+                                series.LegendText = Mes;
+
+                                graficoBox.Series.Add(series);
+                                break;
+
+
+
+                            case "Line":
+                                if (graficoBox.Series.Count <= 0)
+                                {
+                                    graficoBox.Series.Add(cbxGrafico.Text);
+                                }
+
+                                graficoBox.Series[0].Points.AddXY(Mes, Dados[i][0]);
+                                graficoBox.Series[0].ChartType = (SeriesChartType)Enum.Parse(typeof(SeriesChartType), cbxGrafico.Text, true);
+                                break;
+
+
+
+                            case "Spline":
+                                if (graficoBox.Series.Count <= 0)
+                                {
+                                    graficoBox.Series.Add(cbxGrafico.Text);
+                                }
+                                graficoBox.Series[0].Points.AddXY(Mes, Dados[i][0]);
+                                graficoBox.Series[0].ChartType = (SeriesChartType)Enum.Parse(typeof(SeriesChartType), cbxGrafico.Text, true);
+                                break;
+
+                            case "Area":
+                                if (graficoBox.Series.Count <= 0)
+                                {
+                                    graficoBox.Series.Add(cbxGrafico.Text);
+                                }
+                                graficoBox.Series[0].Points.AddXY(Mes, Dados[i][0]);
+                                graficoBox.Series[0].ChartType = (SeriesChartType)Enum.Parse(typeof(SeriesChartType), cbxGrafico.Text, true);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int AnoNao = comboBox1.SelectedIndex;
+            int MesNao = comboBox2.SelectedIndex;
+            if (AnoNao < 0 || MesNao < 0)
+            {
+                MessageBox.Show("Por favor selecione os dois ComboBox: ");
+            }
+            else
+            {
+                String mesSelecionado = (String)comboBox2.SelectedItem;
+                String anoSelecionado = (String)comboBox1.SelectedItem;
+                int mesEscolhido = obterNumeroMes(mesSelecionado);
+                int ano = Int32.Parse(anoSelecionado);
+
+
+               SelectFiltro selectFiltro = new SelectFiltro();
+                string sql = "SELECT * FROM Produto as p inner join Conserto as _computadorSaida on p.id=_computadorSaida.Produto_id WHERE MONTH(DATE(_computadorSaida.Data)) = @Mes AND YEAR(DATE(_computadorSaida.Data)) = @Ano;";
+                Dados = selectFiltro.carregarTabela(mesEscolhido, ano, sql);
+                if (Dados.Count==0)
+                {
+                    Tabela.DataSource = null;
+                    label11.Text = "";
+                    label8.Text = "";
+                    label10.Text = "";
+                    MessageBox.Show("Nenhum item encontrado");
+                   
+                }
+                else
+                {
+                   
+                    tabelaPivotada = selectFiltro.PivotData(Dados);
+                    SelectTabela SelectTabel = new SelectTabela();
+                    // Calcula o total de consertos e produtos com garantia
+
+                    int MesConserto = selectFiltro.CalcularMesConserto(Dados);
+
+                    int totalConserto = selectFiltro.CalcularTotalConserto(Dados);
+
+                    int totalProdutosComGarantia = selectFiltro.CalcularQuantidadeGarantia(Dados);
+
+                    List<int> Produtos = SelectTabel.HEADSETDISCADORConserto(Dados);
+                    int Headset = Produtos[0];
+                    int Discador = Produtos[1];
+                    int Carrapatos = Produtos[2];
+
+                    //
+                    // Exibe a tabela pivotada no DataGridView
+                    Tabela.DataSource = tabelaPivotada;
+
+                    // Exibe o total de consertos e o número de produtos com garantia em MessageBox
+                    MessageBox.Show("Total de Consertos neste mês: " + MesConserto + "\n" + "\n" +
+                                    "Total de Headset: " + Headset + "\n" + "\n" +
+                                    "total de Discadores : " + Discador + "\n" + "\n" +
+                                    "Total de Carrapatos :  " + Carrapatos + "\n" + "\n" +
+                                    "                   Informações do mês !!!");//+ MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    label4.Visible = true;
+                    label11.Visible = true;
+                    label8.Visible = true;
+                    label10.Visible = true;
+                    label13.Visible = true;
+                    label12.Visible = true;
+                    label9.Visible = true;
+
+                    label4.Visible = true;
+
+                    label11.Text = totalProdutosComGarantia.ToString();
+                    label8.Text = totalConserto.ToString();
+                    label10.Text = MesConserto.ToString();
+                }
+            }
+        }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -128,10 +343,12 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             g.GravarCSV(tabelaPivotada);
             checkBox1.Checked = false;
         }
-
-        private void LabelGarantia_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
+
+
+
+
+
+
+

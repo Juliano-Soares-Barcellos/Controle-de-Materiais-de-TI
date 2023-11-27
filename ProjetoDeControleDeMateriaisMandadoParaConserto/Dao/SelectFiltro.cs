@@ -195,5 +195,47 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             }
 
         }
+
+
+        public List<Object []> BuscaPreenchimentoGrafico(String Data1, String Data2, string sql)
+        {
+            List<Object []> resultados = new List<Object []>();
+
+            try
+            {
+                con = new Banco().Conexao();
+                con.Open();
+
+                MySqlCommand comando = new MySqlCommand(sql, con);
+                comando.Parameters.AddWithValue("@data1", Data1);
+                comando.Parameters.AddWithValue("@data2", Data2);
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Object[] row = new Object[reader.FieldCount];
+
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        row[i] = reader[i];
+                    }
+
+                    resultados.Add(row);
+                }
+
+                reader.Close();
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+           
+            return resultados;
+        }
     }
 }
