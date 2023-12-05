@@ -3,16 +3,13 @@ using ProjetoDeControleDeMateriaisMandadoParaConserto.BancoConexao;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
 {
-    class SelectFiltro
+    internal class SelectFiltro
     {
-        MySqlConnection con = null;
+        private MySqlConnection con = null;
 
         public List<Object[]> carregarTabela(int Mes, int Ano, string sql)
         {
@@ -22,7 +19,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             {
                 con = new Banco().Conexao();
                 con.Open();
-               // string sql = "SELECT * FROM Produto as p inner join Conserto as _computadorSaida on p.id=_computadorSaida.Produto_id WHERE MONTH(DATE(_computadorSaida.Data)) = @Mes AND YEAR(DATE(_computadorSaida.Data)) = @Ano;";
                 MySqlCommand comando = new MySqlCommand(sql, con);
                 comando.Parameters.AddWithValue("@Mes", Mes);
                 comando.Parameters.AddWithValue("@Ano", Ano);
@@ -60,17 +56,12 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             DataTable pivotTable = new DataTable();
             try
             {
-                // Adiciona as colunas iniciais (id, Nome, Numero e quantidade_conserto)
                 pivotTable.Columns.Add("Nome", typeof(string));
                 pivotTable.Columns.Add("Numero", typeof(string));
                 pivotTable.Columns.Add("quantidade_conserto", typeof(int));
                 pivotTable.Columns.Add("Data Conserto", typeof(DateTime));
                 pivotTable.Columns.Add("Garantia", typeof(string));
                 pivotTable.Columns.Add("Dias de Garantia", typeof(string));
-
-
-
-
 
                 // Pivotar os dados e preencher as colunas de datas de conserto
                 foreach (Object[] row in dados)
@@ -197,9 +188,9 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
         }
 
 
-        public List<Object []> BuscaPreenchimentoGrafico(String Data1, String Data2, string sql)
+        public List<Object[]> BuscaPreenchimentoGrafico(String Data1, String Data2, string sql)
         {
-            List<Object []> resultados = new List<Object []>();
+            List<Object[]> resultados = new List<Object[]>();
 
             try
             {
@@ -234,7 +225,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             {
                 con.Close();
             }
-           
+
             return resultados;
         }
     }

@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using ProjetoDeControleDeMateriaisMandadoParaConserto.BancoConexao;
+using ProjetoDeControleDeMateriaisMandadoParaConserto.Querys;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +21,9 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             try
             {
                 con = new Banco().Conexao();
-                string Sql = "Select * from Produto as p left join conserto as _computadorSaida on p.id=_computadorSaida.Produto_id where p.numero=@numero;";
+                Query sql= new Query();
                 con.Open();
+                String Sql = sql.SelectDelet;
                 MySqlCommand comando = new MySqlCommand(Sql, con);
                 comando.Parameters.AddWithValue("@numero", numero);
                 MySqlDataReader reader = comando.ExecuteReader();
@@ -36,13 +38,10 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                     ArrayDeletar.Add(row);
                 }
                 reader.Close();
-
-
                 Console.WriteLine();
 
                 if (ArrayDeletar.Count > 0)
                 {
-                 
                     int produtoStatus = Convert.ToInt32(ArrayDeletar[0][3].ToString());
                     int produtoId = Convert.ToInt32(ArrayDeletar[0][0].ToString());
 

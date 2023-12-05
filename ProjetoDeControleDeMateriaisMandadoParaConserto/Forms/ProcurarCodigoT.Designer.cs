@@ -163,15 +163,21 @@
             // 
             // Tabela
             // 
+            this.Tabela.AllowUserToAddRows = false;
+            this.Tabela.AllowUserToDeleteRows = false;
+            this.Tabela.AllowUserToOrderColumns = true;
             this.Tabela.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Tabela.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Tabela.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.Tabela.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Tabela.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Tabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Tabela.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Tabela.Location = new System.Drawing.Point(90, 117);
             this.Tabela.Name = "Tabela";
-            this.Tabela.Size = new System.Drawing.Size(652, 54);
+            this.Tabela.ReadOnly = true;
+            this.Tabela.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.Tabela.Size = new System.Drawing.Size(652, 82);
             this.Tabela.TabIndex = 4;
             // 
             // ProcurarCodigoT

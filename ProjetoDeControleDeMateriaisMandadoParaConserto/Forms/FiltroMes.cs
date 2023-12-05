@@ -189,11 +189,13 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                         DateTime Datas = (DateTime)Dados[i][1];
                         int data = Convert.ToInt32(Datas.Month);
                         String Mes = obterStringMes(data);
-
+                        String MesVal = $"{Dados[i][0]}-{Mes}";
 
 
                         switch (cbxGrafico.Text)
                         {
+                               
+
                             case "Pie":
 
                                 if (graficoBox.Series.Count <= 0)
@@ -203,7 +205,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                                 graficoBox.Legends.Add($"{Mes}");
                                 DataPoint dataPoint = new DataPoint();
                                 dataPoint.SetValueY(Dados[i][0]);
-                                dataPoint.AxisLabel = Dados[i][0].ToString();
+                                dataPoint.AxisLabel = MesVal;
                                 dataPoint.LegendText = Mes;
 
                                 graficoBox.Series[0].Points.Add(dataPoint);
@@ -215,9 +217,8 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                                 {
                                     graficoBox.Series.Add(cbxGrafico.Text);
                                 }
-
                                 graficoBox.Legends.Add($"{Mes}");
-                                Series series = new Series(Dados[i][0].ToString());
+                                Series series = new Series(MesVal);
                                 series.Points.Add(Double.Parse(Dados[i][0].ToString()));
                                 series.LegendText = Mes;
 
@@ -232,7 +233,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                                     graficoBox.Series.Add(cbxGrafico.Text);
                                 }
 
-                                graficoBox.Series[0].Points.AddXY(Mes, Dados[i][0]);
+                                graficoBox.Series[0].Points.AddXY(MesVal, Dados[i][0]);
                                 graficoBox.Series[0].ChartType = (SeriesChartType)Enum.Parse(typeof(SeriesChartType), cbxGrafico.Text, true);
                                 break;
 
@@ -243,7 +244,9 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                                 {
                                     graficoBox.Series.Add(cbxGrafico.Text);
                                 }
-                                graficoBox.Series[0].Points.AddXY(Mes, Dados[i][0]);
+                                MesVal = MesVal.Replace(Mes, "").Replace("-","");
+                                String QuantidadeJunto =$"{Mes}-{"Total"}:{MesVal}";
+                                graficoBox.Series[0].Points.AddXY(QuantidadeJunto, Dados[i][0]);
                                 graficoBox.Series[0].ChartType = (SeriesChartType)Enum.Parse(typeof(SeriesChartType), cbxGrafico.Text, true);
                                 break;
 
@@ -252,7 +255,10 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                                 {
                                     graficoBox.Series.Add(cbxGrafico.Text);
                                 }
-                                graficoBox.Series[0].Points.AddXY(Mes, Dados[i][0]);
+                                MesVal = MesVal.Replace(Mes, "").Replace("-", "");
+                                String QuantidadeJunt = $"{Mes}-{"Total"}:{MesVal}";
+
+                                graficoBox.Series[0].Points.AddXY(QuantidadeJunt, Dados[i][0]);
                                 graficoBox.Series[0].ChartType = (SeriesChartType)Enum.Parse(typeof(SeriesChartType), cbxGrafico.Text, true);
                                 break;
                             default:
@@ -289,30 +295,22 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     label8.Text = "";
                     label10.Text = "";
                     MessageBox.Show("Nenhum item encontrado");
-                   
                 }
                 else
                 {
-                   
                     tabelaPivotada = selectFiltro.PivotData(Dados);
                     SelectTabela SelectTabel = new SelectTabela();
                     // Calcula o total de consertos e produtos com garantia
-
                     int MesConserto = selectFiltro.CalcularMesConserto(Dados);
-
                     int totalConserto = selectFiltro.CalcularTotalConserto(Dados);
-
                     int totalProdutosComGarantia = selectFiltro.CalcularQuantidadeGarantia(Dados);
-
                     List<int> Produtos = SelectTabel.HEADSETDISCADORConserto(Dados);
                     int Headset = Produtos[0];
                     int Discador = Produtos[1];
                     int Carrapatos = Produtos[2];
 
-                    //
                     // Exibe a tabela pivotada no DataGridView
                     Tabela.DataSource = tabelaPivotada;
-
                     // Exibe o total de consertos e o número de produtos com garantia em MessageBox
                     MessageBox.Show("Total de Consertos neste mês: " + MesConserto + "\n" + "\n" +
                                     "Total de Headset: " + Headset + "\n" + "\n" +
@@ -327,16 +325,13 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     label13.Visible = true;
                     label12.Visible = true;
                     label9.Visible = true;
-
                     label4.Visible = true;
-
                     label11.Text = totalProdutosComGarantia.ToString();
                     label8.Text = totalConserto.ToString();
                     label10.Text = MesConserto.ToString();
                 }
             }
         }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             GravadorCsv g = new GravadorCsv();

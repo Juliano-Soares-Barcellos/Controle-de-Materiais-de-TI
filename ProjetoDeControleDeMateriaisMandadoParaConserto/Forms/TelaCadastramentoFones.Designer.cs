@@ -99,7 +99,6 @@
             // 
             this.Tabela.AllowUserToAddRows = false;
             this.Tabela.AllowUserToDeleteRows = false;
-            this.Tabela.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Tabela.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Tabela.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -305,14 +304,16 @@
             this.d.Text = "Material para conserto csv";
             this.d.Click += new System.EventHandler(this.d_Click);
             // 
-            // TelaInicial
+            // TelaCadastramentoFones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(993, 708);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "TelaInicial";
+            this.MaximumSize = new System.Drawing.Size(1009, 746);
+            this.MinimumSize = new System.Drawing.Size(1009, 746);
+            this.Name = "TelaCadastramentoFones";
             this.Text = "Enviar e visualizar Materiais de Telefonia";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaInicial_FormClosing);
             this.panel1.ResumeLayout(false);

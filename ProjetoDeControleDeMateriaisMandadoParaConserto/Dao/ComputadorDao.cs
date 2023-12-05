@@ -26,7 +26,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
 
             try
             {
-                sql = new Query(); // instanciando para usar a query da classe
+                sql = new Query();
                 MySqlCommand cmd = new MySqlCommand(sql.Achou, con);
                 cmd.Parameters.AddWithValue("@Nome", computador);
                 object tese = cmd.ExecuteScalar();
@@ -57,11 +57,9 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             try
             {
 
-                // Executar suas consultas SQL aqui com commit e rollback
                 MySqlCommand comando = con.CreateCommand();
                 Transacao = con.BeginTransaction();
                 comando.Transaction = Transacao;
-                //MySqlCommand comando = new MySqlCommand(sql, con);
                 sql = new Query();
                 comando.CommandText = sql.SqlInserirComputadorVoltarUltimoId; // esta é a query
                 comando.Parameters.AddWithValue("@Nome", computador.Nome);
@@ -77,9 +75,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
 
                 }
                 InsereDataEntrada(Descricao, id);
-
-
-
             }
 
             catch (MySqlException ex)
@@ -105,7 +100,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             con.Open();
             try
             {
-
                 Transacao = con.BeginTransaction();
                 MySqlCommand comandos = con.CreateCommand();
                 comandos.Transaction = Transacao;
@@ -167,7 +161,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             con.Open();
             try
             {
-                //aaaaaa
                 MySqlCommand comando = con.CreateCommand();
                 Transacao = con.BeginTransaction();
                 comando.Transaction = Transacao;
@@ -286,8 +279,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
 
             try
             {
-                //
-                sql = new Query(); // instanciando para usar a query da classe
+                sql = new Query();
                 MySqlCommand cmd = new MySqlCommand(sql.acharIdDataEntrada, con);
                 cmd.Parameters.AddWithValue("@idData", IdData);
                object iddata = cmd.ExecuteScalar();

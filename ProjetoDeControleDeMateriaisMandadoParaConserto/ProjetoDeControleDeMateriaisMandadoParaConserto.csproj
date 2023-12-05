@@ -56,13 +56,12 @@
     <Compile Include="Dao\ComputadorDao.cs" />
     <Compile Include="Dao\DeleteDao.cs" />
     <Compile Include="Dao\GravadorCsv.cs" />
-    <Compile Include="Dao\InseriDataNaoConserto.cs" />
     <Compile Include="Dao\NumeroDao.cs" />
     <Compile Include="Dao\ProcurarCodigo.cs" />
     <Compile Include="Dao\SelectFiltro.cs" />
     <Compile Include="Dao\SelectTabela.cs" />
     <Compile Include="Dao\TabelaDao.cs" />
-    <Compile Include="Dao\Teste.cs" />
+    <Compile Include="Dao\InsersaoDbPlanilha.cs" />
     <Compile Include="Forms\AindaNaoConserto.cs">
       <SubType>Form</SubType>
     </Compile>
