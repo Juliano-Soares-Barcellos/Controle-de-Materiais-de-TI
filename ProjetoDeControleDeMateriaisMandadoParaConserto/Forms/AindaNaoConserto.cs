@@ -83,41 +83,45 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            ArquivoTxtDao arquivo = new ArquivoTxtDao();
-            int headset = 0;
-            int carrapato = 0;
-            int discador = 0;
-
-            foreach (DataGridViewRow row in Tabela.Rows)
+            if (checkBox2.Checked)
             {
-                if (row.Cells[3].Value != null)
+                checkBox2.Checked = false;
+                ArquivoTxtDao arquivo = new ArquivoTxtDao();
+                int headset = 0;
+                int carrapato = 0;
+                int discador = 0;
+
+                foreach (DataGridViewRow row in Tabela.Rows)
                 {
-                    String garantia = row.Cells[3].Value.ToString();
-
-                    if (garantia == "Com Garantia")
+                    if (row.Cells[3].Value != null)
                     {
-                        String material = row.Cells[0].Value.ToString();
-                        switch (material)
+                        String garantia = row.Cells[3].Value.ToString();
+
+                        if (garantia == "Com Garantia")
                         {
-                            case "HEADSET":
-                                headset++;
-                                break;
+                            String material = row.Cells[0].Value.ToString();
+                            switch (material)
+                            {
+                                case "HEADSET":
+                                    headset++;
+                                    break;
 
-                            case "DISCADOR":
-                                discador++;
-                                break;
+                                case "DISCADOR":
+                                    discador++;
+                                    break;
 
-                            case "CARRAPATOS":
-                                carrapato++;
-                                break;
+                                case "CARRAPATOS":
+                                    carrapato++;
+                                    break;
+                            }
                         }
                     }
                 }
+
+                arquivo.GeararArquivoTxt(LabelHeadset.Text, LabelDiscador.Text, LabelCarrapato.Text, headset, discador, carrapato);
+
+                
             }
-            arquivo.GeararArquivoTxt(LabelHeadset.Text,LabelDiscador.Text,LabelCarrapato.Text,headset,discador,carrapato);
-
-            checkBox2.Checked=false;
-
         }
 
         private void CarregarDadosNaTabela()
@@ -183,11 +187,15 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            AindaNaoConsertoDao aindaNaoConsertoDa = new AindaNaoConsertoDao();
-            aindaNaoConsertoDa.GravarCsv(Dados);
-            ArquivoTxtDao arquivo = new ArquivoTxtDao();
-            checkBox1.Checked = false;
+
+            if (checkBox1.Checked)
+            {
+                checkBox1.Checked = false;
+                AindaNaoConsertoDao aindaNaoConsertoDa = new AindaNaoConsertoDao();
+                aindaNaoConsertoDa.GravarCsv(Dados);
+            }
         }
+
 
         private void AindaNaoConserto_FormClosing(object sender, FormClosingEventArgs e)
         {

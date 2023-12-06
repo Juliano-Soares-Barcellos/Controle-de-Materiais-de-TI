@@ -118,9 +118,12 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            GravadorCsv g = new GravadorCsv();
-            g.GravarCSV(tabelaPivotada);
-            checkBox1.Checked = false;
+            if (checkBox1.Checked)
+            {
+                checkBox1.Checked = false;
+                GravadorCsv g = new GravadorCsv();
+                g.GravarCSV(tabelaPivotada);
+            }
         }
 
 

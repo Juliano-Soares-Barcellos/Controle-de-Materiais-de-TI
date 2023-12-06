@@ -9,19 +9,19 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.BancoConexao
 {
     class Banco
     {
-        private string connection = "Data Source=localhost;Username=root;Password=;Database=planilhas;";
-        private string connection2= "Data Source=localhost;Username=root;Password=;Database=pcs;";
+        private string ConexaoPlanilhas = "Data Source=localhost;Username=root;Password=;Database=planilhas;";
+        private string ConexaoPcs = "Data Source=localhost;Username=root;Password=;Database=pcs;";
 
         public MySqlConnection Conexao()
 
         {
-            return new MySqlConnection(connection);
+            return new MySqlConnection(ConexaoPlanilhas);
         }
 
         public MySqlConnection Conexaopcs()
 
         {
-            return new MySqlConnection(connection2);
+            return new MySqlConnection(ConexaoPcs);
         }
 
 

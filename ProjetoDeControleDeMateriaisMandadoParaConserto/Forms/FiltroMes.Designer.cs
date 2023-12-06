@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FiltroMes));
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -466,16 +467,16 @@
             // 
             // graficoBox
             // 
-            chartArea1.Name = "ChartArea1";
-            this.graficoBox.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.graficoBox.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.graficoBox.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.graficoBox.Legends.Add(legend2);
             this.graficoBox.Location = new System.Drawing.Point(3, 191);
             this.graficoBox.Name = "graficoBox";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.graficoBox.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.graficoBox.Series.Add(series2);
             this.graficoBox.Size = new System.Drawing.Size(753, 432);
             this.graficoBox.TabIndex = 0;
             this.graficoBox.Text = "chart1";
@@ -488,6 +489,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FiltroMes";
             this.Text = "FiltroMes2";
             this.panel2.ResumeLayout(false);

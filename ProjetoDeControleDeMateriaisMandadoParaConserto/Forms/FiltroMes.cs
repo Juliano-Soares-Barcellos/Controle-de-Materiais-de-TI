@@ -3,6 +3,7 @@ using ProjetoDeControleDeMateriaisMandadoParaConserto.Querys;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -212,6 +213,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                                 graficoBox.Series[0].ChartType = SeriesChartType.Pie;
                                 break;
 
+
                             case "Column":
                                 if (graficoBox.Series.Count <= 0)
                                 {
@@ -221,6 +223,16 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                                 Series series = new Series(MesVal);
                                 series.Points.Add(Double.Parse(Dados[i][0].ToString()));
                                 series.LegendText = Mes;
+
+                                series.IsValueShownAsLabel = true;
+                                series.LabelFormat = "#,0"; 
+
+                                Legend legend = graficoBox.Legends[0];
+                                legend.Alignment = StringAlignment.Center;
+                                legend.Docking = Docking.Top;
+                                ChartArea chartArea = graficoBox.ChartAreas[0];
+                                chartArea.AxisX.MajorGrid.Enabled = true;
+                                chartArea.AxisY.MajorGrid.Enabled = true;
 
                                 graficoBox.Series.Add(series);
                                 break;
@@ -239,30 +251,50 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
 
 
+                        
+
                             case "Spline":
                                 if (graficoBox.Series.Count <= 0)
                                 {
                                     graficoBox.Series.Add(cbxGrafico.Text);
                                 }
-                                MesVal = MesVal.Replace(Mes, "").Replace("-","");
-                                String QuantidadeJunto =$"{Mes}-{"Total"}:{MesVal}";
+                                graficoBox.Legends.Add($"{Mes}");
+                                String QuantidadeJunto = $"{Mes}";
+
+                    
+                                graficoBox.Series[0].IsValueShownAsLabel = true;
+                                graficoBox.Series[0].LabelFormat = "#,0"; 
+
+                               
+                                Legend legendSpline = graficoBox.Legends[0];
+                                legendSpline.Alignment = StringAlignment.Center;
+                                legendSpline.Docking = Docking.Top;
+
                                 graficoBox.Series[0].Points.AddXY(QuantidadeJunto, Dados[i][0]);
-                                graficoBox.Series[0].ChartType = (SeriesChartType)Enum.Parse(typeof(SeriesChartType), cbxGrafico.Text, true);
+                                graficoBox.Series[0].ChartType = SeriesChartType.Spline;
                                 break;
+
+
 
                             case "Area":
                                 if (graficoBox.Series.Count <= 0)
                                 {
                                     graficoBox.Series.Add(cbxGrafico.Text);
                                 }
-                                MesVal = MesVal.Replace(Mes, "").Replace("-", "");
-                                String QuantidadeJunt = $"{Mes}-{"Total"}:{MesVal}";
+                                graficoBox.Legends.Add($"{Mes}");
+                                String QuantidadeJunt = $"{Mes}";
+
+                                graficoBox.Series[0].IsValueShownAsLabel = true;
+                                graficoBox.Series[0].LabelFormat = "#,0"; 
+
+                                Legend legendArea = graficoBox.Legends[0];
+                                legendArea.Alignment = StringAlignment.Center;
+                                legendArea.Docking = Docking.Top;
 
                                 graficoBox.Series[0].Points.AddXY(QuantidadeJunt, Dados[i][0]);
-                                graficoBox.Series[0].ChartType = (SeriesChartType)Enum.Parse(typeof(SeriesChartType), cbxGrafico.Text, true);
+                                graficoBox.Series[0].ChartType = SeriesChartType.Area;
                                 break;
-                            default:
-                                break;
+
                         }
                     }
                 }
@@ -334,9 +366,12 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            GravadorCsv g = new GravadorCsv();
-            g.GravarCSV(tabelaPivotada);
-            checkBox1.Checked = false;
+            if (checkBox1.Checked)
+            {
+                checkBox1.Checked = false;
+                GravadorCsv g = new GravadorCsv();
+                g.GravarCSV(tabelaPivotada);
+            }
         }
     }
 }

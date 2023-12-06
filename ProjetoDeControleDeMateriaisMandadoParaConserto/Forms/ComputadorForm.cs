@@ -139,16 +139,19 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            GravadorCsv s = new GravadorCsv();
-            if (teste.Columns.Count==0)
+            if (checkBox1.Checked)
             {
-                MessageBox.Show("Impossivel gravar a tabela zerada");
+                checkBox1.Checked = false;
+                GravadorCsv s = new GravadorCsv();
+                if (teste.Columns.Count == 0)
+                {
+                    MessageBox.Show("Impossivel gravar a tabela zerada");
+                }
+                else
+                {
+                    s.GravarCSV(teste);
+                }
             }
-            else
-            {
-                s.GravarCSV(teste);
-            }
-            checkBox1.Checked = false;
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
