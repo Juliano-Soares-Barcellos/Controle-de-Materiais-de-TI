@@ -348,6 +348,8 @@
             this.ClientSize = new System.Drawing.Size(901, 673);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(917, 711);
+            this.MinimumSize = new System.Drawing.Size(917, 711);
             this.Name = "AindaNaoConserto";
             this.Text = "AindaNaoConserto";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AindaNaoConserto_FormClosing);

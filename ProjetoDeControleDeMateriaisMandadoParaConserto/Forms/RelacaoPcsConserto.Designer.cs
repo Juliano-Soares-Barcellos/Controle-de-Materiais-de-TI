@@ -33,6 +33,7 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox = new System.Windows.Forms.ComboBox();
@@ -47,7 +48,6 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.computadorConsertadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabelaDosComputadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -122,6 +122,15 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(679, 100);
             this.tableLayoutPanel3.TabIndex = 2;
             this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(381, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(170, 21);
+            this.comboBox1.TabIndex = 5;
             // 
             // label4
             // 
@@ -277,15 +286,6 @@
             this.tabelaDosComputadoresToolStripMenuItem.Text = "Tabela Dos Computadores";
             this.tabelaDosComputadoresToolStripMenuItem.Click += new System.EventHandler(this.tabelaDosComputadoresToolStripMenuItem_Click);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(381, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(170, 21);
-            this.comboBox1.TabIndex = 5;
-            // 
             // RelacaoPcsConserto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,7 +295,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(850, 500);
-            this.MinimumSize = new System.Drawing.Size(680, 300);
+            this.MinimumSize = new System.Drawing.Size(816, 488);
             this.Name = "RelacaoPcsConserto";
             this.Text = "Enviar Computador Para conserto";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RelacaoPcsConserto_FormClosing);

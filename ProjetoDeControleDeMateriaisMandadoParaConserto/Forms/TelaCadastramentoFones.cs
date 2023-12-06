@@ -33,7 +33,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             {
                 MessageBox.Show("Digite o Material.");
             }
-            else if (comboBox.SelectedIndex == -1)
+            else if (comboBox.SelectedIndex == -1 && comboBox.Text.Equals(""))
             {
                 MessageBox.Show("Escolha o nome do material.");
             }
@@ -50,7 +50,17 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     NumeroDao numeroDao = new NumeroDao();
                     InsersaoDbPlanilha t = new InsersaoDbPlanilha();
                     string numero = textBox1.Text;
-                    string NomeMaterial = comboBox.SelectedItem.ToString();
+                    string NomeMaterial;
+
+                    if (comboBox.SelectedIndex==-1)
+                    {
+                        NomeMaterial = comboBox.Text.ToUpper();
+                    }
+                    else
+                    {
+                        NomeMaterial=comboBox.SelectedItem.ToString();
+                    }
+                    
                     Object[] encontrar = numeroDao.EncontrarNumero(numero);
 
                     if (encontrar.Length > 0)
@@ -67,7 +77,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                         MessageBox.Show("Produto consertado pela primeira vez !");
                         Produto produto = new Produto();
                         produto.Nome = NomeMaterial;
-                        produto.Numero = numero; // Certifique-se de que textBoxNumero contenha o número correto.
+                        produto.Numero = numero; 
                         Conserto conserto = new Conserto();
                         conserto.Data = DateTime.Now;
                         t.inserirProduto(produto, conserto);

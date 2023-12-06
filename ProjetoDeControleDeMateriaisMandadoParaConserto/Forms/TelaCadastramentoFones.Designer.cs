@@ -311,8 +311,6 @@
             this.ClientSize = new System.Drawing.Size(993, 708);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1009, 746);
-            this.MinimumSize = new System.Drawing.Size(1009, 746);
             this.Name = "TelaCadastramentoFones";
             this.Text = "Enviar e visualizar Materiais de Telefonia";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaInicial_FormClosing);

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -108,7 +108,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(386, 495);
+            this.label8.Location = new System.Drawing.Point(386, 545);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 12;
@@ -128,7 +128,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(386, 545);
+            this.label10.Location = new System.Drawing.Point(386, 495);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 13);
             this.label10.TabIndex = 10;
@@ -329,9 +329,9 @@
             this.panel1.Controls.Add(this.ComboMes1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.graficoBox);
-            this.panel1.Location = new System.Drawing.Point(1, 120);
+            this.panel1.Location = new System.Drawing.Point(1, 117);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(756, 626);
+            this.panel1.Size = new System.Drawing.Size(744, 626);
             this.panel1.TabIndex = 5;
             // 
             // Carregar
@@ -427,7 +427,7 @@
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(54, 1);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(648, 46);
+            this.label2.Size = new System.Drawing.Size(636, 46);
             this.label2.TabIndex = 8;
             this.label2.Text = "Grafico";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -466,29 +466,29 @@
             // 
             // graficoBox
             // 
-            chartArea6.Name = "ChartArea1";
-            this.graficoBox.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.graficoBox.Legends.Add(legend6);
+            chartArea1.Name = "ChartArea1";
+            this.graficoBox.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.graficoBox.Legends.Add(legend1);
             this.graficoBox.Location = new System.Drawing.Point(3, 191);
             this.graficoBox.Name = "graficoBox";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.graficoBox.Series.Add(series6);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.graficoBox.Series.Add(series1);
             this.graficoBox.Size = new System.Drawing.Size(753, 432);
             this.graficoBox.TabIndex = 0;
             this.graficoBox.Text = "chart1";
             // 
-            // FiltroMes2
+            // FiltroMes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 112);
+            this.ClientSize = new System.Drawing.Size(742, 115);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Name = "FiltroMes2";
+            this.Name = "FiltroMes";
             this.Text = "FiltroMes2";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

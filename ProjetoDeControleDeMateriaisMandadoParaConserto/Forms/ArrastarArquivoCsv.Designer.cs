@@ -43,7 +43,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(230, 254);
+            this.panel1.Size = new System.Drawing.Size(230, 197);
             this.panel1.TabIndex = 1;
             // 
             // label2
@@ -76,6 +76,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(230, 197);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(246, 235);
+            this.MinimumSize = new System.Drawing.Size(246, 235);
             this.Name = "ArrastarArquivoCsv";
             this.Text = "ArrastarArquivoCsv";
             this.panel1.ResumeLayout(false);
