@@ -4,4 +4,4 @@
    As tecnologias ultilizadas ate agora neste projeto sao a linguagem de programacao c# e banco de dados MySql</p>
 
    <p> este projeto consegue gerar arquivos csv apartir das suas tabelas, consegue tambem importar dados para o MySql apartir de um CSV
-   é só arrastar o arquivo e largalo sobre um label que ele indentifica e começa a fazer o insert ou o update que o  banco precisa</p>
+   é só arrastar o arquivo e larga-lo sobre um label que ele indentifica e começa a fazer o insert ou o update que o  banco precisa</p>
