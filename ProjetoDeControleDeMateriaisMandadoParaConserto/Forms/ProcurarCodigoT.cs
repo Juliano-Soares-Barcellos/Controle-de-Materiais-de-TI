@@ -18,7 +18,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
+     {
             // Verifica se a tecla pressionada não é um dígito numérico ou a tecla de backspace
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
             {

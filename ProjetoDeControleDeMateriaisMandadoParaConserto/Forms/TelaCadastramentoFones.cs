@@ -1,13 +1,9 @@
 ﻿using ProjetoDeControleDeMateriaisMandadoParaConserto.Dao;
 using ProjetoDeControleDeMateriaisMandadoParaConserto.Model;
+using ProjetoDeControleDeMateriaisMandadoParaConserto.Querys;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
@@ -17,6 +13,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         private Form1 fecha;
         private DataTable tabelaPivotada;
         private List<Object[]> dados;
+
 
         public TelaCadastramentoFones(Form1 f)
         {
@@ -50,37 +47,53 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     NumeroDao numeroDao = new NumeroDao();
                     InsersaoDbPlanilha t = new InsersaoDbPlanilha();
                     string numero = textBox1.Text;
-                    string NomeMaterial;
+                    string NomeMaterial="";
 
-                    if (comboBox.SelectedIndex==-1)
+                    if (comboBox.SelectedIndex == -1)
                     {
                         NomeMaterial = comboBox.Text.ToUpper();
                     }
                     else
                     {
-                        NomeMaterial=comboBox.SelectedItem.ToString();
+                        NomeMaterial = comboBox.SelectedItem.ToString();
                     }
-                    
-                    Object[] encontrar = numeroDao.EncontrarNumero(numero);
 
+                    Object[] encontrar = numeroDao.EncontrarNumero(numero);
+                    Query query = new Query();
                     if (encontrar.Length > 0)
                     {
-                        MessageBox.Show("Produto consertado novamente !");
-                        string sql = "UPDATE Produto AS p  Inner JOIN Conserto as _computadorSaida on p.id=_computadorSaida.Produto_id set p.quantidade_conserto = p.quantidade_conserto+1  where p.Numero= @numero";
-                        numeroDao.Update(numero,sql);
+                        String sql = (encontrar[3].Equals(0)) ? query.UpdateConsertoIgualZero : query.UpdateConsertoMaisUm;
+                        numeroDao.Update(numero, sql);
                         int idProduto = Convert.ToInt32(encontrar[0]);
-                        String sql1 = "INSERT INTO Conserto (Data,Produto_id) VALUES (@Data,@Produto_id)";
-                        numeroDao.NovaData(idProduto, sql1);
+                        String sqlInsertConserto = query.SqlInsertConserto;
+                        numeroDao.NovaData(idProduto, sqlInsertConserto);
+
                     }
                     else
                     {
-                        MessageBox.Show("Produto consertado pela primeira vez !");
-                        Produto produto = new Produto();
-                        produto.Nome = NomeMaterial;
-                        produto.Numero = numero; 
-                        Conserto conserto = new Conserto();
-                        conserto.Data = DateTime.Now;
+                        message = "é para conserto ? Digite 's' para sim ou 'n' para não:";
+                        caption = "Confirmação";
+                        buttons = MessageBoxButtons.YesNo;
+
+                        result = MessageBox.Show(message, caption, buttons);
+
+                        Produto produto = new Produto()
+                        {
+                            Nome = NomeMaterial,
+                            Numero = numero
+                        };
+                        Conserto conserto = null;
+
+                        if (result == DialogResult.Yes)
+                        {
+                            conserto = new Conserto() { Data = DateTime.Now };
+                        }
+
                         t.inserirProduto(produto, conserto);
+                        String mensagem = (result.Equals(DialogResult.Yes)) ? "Produto consertado com Sucesso !!! " : "Produto Cadastrado com Sucesso !!! ";
+                        MessageBox.Show(mensagem);
+
+
                     }
                 }
                 else if (result == DialogResult.No)
@@ -91,12 +104,10 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             }
         }
 
-        private void CarregarDadosNaTabela()
+        public void CarregarDadosNaTabela()
         {
-           SelectTabela selectTabela = new SelectTabela();
+            SelectTabela selectTabela = new SelectTabela();
             dados = selectTabela.carregarTabela();
-            // Atualizar a propriedade TotalConserto
-            // Exibe a tabela pivotada no DataGridView
             tabelaPivotada = selectTabela.PivotData(dados);
             Tabela.DataSource = tabelaPivotada;
 
@@ -118,13 +129,31 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+
             if (checkBox1.Checked)
             {
                 checkBox1.Checked = false;
                 GravadorCsv g = new GravadorCsv();
                 g.GravarCSV(tabelaPivotada);
+
             }
         }
+
+
+
+        public void gravar()
+        {
+            AindaNaoConsertoDao aindaNaoConsertoDa = new AindaNaoConsertoDao();
+
+            foreach (DataRow row in tabelaPivotada.Rows)
+            {
+                object[] rowData = row.ItemArray;
+                dados.Add(rowData);
+            }
+
+            aindaNaoConsertoDa.GravarCsv(dados);
+        }
+
 
 
         private void inserirArquivoCsvToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -198,6 +227,15 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             }
         }
 
-     
+        private void Checkbox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.X)
+            {
+                checkBox1.Checked = true;
+            }
+        }
+
+
     }
 }
+

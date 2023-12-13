@@ -164,10 +164,12 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
         public int ProdutoConserto(List<Object[]> dados)
         {
             int Produtos = 0;
-            foreach (Object[] row in dados)
+
+            foreach (object [] item in dados)
             {
                 Produtos++;
             }
+            
             return Produtos;
         }
 
@@ -182,12 +184,13 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             foreach (Object[] row in dados)
             {
                 String NomeProduto = (String)row[1];
-                if (NomeProduto == "HEADSET")
+
+                if (NomeProduto.StartsWith("HEADSET",StringComparison.OrdinalIgnoreCase))
                 {
                     HEADSET++;
                 }
 
-                else if (NomeProduto == ("DISCADOR"))
+                else if (NomeProduto.StartsWith("DISCADOR",StringComparison.OrdinalIgnoreCase))
                 {
                     DISCADOR++;
 
@@ -222,14 +225,14 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             }
             else
             {
-                return "Sem Garantia";
+                return "";
             }
         }
-        private string CalcularDias(DateTime teste)
+        private string CalcularDias(DateTime Dias)
         {
-            if (teste != DateTime.MinValue)
+            if (Dias != DateTime.MinValue)
             {
-                TimeSpan diferenca = DateTime.Now.Date.Subtract(teste);
+                TimeSpan diferenca = DateTime.Now.Date.Subtract(Dias);
                 TimeSpan duracao = new TimeSpan(90, 0, 0, 0);
                 TimeSpan res = duracao.Subtract(diferenca);
 
@@ -248,7 +251,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
             }
             else
             {
-                return "0";
+                return "";
             }
 
         }

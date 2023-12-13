@@ -56,12 +56,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
         }
 
 
-
-
-
-
-
-
+       
         public List<Object[]> pegarNumnero(String numero)
         {
             con = new Banco().Conexaopcs();

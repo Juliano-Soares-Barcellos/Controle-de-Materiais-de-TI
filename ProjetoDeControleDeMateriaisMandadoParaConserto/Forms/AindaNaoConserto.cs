@@ -133,9 +133,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             LabelsMostrar(Dados);
 
 
-
-
-
         }
         public void LabelsMostrar(List<Object[]> Dados)
         {

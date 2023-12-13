@@ -36,6 +36,12 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Querys
 
         public string CarregarTabela = "SELECT p.id, p.Nome, p.Numero, p.quantidade_conserto, GROUP_CONCAT(Con.Data SEPARATOR ', ') AS Datas FROM Produto AS p LEFT JOIN Conserto AS Con ON p.id = Con.Produto_id where p.Numero = @numero GROUP BY p.Nome ORDER BY Con.Data ASC";
 
+        public String UpdateConsertoIgualZero = "update produto set quantidade_conserto ='1' where produto.numero=@numero;";
 
+        public String UpdateConsertoMaisUm = "UPDATE Produto AS p  Inner JOIN Conserto  on p.id=Conserto.Produto_id set p.quantidade_conserto = p.quantidade_conserto+1  where p.Numero= @numero ;";
+
+        public String SqlInsertConserto = "INSERT INTO Conserto (Data,Produto_id) VALUES (@Data,@Produto_id)";
+
+        public String EncontarNumero="SELECT * FROM Produto AS p left JOIN Conserto ON p.id = Conserto.Produto_id WHERE Numero = @numero";
     }
 }

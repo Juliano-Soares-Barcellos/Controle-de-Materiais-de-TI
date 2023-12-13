@@ -12,7 +12,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
     {
         private List<Object[]> select;
 
-        private DataTable teste;
+        private DataTable DateTabela;
         private Form1 f;
 
         public ComputadorForm()
@@ -31,10 +31,10 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             foreach (var item in select)
             {
 
-                teste.Rows.Add(item);
+                DateTabela.Rows.Add(item);
 
             }
-            Tabela.DataSource = teste;
+            Tabela.DataSource = DateTabela;
 
         }
         private void MudaCor(object sender, DataGridViewRowPrePaintEventArgs e)
@@ -79,10 +79,10 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     this.MinhasColunas();
                     foreach (var item in select)
                     {
-                        teste.Rows.Add(item);
+                        DateTabela.Rows.Add(item);
                     }
 
-                    Tabela.DataSource = teste;
+                    Tabela.DataSource = DateTabela;
                     Tabela.RowPrePaint += new DataGridViewRowPrePaintEventHandler(MudaCor);
                 }
             }
@@ -92,7 +92,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
         public void Apagar()
         {
-            teste.Reset();
+            DateTabela.Reset();
 
             for (int i = 0; i < select.Count; i++)
             {
@@ -102,15 +102,15 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
         public void MinhasColunas()
         {
-            teste = new DataTable();
-            teste.Columns.Add("Data Entrada", typeof(DateTime));
-            teste.Columns.Add("Problema Apresentado", typeof(String));
-            teste.Columns.Add("Numero", typeof(String));
-            teste.Columns.Add("Modelo", typeof(String));
-            teste.Columns.Add("Sistema Operacional", typeof(String));
-            teste.Columns.Add("Programas", typeof(String));
-            teste.Columns.Add("Data de Saida", typeof(DateTime));
-            teste.Columns.Add("O que foi feito", typeof(String));
+            DateTabela = new DataTable();
+            DateTabela.Columns.Add("Data Entrada", typeof(DateTime));
+            DateTabela.Columns.Add("Problema Apresentado", typeof(String));
+            DateTabela.Columns.Add("Numero", typeof(String));
+            DateTabela.Columns.Add("Modelo", typeof(String));
+            DateTabela.Columns.Add("Sistema Operacional", typeof(String));
+            DateTabela.Columns.Add("Programas", typeof(String));
+            DateTabela.Columns.Add("Data de Saida", typeof(DateTime));
+            DateTabela.Columns.Add("O que foi feito", typeof(String));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -128,10 +128,10 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
                 foreach (var item in select)
                 {
-                    teste.Rows.Add(item);
+                    DateTabela.Rows.Add(item);
                 }
 
-                Tabela.DataSource = teste;
+                Tabela.DataSource = DateTabela;
                 Tabela.RowPrePaint += new DataGridViewRowPrePaintEventHandler(MudaCor);
             }
 
@@ -143,13 +143,13 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             {
                 checkBox1.Checked = false;
                 GravadorCsv s = new GravadorCsv();
-                if (teste.Columns.Count == 0)
+                if (DateTabela.Columns.Count == 0)
                 {
                     MessageBox.Show("Impossivel gravar a tabela zerada");
                 }
                 else
                 {
-                    s.GravarCSV(teste);
+                    s.GravarCSV(DateTabela);
                 }
             }
         }
@@ -163,10 +163,10 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
             foreach (var item in select)
             {
-                teste.Rows.Add(item);
+                DateTabela.Rows.Add(item);
             }
 
-            Tabela.DataSource = teste;
+            Tabela.DataSource = DateTabela;
             Tabela.RowPrePaint += new DataGridViewRowPrePaintEventHandler(MudaCor);
             checkBox2.Checked = false;
         }

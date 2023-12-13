@@ -14,28 +14,43 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
     {
         MySqlConnection con = null;
 
-        public void inserirProduto(Produto Produto, Conserto conserto)
+        public void inserirProduto(Produto Produto, Conserto conserto = null)
         {
             try
             {
+                string sql = "";
                 con = new Banco().Conexao();
                 con.Open();
-                String sql = "INSERT INTO Produto(Nome, Numero, quantidade_conserto) VALUES (@Nome, @Numero, @Quantidade+1); SELECT LAST_INSERT_ID()";
-                String sql2 = "INSERT INTO Conserto(Data, Produto_id) VALUES (@Data, @Produto_id)";
 
+                if(conserto==null)
+                {
+                     sql = "INSERT INTO Produto(Nome, Numero, quantidade_conserto) VALUES (@Nome, @Numero, 0 ); SELECT LAST_INSERT_ID()";
+                }
+                else
+                {
+                     sql = "INSERT INTO Produto(Nome, Numero, quantidade_conserto) VALUES (@Nome, @Numero, @Quantidade+1); SELECT LAST_INSERT_ID()";
+
+                }
+                MySqlCommand incluir = null;
                 MySqlCommand comando = new MySqlCommand(sql, con);
-                MySqlCommand incluir = new MySqlCommand(sql2, con);
+               
                 comando.Parameters.AddWithValue("@Nome", Produto.Nome);
                 comando.Parameters.AddWithValue("@Numero", Produto.Numero);
                 comando.Parameters.AddWithValue("@Quantidade", Produto.quantidade_conserto);
 
                 int ProdutoId = Convert.ToInt32(comando.ExecuteScalar());
-                conserto.Produto_id.id = ProdutoId;
+              
 
-                incluir.Parameters.AddWithValue("@Data", conserto.Data);
-                incluir.Parameters.AddWithValue("@Produto_id", conserto.Produto_id.id);
-
-                incluir.ExecuteNonQuery();
+                if (conserto != null)
+                {
+                    conserto.Produto_id.id = ProdutoId;
+                    String sql2 = "INSERT INTO Conserto(Data, Produto_id) VALUES (@Data, @Produto_id)";
+                    incluir= new MySqlCommand(sql2, con);
+                    incluir.Parameters.AddWithValue("@Data", conserto.Data);
+                    incluir.Parameters.AddWithValue("@Produto_id", conserto.Produto_id.id);
+                    incluir.ExecuteNonQuery();
+                }
+                
             }
             catch (MySqlException ex)
             {

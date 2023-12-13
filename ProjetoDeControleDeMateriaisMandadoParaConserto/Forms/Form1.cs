@@ -41,7 +41,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             f.Show();
         }
 
-        private void inserirArquivoCsvToolStripMenuItem_Click(object sender, EventArgs e)
+        public void inserirArquivoCsvToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ArrastarArquivoCsv a = new ArrastarArquivoCsv();
             a.Show();

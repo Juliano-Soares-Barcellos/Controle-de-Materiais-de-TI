@@ -159,21 +159,21 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                 return "Sem Garantia";
             }
         }
-        public string CalcularDias(DateTime teste)
+        public string CalcularDias(DateTime Data)
         {
-            if (teste != DateTime.MinValue)
+            if (Data != DateTime.MinValue)
             {
-                TimeSpan diferenca = DateTime.Now.Date.Subtract(teste);
+                TimeSpan diferenca = DateTime.Now.Date.Subtract(Data);
                 TimeSpan duracao = new TimeSpan(90, 0, 0, 0);
                 TimeSpan res = duracao.Subtract(diferenca);
 
                 if (res.Days <= 90 && res.Days >= 1)
                 {
-                    return "tem: " + res.Days + " dias de garantia";
+                    return   res.Days.ToString() ;
                 }
                 else if (res.Days <= 0 && res.Days >= -15)
                 {
-                    return "Excedeu: " + res.Days + " dias de garantia";
+                    return  res.Days.ToString();
                 }
                 else
                 {

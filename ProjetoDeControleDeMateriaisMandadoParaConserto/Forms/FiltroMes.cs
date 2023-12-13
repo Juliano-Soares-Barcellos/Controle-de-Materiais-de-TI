@@ -12,6 +12,13 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
     public partial class FiltroMes : Form
     {
         private List<Object[]> Dados;
+        private List<String> Meses = new List<String>
+        {
+            "Janeiro", "Fevereiro", "Março", "Abril",
+            "Maio", "Junho", "Julho", "Agosto",
+            "Setembro", "Outubro", "Novembro", "Dezembro"
+        };
+
         private DataTable tabelaPivotada;
         public FiltroMes()
         {
@@ -53,106 +60,32 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
 
         }
-
-        public int obterNumeroMes(string mesSelecionado)
+   
+        public object Obtermes(object MesesObjeto)
         {
-            switch (mesSelecionado)
+           
+            if (MesesObjeto != null && int.TryParse(MesesObjeto.ToString(), out int ValorConvertido))
             {
-                case "Janeiro":
-                    return 01;
-
-                case "Fevereiro":
-                    return 02;
-
-                case "Março":
-                    return 03;
-
-                case "Abril":
-                    return 04;
-
-                case "Maio":
-                    return 05;
-
-                case "Junho":
-                    return 06;
-
-                case "Julho":
-                    return 07;
-
-                case "Agosto":
-                    return 08;
-
-                case "Setembro":
-                    return 09;
-
-                case "Outubro":
-                    return 10;
-
-                case "Novembro":
-                    return 11;
-
-                case "Dezembro":
-                    return 12;
-
+               
+               String Mes=Meses[ValorConvertido-1];
+                return Mes;
             }
-            return 0;
-        }
-        public String obterStringMes(int mesN)
-        {
-            switch (mesN)
+            else
             {
-                case 1:
-                    return "Janeiro";
 
-                case 2:
-                    return "Fevereiro";
-
-                case 3:
-                    return "Março";
-
-                case 4:
-                    return "Abril";
-
-                case 5:
-                    return "Maio";
-
-                case 6:
-                    return "Junho";
-
-                case 7:
-                    return "Julho";
-
-                case 8:
-                    return "Agosto";
-
-                case 9:
-                    return "Setembro";
-
-                case 10:
-                    return "Outubro";
-
-                case 11:
-                    return "Novembro";
-
-                case 12:
-                    return "Dezembro";
-
+                int NumeroMes = Meses.IndexOf(MesesObjeto.ToString());
+                return NumeroMes+1;
             }
-            return "";
         }
-
-
 
         private void Carregar_Click(object sender, EventArgs e)
         {
-            String PrimeiroMes = (String)ComboMes1.SelectedItem;
-            String SegundoMes = (String)ComboMes2.SelectedItem;
-            String GraficoSelecionado = (String)cbxGrafico.SelectedItem;
-            int MesNumero1 = obterNumeroMes(PrimeiroMes);
-            int MesNumero2 = obterNumeroMes(SegundoMes);
+            object obterMeses = null;
+            obterMeses = (String)ComboMes1.SelectedItem;
+            int MesNumero1 = (int)Obtermes(obterMeses);
+            obterMeses = (String)ComboMes2.SelectedItem;
+            int MesNumero2 = (int)Obtermes(obterMeses);
             String AnoString = TextAno.Text;
-            int ano = Convert.ToInt32(AnoString);
-
 
             if (MesNumero2 < MesNumero1)
             {
@@ -161,13 +94,15 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 MesNumero2 = MesPassagem;
             }
 
-            if (MesNumero1 < 0 || MesNumero2 < 0 || GraficoSelecionado.Equals(""))
+            if (MesNumero1 == 0 || MesNumero2 == 0 || cbxGrafico.SelectedIndex <= -1 || AnoString.Equals(""))
             {
                 MessageBox.Show("Por favor preencha todos os campos");
 
             }
             else
             {
+                String GraficoSelecionado = (String)cbxGrafico.SelectedItem;
+                int ano = Convert.ToInt32(AnoString);
                 if (ano <= 2022 || ano > DateTime.Now.Year)
                 {
                     MessageBox.Show("Por favor preencha um ano válido");
@@ -188,113 +123,57 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     for (int i = 0; i < Dados.Count; i++)
                     {
                         DateTime Datas = (DateTime)Dados[i][1];
-                        int data = Convert.ToInt32(Datas.Month);
-                        String Mes = obterStringMes(data);
+                        object data = Convert.ToInt32(Datas.Month);
+                        String Mes = (String)Obtermes(data);
                         String MesVal = $"{Dados[i][0]}-{Mes}";
 
 
-                        switch (cbxGrafico.Text)
+                        if (cbxGrafico.Text.Equals("Column"))
                         {
-                               
-
-                            case "Pie":
-
-                                if (graficoBox.Series.Count <= 0)
-                                {
-                                    graficoBox.Series.Add(cbxGrafico.Text);
-                                }
-                                graficoBox.Legends.Add($"{Mes}");
-                                DataPoint dataPoint = new DataPoint();
-                                dataPoint.SetValueY(Dados[i][0]);
-                                dataPoint.AxisLabel = MesVal;
-                                dataPoint.LegendText = Mes;
-
-                                graficoBox.Series[0].Points.Add(dataPoint);
-                                graficoBox.Series[0].ChartType = SeriesChartType.Pie;
-                                break;
 
 
-                            case "Column":
-                                if (graficoBox.Series.Count <= 0)
-                                {
-                                    graficoBox.Series.Add(cbxGrafico.Text);
-                                }
-                                graficoBox.Legends.Add($"{Mes}");
-                                Series series = new Series(MesVal);
-                                series.Points.Add(Double.Parse(Dados[i][0].ToString()));
-                                series.LegendText = Mes;
+                            if (graficoBox.Series.Count <= 0)
+                            {
+                                graficoBox.Series.Add(cbxGrafico.Text);
+                            }
+                            graficoBox.Legends.Add($"{Mes}");
+                            Series series = new Series(MesVal);
+                            series.Points.Add(Double.Parse(Dados[i][0].ToString()));
+                            series.LegendText = Mes;
+                            series.IsValueShownAsLabel = true;
+                            series.LabelFormat = "#,0";
+                            Legend legend = graficoBox.Legends[0];
+                            legend.Alignment = StringAlignment.Center;
+                            legend.Docking = Docking.Top;
+                            ChartArea chartArea = graficoBox.ChartAreas[0];
+                            chartArea.AxisX.MajorGrid.Enabled = true;
+                            chartArea.AxisY.MajorGrid.Enabled = true;
 
-                                series.IsValueShownAsLabel = true;
-                                series.LabelFormat = "#,0"; 
+                            graficoBox.Series.Add(series);
+                        }
+                        else
+                        {
+                            String ItemCombo = cbxGrafico.SelectedItem.ToString();
+                            if (graficoBox.Series.Count <= 0)
+                            {
+                                graficoBox.Series.Add(cbxGrafico.Text);
+                            }
+                            graficoBox.Legends.Add($"{Mes}");
+                            String QuantidadeJuntos = $"{Mes}";
 
-                                Legend legend = graficoBox.Legends[0];
-                                legend.Alignment = StringAlignment.Center;
-                                legend.Docking = Docking.Top;
-                                ChartArea chartArea = graficoBox.ChartAreas[0];
-                                chartArea.AxisX.MajorGrid.Enabled = true;
-                                chartArea.AxisY.MajorGrid.Enabled = true;
+                            graficoBox.Series[0].IsValueShownAsLabel = true;
+                            graficoBox.Series[0].LabelFormat = "#,0";
 
-                                graficoBox.Series.Add(series);
-                                break;
+                            Legend Generico = graficoBox.Legends[0];
+                            Generico.Alignment = StringAlignment.Center;
+                            Generico.Docking = Docking.Top;
 
+                            graficoBox.Series[0].Points.AddXY(QuantidadeJuntos, Dados[i][0]);
 
-
-                            case "Line":
-                                if (graficoBox.Series.Count <= 0)
-                                {
-                                    graficoBox.Series.Add(cbxGrafico.Text);
-                                }
-
-                                graficoBox.Series[0].Points.AddXY(MesVal, Dados[i][0]);
-                                graficoBox.Series[0].ChartType = (SeriesChartType)Enum.Parse(typeof(SeriesChartType), cbxGrafico.Text, true);
-                                break;
-
-
-
-                        
-
-                            case "Spline":
-                                if (graficoBox.Series.Count <= 0)
-                                {
-                                    graficoBox.Series.Add(cbxGrafico.Text);
-                                }
-                                graficoBox.Legends.Add($"{Mes}");
-                                String QuantidadeJunto = $"{Mes}";
-
-                    
-                                graficoBox.Series[0].IsValueShownAsLabel = true;
-                                graficoBox.Series[0].LabelFormat = "#,0"; 
-
-                               
-                                Legend legendSpline = graficoBox.Legends[0];
-                                legendSpline.Alignment = StringAlignment.Center;
-                                legendSpline.Docking = Docking.Top;
-
-                                graficoBox.Series[0].Points.AddXY(QuantidadeJunto, Dados[i][0]);
-                                graficoBox.Series[0].ChartType = SeriesChartType.Spline;
-                                break;
-
-
-
-                            case "Area":
-                                if (graficoBox.Series.Count <= 0)
-                                {
-                                    graficoBox.Series.Add(cbxGrafico.Text);
-                                }
-                                graficoBox.Legends.Add($"{Mes}");
-                                String QuantidadeJunt = $"{Mes}";
-
-                                graficoBox.Series[0].IsValueShownAsLabel = true;
-                                graficoBox.Series[0].LabelFormat = "#,0"; 
-
-                                Legend legendArea = graficoBox.Legends[0];
-                                legendArea.Alignment = StringAlignment.Center;
-                                legendArea.Docking = Docking.Top;
-
-                                graficoBox.Series[0].Points.AddXY(QuantidadeJunt, Dados[i][0]);
-                                graficoBox.Series[0].ChartType = SeriesChartType.Area;
-                                break;
-
+                            if (Enum.TryParse(ItemCombo, out SeriesChartType chartType))
+                            {
+                                graficoBox.Series[0].ChartType = chartType;
+                            }
                         }
                     }
                 }
@@ -311,16 +190,19 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             }
             else
             {
-                String mesSelecionado = (String)comboBox2.SelectedItem;
+                Object obterMeses = null;
+                obterMeses = (String)comboBox2.SelectedItem;
+
+                int mesEscolhido = (int)Obtermes(obterMeses);
+
                 String anoSelecionado = (String)comboBox1.SelectedItem;
-                int mesEscolhido = obterNumeroMes(mesSelecionado);
                 int ano = Int32.Parse(anoSelecionado);
 
 
-               SelectFiltro selectFiltro = new SelectFiltro();
+                SelectFiltro selectFiltro = new SelectFiltro();
                 string sql = "SELECT * FROM Produto as p inner join Conserto as _computadorSaida on p.id=_computadorSaida.Produto_id WHERE MONTH(DATE(_computadorSaida.Data)) = @Mes AND YEAR(DATE(_computadorSaida.Data)) = @Ano;";
                 Dados = selectFiltro.carregarTabela(mesEscolhido, ano, sql);
-                if (Dados.Count==0)
+                if (Dados.Count == 0)
                 {
                     Tabela.DataSource = null;
                     label11.Text = "";
@@ -340,15 +222,13 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     int Headset = Produtos[0];
                     int Discador = Produtos[1];
                     int Carrapatos = Produtos[2];
-
-                    // Exibe a tabela pivotada no DataGridView
+                 
                     Tabela.DataSource = tabelaPivotada;
-                    // Exibe o total de consertos e o número de produtos com garantia em MessageBox
                     MessageBox.Show("Total de Consertos neste mês: " + MesConserto + "\n" + "\n" +
                                     "Total de Headset: " + Headset + "\n" + "\n" +
                                     "total de Discadores : " + Discador + "\n" + "\n" +
                                     "Total de Carrapatos :  " + Carrapatos + "\n" + "\n" +
-                                    "                   Informações do mês !!!");//+ MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    "                   Informações do mês !!!");
 
                     label4.Visible = true;
                     label11.Visible = true;

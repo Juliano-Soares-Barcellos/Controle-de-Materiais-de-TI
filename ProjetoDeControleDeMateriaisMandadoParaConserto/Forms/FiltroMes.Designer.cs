@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FiltroMes));
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -363,7 +363,40 @@
             "Column",
             "Line",
             "Spline",
-            "Area"});
+            "Area",
+            "Bar",
+            "BoxPlot",
+            "Bubble",
+            "Candlestick",
+            "Doughnut",
+            "ErrorBar",
+            "FastLine",
+            "FastPoint",
+            "Funnel",
+            "Kagi",
+            "Point",
+            "PointAndfigure",
+            "Polar",
+            "Pyramid",
+            "Radar",
+            "Range",
+            "RangeBar",
+            "RangeColumn",
+            "Renko",
+            "SplineArea",
+            "SplineRange",
+            "StackedArea",
+            "StackedArea100",
+            "StackedBar",
+            "StackedBar100",
+            "StackedColumn",
+            "StackedColumn100",
+            "StepLine",
+            "Stock",
+            "ThreeLineBreack",
+            "Area",
+            "Spline",
+            "Line"});
             this.cbxGrafico.Location = new System.Drawing.Point(417, 113);
             this.cbxGrafico.Name = "cbxGrafico";
             this.cbxGrafico.Size = new System.Drawing.Size(121, 21);
@@ -467,17 +500,17 @@
             // 
             // graficoBox
             // 
-            chartArea2.Name = "ChartArea1";
-            this.graficoBox.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.graficoBox.Legends.Add(legend2);
-            this.graficoBox.Location = new System.Drawing.Point(3, 191);
+            chartArea1.Name = "ChartArea1";
+            this.graficoBox.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.graficoBox.Legends.Add(legend1);
+            this.graficoBox.Location = new System.Drawing.Point(0, 190);
             this.graficoBox.Name = "graficoBox";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.graficoBox.Series.Add(series2);
-            this.graficoBox.Size = new System.Drawing.Size(753, 432);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.graficoBox.Series.Add(series1);
+            this.graficoBox.Size = new System.Drawing.Size(750, 432);
             this.graficoBox.TabIndex = 0;
             this.graficoBox.Text = "chart1";
             // 
@@ -485,7 +518,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(742, 115);
+            this.ClientSize = new System.Drawing.Size(742, 545);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);

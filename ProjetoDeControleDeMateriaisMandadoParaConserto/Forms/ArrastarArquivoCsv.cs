@@ -36,7 +36,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
         private void label2_DragDrop(object sender, DragEventArgs e)
         {
-            InsersaoDbPlanilha teste = new InsersaoDbPlanilha();
+            InsersaoDbPlanilha _InsersaoDbPlanilha = new InsersaoDbPlanilha();
             string message = "Deseja fazer o Backup? Digite 's' para sim ou 'n' para não:";
             string caption = "Confirmação";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;

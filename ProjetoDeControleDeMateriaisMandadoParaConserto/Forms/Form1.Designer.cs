@@ -162,6 +162,7 @@
             // inserirFoneToolStripMenuItem
             // 
             this.inserirFoneToolStripMenuItem.Name = "inserirFoneToolStripMenuItem";
+            this.inserirFoneToolStripMenuItem.ShowShortcutKeys = false;
             this.inserirFoneToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.inserirFoneToolStripMenuItem.Text = "Inserir fone ";
             this.inserirFoneToolStripMenuItem.Click += new System.EventHandler(this.inserirFoneToolStripMenuItem_Click);

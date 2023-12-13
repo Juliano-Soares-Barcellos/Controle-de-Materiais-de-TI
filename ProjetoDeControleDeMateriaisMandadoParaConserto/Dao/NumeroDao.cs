@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using ProjetoDeControleDeMateriaisMandadoParaConserto.BancoConexao;
+using ProjetoDeControleDeMateriaisMandadoParaConserto.Querys;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,12 +16,14 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
 
         public object[] EncontrarNumero(string numero)
         {
+
+            Query quey = new Query();
             List<object> resultados = new List<object>();
             try
             {
                 con = new Banco().Conexao();
                 con.Open();
-                string sql = "SELECT * FROM Produto AS p left JOIN Conserto AS _computadorSaida ON p.id = _computadorSaida.Produto_id WHERE Numero = @numero";
+                string sql = quey.EncontarNumero;
                 MySqlCommand comando = new MySqlCommand(sql, con);
                 comando.Parameters.AddWithValue("@numero", numero);
                 MySqlDataReader reader = comando.ExecuteReader();
