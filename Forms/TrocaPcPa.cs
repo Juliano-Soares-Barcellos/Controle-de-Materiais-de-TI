@@ -25,6 +25,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             }
             else
             {
+                //pronto
                 string patrimonio = textPatrimonio.Text.ToString().Trim();
                 string empresa = comboEmpresa.SelectedIndex < 0 ? comboEmpresa.SelectedText : comboEmpresa.SelectedItem.ToString();
                 string setor = comboSetor.SelectedIndex < 0 ? comboSetor.SelectedText : comboSetor.SelectedItem.ToString();
