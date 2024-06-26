@@ -128,13 +128,19 @@ namespace ImobilizadosDll.TabelasDao
         }
         public ComputadorModel PegarDadosDoPcAntesDaTroca(string patrimonio, string empresa)
         {
+            try
+            {
+                Query query = new Query();
+                List<ComputadorModel> pc = new List<ComputadorModel>();
+                Select select = new Select();
+                pc = select.RetornaGruposPc(empresa, patrimonio, query.retornaPatrimonioPc);
 
-            Query query = new Query();
-            List<ComputadorModel> pc = new List<ComputadorModel>();
-            Select select = new Select();
-            pc = select.RetornaGruposPc(empresa, patrimonio, query.retornaPatrimonioPc);
-            
-            return pc[0];
+                return pc[0];
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+            }
         }
     }
 }

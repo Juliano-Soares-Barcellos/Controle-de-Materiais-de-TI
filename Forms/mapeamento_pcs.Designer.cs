@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -87,11 +87,11 @@
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
             this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.18182F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.81818F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 319F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 320F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.05556F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.94444F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 285F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 332F));
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.quantidadeSistemas, 4, 0);
@@ -100,7 +100,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(997, 130);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(988, 130);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel3
@@ -113,11 +113,10 @@
             this.panel3.Controls.Add(this.Cfiltro);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.BotaoFiltrar);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(6, 6);
             this.panel3.MaximumSize = new System.Drawing.Size(380, 118);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(243, 118);
+            this.panel3.Size = new System.Drawing.Size(277, 118);
             this.panel3.TabIndex = 14;
             // 
             // Cempresa
@@ -131,7 +130,7 @@
             "Maximidia"});
             this.Cempresa.Location = new System.Drawing.Point(184, 18);
             this.Cempresa.Name = "Cempresa";
-            this.Cempresa.Size = new System.Drawing.Size(57, 21);
+            this.Cempresa.Size = new System.Drawing.Size(87, 21);
             this.Cempresa.TabIndex = 5;
             // 
             // LabelCMap
@@ -161,7 +160,7 @@
             "patrimonio"});
             this.Cfiltro.Location = new System.Drawing.Point(184, 58);
             this.Cfiltro.Name = "Cfiltro";
-            this.Cfiltro.Size = new System.Drawing.Size(57, 21);
+            this.Cfiltro.Size = new System.Drawing.Size(87, 21);
             this.Cfiltro.TabIndex = 3;
             // 
             // label2
@@ -184,7 +183,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BotaoFiltrar.Location = new System.Drawing.Point(198, 85);
             this.BotaoFiltrar.Name = "BotaoFiltrar";
-            this.BotaoFiltrar.Size = new System.Drawing.Size(29, 23);
+            this.BotaoFiltrar.Size = new System.Drawing.Size(64, 23);
             this.BotaoFiltrar.TabIndex = 6;
             this.BotaoFiltrar.Text = "Enter";
             this.BotaoFiltrar.UseVisualStyleBackColor = true;
@@ -199,11 +198,10 @@
             this.panel4.Controls.Add(this.MaskBox);
             this.panel4.Controls.Add(this.CombSetores);
             this.panel4.Controls.Add(this.EnterTab);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(294, 6);
+            this.panel4.Location = new System.Drawing.Point(352, 6);
             this.panel4.MaximumSize = new System.Drawing.Size(500, 118);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(313, 118);
+            this.panel4.Size = new System.Drawing.Size(279, 118);
             this.panel4.TabIndex = 15;
             this.panel4.Visible = false;
             // 
@@ -225,7 +223,7 @@
             // 
             this.MaskBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MaskBox.Location = new System.Drawing.Point(217, 23);
+            this.MaskBox.Location = new System.Drawing.Point(183, 23);
             this.MaskBox.Mask = "0000000";
             this.MaskBox.Name = "MaskBox";
             this.MaskBox.Size = new System.Drawing.Size(87, 20);
@@ -237,7 +235,7 @@
             this.CombSetores.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CombSetores.FormattingEnabled = true;
-            this.CombSetores.Location = new System.Drawing.Point(217, 22);
+            this.CombSetores.Location = new System.Drawing.Point(183, 22);
             this.CombSetores.Name = "CombSetores";
             this.CombSetores.Size = new System.Drawing.Size(88, 21);
             this.CombSetores.TabIndex = 8;
@@ -246,7 +244,7 @@
             // EnterTab
             // 
             this.EnterTab.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.EnterTab.Location = new System.Drawing.Point(235, 58);
+            this.EnterTab.Location = new System.Drawing.Point(218, 58);
             this.EnterTab.Name = "EnterTab";
             this.EnterTab.Size = new System.Drawing.Size(69, 28);
             this.EnterTab.TabIndex = 12;
@@ -265,7 +263,7 @@
             this.quantidadeSistemas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.quantidadeSistemas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.quantidadeSistemas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.quantidadeSistemas.Location = new System.Drawing.Point(676, 6);
+            this.quantidadeSistemas.Location = new System.Drawing.Point(655, 6);
             this.quantidadeSistemas.MaximumSize = new System.Drawing.Size(600, 118);
             this.quantidadeSistemas.Name = "quantidadeSistemas";
             this.quantidadeSistemas.ReadOnly = true;
@@ -348,8 +346,8 @@
             // 
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;

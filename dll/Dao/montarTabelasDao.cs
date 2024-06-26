@@ -1,4 +1,5 @@
-﻿using computadoresMapeadosEconsertado.model;
+﻿using computadoresMapeadosEconsertado.consultas;
+using computadoresMapeadosEconsertado.model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -315,8 +316,41 @@ namespace computadoresMapeadosEconsertado.Dao
 
             return tabela;
         }
+        public static DataTable PasOperacao()
+        {
+            List<computadorModel> patrimonios = new List<computadorModel>();
+            computadorDao computradorDAO = new computadorDao();
+            Query query = new Query();
+            patrimonios = computradorDAO.FiltroMapInitFiltroMapInit(query.MapeamentoDePcs);
 
-       
+            DataTable tabela = new DataTable();
+
+            try
+            {
+                tabela.Columns.Add("Patrimonio", typeof(string));
+                tabela.Columns.Add("Pa", typeof(int));
+                tabela.Columns.Add("Id da Pa", typeof(string));
+                
+                foreach (var item in patrimonios)
+                {
+                    DataRow linha = tabela.NewRow();
+
+                    linha["Patrimonio"] = item.patrimonio==0 ? "" : item.patrimonio.ToString();
+                    linha["Pa"] = item.fk_compComputador_Pa.pa;
+                    linha["Id da Pa"] = item.fk_compComputador_Pa.talk_id;
+                    
+                    tabela.Rows.Add(linha);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            return tabela;
+        }
+
+
 
     }
 

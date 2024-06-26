@@ -111,43 +111,50 @@ namespace ImobilizadosDll.TabelasDao
 
         public static List<object> trocaPa(string empresa,string patrimonio,string pa,string setor)
         {
-            Query query = new Query();
-            MontaColunasElinhas linha = new MontaColunasElinhas();
-            Select select = new Select();
-            List<object> RetornoPcs = null;
-            ComputadorModel retornaDadosDoPcAtual=linha.PegarDadosDoPcAntesDaTroca(patrimonio,empresa);
-            ComputadorModel retornaDadosDaPaRequerida = new ComputadorModel();
-            int paRequerida = 0;
-            int id_pa = 0;
-            List<PaModel> PA= select.RetornaPaEscolhida(empresa, pa, query.acharPa, setor);
-            foreach (var item in PA)
+            try
             {
-                retornaDadosDaPaRequerida = select.RetornaPcParaTroca(empresa,item.Id_pa.ToString());
-
-                if (retornaDadosDaPaRequerida!=null )
+                Query query = new Query();
+                MontaColunasElinhas linha = new MontaColunasElinhas();
+                Select select = new Select();
+                List<object> RetornoPcs = null;
+                ComputadorModel retornaDadosDoPcAtual = linha.PegarDadosDoPcAntesDaTroca(patrimonio, empresa);
+                ComputadorModel retornaDadosDaPaRequerida = new ComputadorModel();
+                int paRequerida = 0;
+                int id_pa = 0;
+                List<PaModel> PA = select.RetornaPaEscolhida(empresa, pa, query.acharPa, setor);
+                foreach (var item in PA)
                 {
-                    paRequerida = item.Pa;
-                    id_pa = item.Id_pa;
-                    break;
-                }
-            }
+                    retornaDadosDaPaRequerida = select.RetornaPcParaTroca(empresa, item.Id_pa.ToString());
 
-            if (retornaDadosDaPaRequerida != null)
-            {
-                RetornoPcs = new List<object> {
+                    if (retornaDadosDaPaRequerida != null)
+                    {
+                        paRequerida = item.Pa;
+                        id_pa = item.Id_pa;
+                        break;
+                    }
+                }
+
+                if (retornaDadosDaPaRequerida != null)
+                {
+                    RetornoPcs = new List<object> {
                     retornaDadosDoPcAtual.Patrimonio,
                     retornaDadosDoPcAtual.Fk_compComputador_Pa.Pa,
                     retornaDadosDoPcAtual.Fk_compComputador_Pa.Id_pa,
                     retornaDadosDaPaRequerida.Patrimonio,
                     paRequerida,
                     id_pa};
+                }
+                else
+                {
+                    //Arrumar,esta errado
+                    RetornoPcs = new List<object> { retornaDadosDoPcAtual.Patrimonio, pa, PA[0].Id_pa.ToString() };
+                }
+                return RetornoPcs;
             }
-            else
+            catch(Exception e)
             {
-                //Arrumar,esta errado
-                RetornoPcs = new List<object> { retornaDadosDoPcAtual.Patrimonio, retornaDadosDoPcAtual.Fk_compComputador_Pa.Pa, retornaDadosDoPcAtual.Fk_compComputador_Pa.Id_pa };
+                Console.WriteLine(e.Message);
             }
-            return RetornoPcs;
         }
 
         public static List<string> RetornaComboBoxPc(string empresa)

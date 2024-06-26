@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoDeControleDeMateriaisMandadoParaConserto.Dao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         public TrocaPcPa()
         {
             InitializeComponent();
+            this.Location = new Point(20,30);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,17 +38,18 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 int verificaSeTemAlguemNaPa = AntesTroca.Count() - 2;
 
                 string caption = "Confirmação";
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                //MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
                 if (verificaSeTemAlguemNaPa < 3)
                 {
-                    message = "O patrimonio " + AntesTroca[0].ToString() + " vai ir para a Pa " + AntesTroca[4].ToString() + ",\n" +
-                 "A Pa " + AntesTroca[4].ToString() +" Esta Sem nenhuma maquina"+ "\n"
-                 + "Deseja prosseguir? Digite 's' para sim ou 'n' para não:";
-                    DialogResult result = MessageBox.Show(message, caption, buttons);
+                    message = "O patrimonio " + AntesTroca[0].ToString() + " vai ir para a Pa " + AntesTroca[1].ToString() + ",\n" +
+                 "A Pa " + AntesTroca[1].ToString() +" Esta Sem nenhuma maquina"+ "\n"
+                 + "Deseja prosseguir? ";
+                    DialogResult result = CustomMessageBox.Show(message, caption);
                     if (result == DialogResult.Yes)
                     {
-                        ImobilizadosDll.Dao.UpdateDao.TrocaPa(AntesTroca[0].ToString(), AntesTroca[5].ToString(), empresa);
+
+                        ImobilizadosDll.Dao.UpdateDao.TrocaPa(AntesTroca[0].ToString(), AntesTroca[2].ToString(), empresa);
                         MessageBox.Show("Troca de Pa efetuada com sucesso !");
                     }
                     else { MessageBox.Show("Nenhuma Troca foi Efetivada"); }
@@ -54,9 +57,10 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 else
                 {
                         message = "O patrimonio " + AntesTroca[0].ToString() + " vai ir para a Pa "+ AntesTroca[4].ToString() + ",\n" +
-                        "E o patrimonio "+ AntesTroca[3].ToString()+" vai para a Pa"+ AntesTroca[1].ToString()+"\n"
-                        +"Deseja prosseguir? Digite 's' para sim ou 'n' para não:";
-                         DialogResult result = MessageBox.Show(message, caption, buttons);
+                        "E o patrimonio "+ AntesTroca[3].ToString()+" vai para a Pa "+ AntesTroca[1].ToString()+"\n"
+                        +"Deseja prosseguir? ";
+                       //  DialogResult result = MessageBox.Show(message, caption, buttons);
+                          DialogResult result = CustomMessageBox.Show(message, caption);
                     if (result == DialogResult.Yes)
                     {
                         ImobilizadosDll.Dao.UpdateDao.TrocaPa(AntesTroca[3].ToString(),AntesTroca[2].ToString(),empresa);

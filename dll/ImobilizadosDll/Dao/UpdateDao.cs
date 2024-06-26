@@ -11,13 +11,13 @@ namespace ImobilizadosDll.Dao
 {
    public  class UpdateDao
     {
-        public static void TrocaPa(string patrimonio,string estrangeira ,string empresa)
+        public static void TrocaPa(string patrimonio,string FK_estrangeira ,string empresa)
         {
             Query query = new Query();
             var parametros = new
             {
                 empresa = empresa,
-                estrangeira = estrangeira,
+                FK_estrangeira = FK_estrangeira,
                 patrimonio = patrimonio,
             };
             using (var conexao = new Banco().conexao())

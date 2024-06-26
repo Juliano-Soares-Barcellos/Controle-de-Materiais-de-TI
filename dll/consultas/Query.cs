@@ -42,7 +42,6 @@ namespace computadoresMapeadosEconsertado.consultas
 
         public String acharPcsPeloSistema = "SELECT * FROM computador INNER JOIN pa ON pa.id_pa = computador.fk_computador_Pa INNER JOIN grupos_pa ON grupos_pa.id_grupo = pa.fk_grupo_id inner join computador_conserto on computador.id_computador=computador_conserto.fk_computador where sistemasOperacionais=@sistemasOperacionais;";
 
-
         public string TagFiltroCompMapeamento = "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and tag_servico = @Resfiltro;";
 
         public string gruposFiltroCompMapeamento= "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and grupos = @Resfiltro;";
@@ -58,6 +57,9 @@ namespace computadoresMapeadosEconsertado.consultas
         public string TodClub = "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa = 'clube maxivida' or grupos like '%clube%';";
 
         public string imobilizados = "";
+
+        public string MapeamentoDePcs = "select * from computador right join pa on computador.fk_computador_Pa=pa.id_pa  inner join grupos_pa on pa.fk_grupo_id=grupos_pa.id_grupo   where fk_grupo_id=1 order by pa.pa asc;";
+
     }
 
 }

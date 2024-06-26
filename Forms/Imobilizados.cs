@@ -5,9 +5,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 {
@@ -19,6 +21,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         private List<String> Maximidia = new List<string> { "administrativo", "condenada", "coordenacao", "coordenacao", "operacao maximidia", "placar", "procurar", "supervisao", "todos", "Ti", "treinamento 2" };
         private List<String> ClubeMaxi = new List<string> { "administrativo", "condenada", "Diretoria", "operacao clube", "todos", "procurar", "supervisao clube","Ti" };
 
+
         public Imobilizados()
         {
             InitializeComponent();
@@ -27,6 +30,9 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             dataGridView.RowPrePaint += new DataGridViewRowPrePaintEventHandler(MudaCorComputador);
             dataGridViewImob.RowPrePaint += new DataGridViewRowPrePaintEventHandler(MudaCorImob);
         }
+       
+
+        
 
         private void BtnPatrimonio_Click(object sender, EventArgs e)
         {
@@ -326,6 +332,17 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         {
             TrocaPcPa trocaPc = new TrocaPcPa();
             trocaPc.Show();
+        }
+
+        private void espelhoOperaçãoMaximidiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EspelhoPa espelho = new EspelhoPa();
+            espelho.Show();
+        }
+
+        private void Imobilizados_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

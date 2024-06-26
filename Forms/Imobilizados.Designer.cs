@@ -106,8 +106,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trocarComputadorDePaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.espelhoOperaçãoMaximidiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.installer11 = new ProjetoDeControleDeMateriaisMandadoParaConserto.Installer1();
             this.installer12 = new ProjetoDeControleDeMateriaisMandadoParaConserto.Installer1();
+            this.installer13 = new ProjetoDeControleDeMateriaisMandadoParaConserto.Installer1();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl3.SuspendLayout();
@@ -911,7 +913,7 @@
             this.panel19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel19.Controls.Add(this.panel20);
-            this.panel19.Location = new System.Drawing.Point(3, 25);
+            this.panel19.Location = new System.Drawing.Point(3, 35);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(1127, 35);
             this.panel19.TabIndex = 6;
@@ -919,9 +921,10 @@
             // panel20
             // 
             this.panel20.Controls.Add(this.label1);
-            this.panel20.Location = new System.Drawing.Point(0, 7);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel20.Location = new System.Drawing.Point(0, 0);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(1127, 47);
+            this.panel20.Size = new System.Drawing.Size(1127, 35);
             this.panel20.TabIndex = 0;
             // 
             // label1
@@ -929,7 +932,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(426, 0);
+            this.label1.Location = new System.Drawing.Point(426, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(253, 31);
             this.label1.TabIndex = 0;
@@ -973,7 +976,8 @@
             // 
             this.menuToolStripMenuItem.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.trocarComputadorDePaToolStripMenuItem});
+            this.trocarComputadorDePaToolStripMenuItem,
+            this.espelhoOperaçãoMaximidiaToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
@@ -981,9 +985,16 @@
             // trocarComputadorDePaToolStripMenuItem
             // 
             this.trocarComputadorDePaToolStripMenuItem.Name = "trocarComputadorDePaToolStripMenuItem";
-            this.trocarComputadorDePaToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.trocarComputadorDePaToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.trocarComputadorDePaToolStripMenuItem.Text = "Trocar computador de Pa";
             this.trocarComputadorDePaToolStripMenuItem.Click += new System.EventHandler(this.trocarComputadorDePaToolStripMenuItem_Click);
+            // 
+            // espelhoOperaçãoMaximidiaToolStripMenuItem
+            // 
+            this.espelhoOperaçãoMaximidiaToolStripMenuItem.Name = "espelhoOperaçãoMaximidiaToolStripMenuItem";
+            this.espelhoOperaçãoMaximidiaToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.espelhoOperaçãoMaximidiaToolStripMenuItem.Text = "Espelho Operação Maximidia";
+            this.espelhoOperaçãoMaximidiaToolStripMenuItem.Click += new System.EventHandler(this.espelhoOperaçãoMaximidiaToolStripMenuItem_Click);
             // 
             // Imobilizados
             // 
@@ -995,6 +1006,7 @@
             this.MinimumSize = new System.Drawing.Size(1143, 200);
             this.Name = "Imobilizados";
             this.Text = "Imobilizados";
+            this.Load += new System.EventHandler(this.Imobilizados_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
@@ -1128,5 +1140,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trocarComputadorDePaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem espelhoOperaçãoMaximidiaToolStripMenuItem;
+        private Installer1 installer13;
     }
 }
