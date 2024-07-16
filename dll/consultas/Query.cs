@@ -20,45 +20,45 @@ namespace computadoresMapeadosEconsertado.consultas
 
         public String InserirConsertoInicial = "insert into computador_conserto (data_entrada,Descricao_problema,fk_computador)values(@dataEntrada,@DescricaoProblema,@fk_computador);";
 
-        public string queryAtualizacaoSistemaOpPc = "UPDATE computador SET sistemasOperacionais= @sistema WHERE id_computador = @IdComputador";
+        public String queryAtualizacaoSistemaOpPc = "UPDATE computador SET sistemasOperacionais= @sistema WHERE id_computador = @IdComputador";
 
-        public string consertoFinalizado = "update computador_conserto set descricao_problema_resolvido=@descricao ,data_conserto_finalizado=@dataFinalizado where id_conserto = @idConserto;";
+        public String consertoFinalizado = "update computador_conserto set descricao_problema_resolvido=@descricao ,data_conserto_finalizado=@dataFinalizado where id_conserto = @idConserto;";
 
-        public string UpdateNosPrograma = "update computador set programa=@programa where id_computador=@id_computador;";
+        public String UpdateNosPrograma = "update computador set programa=@programa where id_computador=@id_computador;";
 
-        public string InserirTabelaTemp = "insert into temp_conserto (fk_computador,fk_pa)values (@fk_computador,@fk_pa);";
+        public String InserirTabelaTemp = "insert into temp_conserto (fk_computador,fk_pa)values (@fk_computador,@fk_pa);";
 
-        public string mudarParaTi = "update computador set fk_computador_pa = 340 where id_computador =  @id_computador;";
+        public String mudarParaTi = "update computador set fk_computador_pa = 340 where id_computador =  @id_computador;";
 
-        public string selectTabelaTemp = "select * from temp_conserto where fk_computador = @id_computador;";
+        public String selectTabelaTemp = "select * from temp_conserto where fk_computador = @id_computador;";
 
-        public string retornarPaDeOrigem = "update computador set fk_computador_pa = @fk_pa where id_computador=@id_computador;";
+        public String retornarPaDeOrigem = "update computador set fk_computador_pa = @fk_pa where id_computador=@id_computador;";
 
-        public string Condenar = "update computador set Conservacao = Condenada where id_computador=@id_computador;";
+        public String Condenar = "update computador set Conservacao = Condenada where id_computador=@id_computador;";
 
-        public string DeletePaTemp = "delete from temp_conserto where id_tempConserto=@id_tempConserto;";
+        public String DeletePaTemp = "delete from temp_conserto where id_tempConserto=@id_tempConserto;";
 
-        public string atualizaModeloDoPc = "update computador set marca=@marca where id_computador = @id_computador;";
+        public String atualizaModeloDoPc = "update computador set marca=@marca where id_computador = @id_computador;";
 
         public String acharPcsPeloSistema = "SELECT * FROM computador INNER JOIN pa ON pa.id_pa = computador.fk_computador_Pa INNER JOIN grupos_pa ON grupos_pa.id_grupo = pa.fk_grupo_id inner join computador_conserto on computador.id_computador=computador_conserto.fk_computador where sistemasOperacionais=@sistemasOperacionais;";
 
-        public string TagFiltroCompMapeamento = "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and tag_servico = @Resfiltro;";
+        public String TagFiltroCompMapeamento = "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and tag_servico = @Resfiltro;";
 
-        public string gruposFiltroCompMapeamento= "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and grupos = @Resfiltro;";
+        public String gruposFiltroCompMapeamento= "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and grupos = @Resfiltro;";
 
-        public string paFiltroCompMapeamento= "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and pa = @Resfiltro;";
+        public String paFiltroCompMapeamento= "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and pa = @Resfiltro;";
 
-        public string TalkfiltroCompMapeamento= "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and Talk_id = @Resfiltro;";
+        public String TalkfiltroCompMapeamento= "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and Talk_id = @Resfiltro;";
 
-        public string PatrifiltroCompMapeamento= "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and patrimonio = @Resfiltro;";
+        public String PatrifiltroCompMapeamento= "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and patrimonio = @Resfiltro;";
 
-        public string TodfiltroCompMapeamento = "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa";
+        public String TodfiltroCompMapeamento = "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa";
 
-        public string TodClub = "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa = 'clube maxivida' or grupos like '%clube%';";
+        public String TodClub = "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa = 'clube maxivida' or grupos like '%clube%';";
 
-        public string imobilizados = "";
+        public String imobilizados = "";
 
-        public string MapeamentoDePcs = "select * from computador right join pa on computador.fk_computador_Pa=pa.id_pa  inner join grupos_pa on pa.fk_grupo_id=grupos_pa.id_grupo   where fk_grupo_id=1 order by pa.pa asc;";
+        public String MapeamentoDePcs = "select * from computador right join pa on computador.fk_computador_Pa=pa.id_pa  inner join grupos_pa on pa.fk_grupo_id=grupos_pa.id_grupo   where fk_grupo_id=1 order by pa.pa asc;";
 
     }
 

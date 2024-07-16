@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="BrancoVermelho656" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagem\BrancoVermelho656.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="csv_imagem-removebg-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagem\csv_imagem-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="m - Cópia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagem\m - Cópia.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,18 +130,11 @@
   <data name="Capturar-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagem\Capturar-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="degrade verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagem\degrade verde.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+
+  <data name="Untitled@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Untitled@2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="csv_imagem-removebg-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagem\csv_imagem-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="vermelho e branco computador conserto - Cópia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagem\vermelho e branco computador conserto - Cópia.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="vermelhoconcerto - Cópia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagem\vermelhoconcerto - Cópia.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+
   <data name="nova" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagem\nova.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,13 +150,8 @@
   <data name="degrade verde1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagem\degrade verde.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BrancoVermelho" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagem\BrancoVermelho.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BrancoVermelho1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagem\BrancoVermelho1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="m -Busca computador" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagem\m -Busca computador.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+
 </root>

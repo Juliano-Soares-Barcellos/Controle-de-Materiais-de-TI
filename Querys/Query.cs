@@ -44,7 +44,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Querys
 
         public String EncontarNumero="SELECT * FROM Produto AS p left JOIN Conserto ON p.id = Conserto.Produto_id WHERE Numero = @numero;";
         
-        //aqui!!!
         public String buscaMapPc=  "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id; ";
 
         public String encontrePc = "SELECT * FROM computador INNER JOIN pa ON pa.id_pa = computador.fk_computador_Pa INNER JOIN grupos_pa ON grupos_pa.id_grupo = pa.fk_grupo_id where computador.patrimonio=@patrimonio;";

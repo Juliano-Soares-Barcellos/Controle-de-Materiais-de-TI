@@ -61,6 +61,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -107,7 +108,6 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trocarComputadorDePaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.espelhoOperaçãoMaximidiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.installer11 = new ProjetoDeControleDeMateriaisMandadoParaConserto.Installer1();
             this.installer12 = new ProjetoDeControleDeMateriaisMandadoParaConserto.Installer1();
             this.installer13 = new ProjetoDeControleDeMateriaisMandadoParaConserto.Installer1();
             this.tabControl1.SuspendLayout();
@@ -388,10 +388,10 @@
             // 
             this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox2.Location = new System.Drawing.Point(491, 9);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(105, 20);
+            this.checkBox2.Size = new System.Drawing.Size(117, 20);
             this.checkBox2.TabIndex = 0;
             this.checkBox2.Text = "Gravar Tabela";
             this.checkBox2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -465,6 +465,7 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.checkBox3);
             this.panel5.Controls.Add(this.checkBox1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
@@ -472,13 +473,25 @@
             this.panel5.Size = new System.Drawing.Size(1107, 26);
             this.panel5.TabIndex = 3;
             // 
+            // checkBox3
+            // 
+            this.checkBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.checkBox3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox3.Location = new System.Drawing.Point(237, 3);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(117, 18);
+            this.checkBox3.TabIndex = 25;
+            this.checkBox3.Text = "Limpar Filtros";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
             // checkBox1
             // 
             this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.checkBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(472, 3);
+            this.checkBox1.Location = new System.Drawing.Point(729, 3);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(148, 18);
+            this.checkBox1.Size = new System.Drawing.Size(128, 18);
             this.checkBox1.TabIndex = 24;
             this.checkBox1.Text = "Gravar a tabela ";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -770,9 +783,9 @@
             this.LabelTotalComputador.AutoSize = true;
             this.LabelTotalComputador.Location = new System.Drawing.Point(243, 13);
             this.LabelTotalComputador.Name = "LabelTotalComputador";
-            this.LabelTotalComputador.Size = new System.Drawing.Size(61, 22);
+            this.LabelTotalComputador.Size = new System.Drawing.Size(50, 22);
             this.LabelTotalComputador.TabIndex = 6;
-            this.LabelTotalComputador.Text = "label9";
+            this.LabelTotalComputador.Text = "Total";
             // 
             // LabelString
             // 
@@ -836,7 +849,7 @@
             this.panel3.Controls.Add(this.dataGridView);
             this.panel3.Location = new System.Drawing.Point(1, 161);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1117, 448);
+            this.panel3.Size = new System.Drawing.Size(1117, 444);
             this.panel3.TabIndex = 1;
             // 
             // dataGridView
@@ -855,13 +868,12 @@
             this.dataGridView.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView.MinimumSize = new System.Drawing.Size(1143, 620);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.ShowEditingIcon = false;
-            this.dataGridView.Size = new System.Drawing.Size(1143, 620);
+            this.dataGridView.Size = new System.Drawing.Size(1117, 444);
             this.dataGridView.TabIndex = 0;
             // 
             // panel14
@@ -1066,7 +1078,6 @@
         }
 
         #endregion
-        private Installer1 installer11;
         private Installer1 installer12;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TabControl tabControl1;
@@ -1142,5 +1153,6 @@
         private System.Windows.Forms.ToolStripMenuItem trocarComputadorDePaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem espelhoOperaçãoMaximidiaToolStripMenuItem;
         private Installer1 installer13;
+        private System.Windows.Forms.CheckBox checkBox3;
     }
 }

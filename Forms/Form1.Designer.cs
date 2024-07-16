@@ -37,6 +37,7 @@
             this.listaDeTodosComputadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.patrimonioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imobilizadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarComputadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fonesEHeadsetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procurarFoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procurarPorCodigoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,7 +82,8 @@
             this.consertadoToolStripMenuItem,
             this.listaDeTodosComputadoresToolStripMenuItem,
             this.patrimonioToolStripMenuItem,
-            this.imobilizadosToolStripMenuItem});
+            this.imobilizadosToolStripMenuItem,
+            this.cadastrarComputadorToolStripMenuItem});
             this.computadorToolStripMenuItem.Name = "computadorToolStripMenuItem";
             this.computadorToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.computadorToolStripMenuItem.Text = "Computador";
@@ -120,6 +122,13 @@
             this.imobilizadosToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.imobilizadosToolStripMenuItem.Text = "Imobilizados";
             this.imobilizadosToolStripMenuItem.Click += new System.EventHandler(this.imobilizadosToolStripMenuItem_Click);
+            // 
+            // cadastrarComputadorToolStripMenuItem
+            // 
+            this.cadastrarComputadorToolStripMenuItem.Name = "cadastrarComputadorToolStripMenuItem";
+            this.cadastrarComputadorToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.cadastrarComputadorToolStripMenuItem.Text = "Cadastrar Computador";
+            this.cadastrarComputadorToolStripMenuItem.Click += new System.EventHandler(this.cadastrarComputadorToolStripMenuItem_Click);
             // 
             // fonesEHeadsetToolStripMenuItem
             // 
@@ -225,5 +234,6 @@
         private System.Windows.Forms.ToolStripMenuItem inserirFoneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem patrimonioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem imobilizadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarComputadorToolStripMenuItem;
     }
 }

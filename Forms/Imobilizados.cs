@@ -344,6 +344,15 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         {
 
         }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked)
+            {
+                checkBox3.Checked = false;
+                 carregaTabelaPC();
+            }
+        }
     }
 }
 

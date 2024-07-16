@@ -19,7 +19,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             this._computadorDao = new ComputadorDao();
             InitializeComponent();
             Tnome.KeyPress += this.textBox1_KeyPress;
-            comboboxpreenchida();
+            comboboxpreenchida(comboBox1);
         }
 
 
@@ -78,7 +78,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     MessageBox.Show("Esse computador nao existe !");
                 }
 
-                    comboboxpreenchida();
+                    comboboxpreenchida(comboBox1);
                 }
                 else
                 {
@@ -123,12 +123,12 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
         }
 
-        public void comboboxpreenchida()
+        public  void comboboxpreenchida(ComboBox combo)
         {
-            comboBox1.Items.Clear();
+            combo.Items.Clear();
             foreach (String item in _computadorDao.carregarCombobox())
             {
-                comboBox1.Items.Add(item);
+                combo.Items.Add(item);
             }
         }
 

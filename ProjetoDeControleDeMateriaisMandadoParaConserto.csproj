@@ -77,9 +77,6 @@
     <Compile Include="Dao\SelectTabela.cs" />
     <Compile Include="Dao\TabelaDao.cs" />
     <Compile Include="Dao\InsersaoDbPlanilha.cs" />
-    <Compile Include="estilizacao\CustomMessageBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\AindaNaoConserto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +88,12 @@
     </Compile>
     <Compile Include="Forms\ArrastarArquivoCsv.Designer.cs">
       <DependentUpon>ArrastarArquivoCsv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadastroComputador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadastroComputador.Designer.cs">
+      <DependentUpon>CadastroComputador.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ComputadorConsertado.cs">
       <SubType>Form</SubType>
@@ -182,6 +185,9 @@
     <EmbeddedResource Include="Forms\ArrastarArquivoCsv.resx">
       <DependentUpon>ArrastarArquivoCsv.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadastroComputador.resx">
+      <DependentUpon>CadastroComputador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ComputadorConsertado.resx">
       <DependentUpon>ComputadorConsertado.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,15 +269,6 @@
     <None Include="Imagem\degrade verde].PNG" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Imagem\vermelhoBranco computadorConserto.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Imagem\vermelho e branco computador conserto - Cópia.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Imagem\vermelhoconcerto - Cópia.PNG" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Imagem\BrancoVermelho.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -286,6 +283,14 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Imagem\CadastroComputador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="estilizacao\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

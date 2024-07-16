@@ -63,36 +63,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BrancoVermelho {
-            get {
-                object obj = ResourceManager.GetObject("BrancoVermelho", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BrancoVermelho1 {
-            get {
-                object obj = ResourceManager.GetObject("BrancoVermelho1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BrancoVermelho656 {
-            get {
-                object obj = ResourceManager.GetObject("BrancoVermelho656", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Capturar_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Capturar-removebg-preview", resourceCulture);
@@ -116,16 +86,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Properties {
         internal static System.Drawing.Bitmap csv_imagem_removebg_preview__1_1 {
             get {
                 object obj = ResourceManager.GetObject("csv_imagem-removebg-preview (1)1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap degrade_verde {
-            get {
-                object obj = ResourceManager.GetObject("degrade verde", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,19 +163,9 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap vermelho_e_branco_computador_conserto___Cópia {
+        internal static System.Drawing.Bitmap Untitled_2x {
             get {
-                object obj = ResourceManager.GetObject("vermelho e branco computador conserto - Cópia", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap vermelhoconcerto___Cópia {
-            get {
-                object obj = ResourceManager.GetObject("vermelhoconcerto - Cópia", resourceCulture);
+                object obj = ResourceManager.GetObject("Untitled@2x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

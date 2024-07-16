@@ -13,12 +13,15 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
     public partial class EspelhoPa : Form
     {
         private DataTable tabela = new DataTable();
-     
+
         public EspelhoPa()
         {
             InitializeComponent();
             Preenchimento();
             dataGridView1.CellFormatting+= MudaCorComputador;
+            NumeroTotaldePaCheiaOuVazias();
+            
+
         }
 
         private void Preenchimento()
@@ -29,16 +32,42 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
         private void MudaCorComputador(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            
+            if (dataGridView1.Rows[e.RowIndex].Cells[0].Value == null ||
+                dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() == "")
 
-                if (e.ColumnIndex == 0 && e.Value != null && e.Value == "")
+            {
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.GreenYellow;
+             }
+
+            else
+             {
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+             }
+        }
+
+        public void NumeroTotaldePaCheiaOuVazias()
+        {
+            int totalVazia = 0;
+            int totalPaOcupada = 0;
+
+            foreach (DataGridViewRow rown in dataGridView1.Rows)
+            {
+                if (rown.Cells[0].Value == null || rown.Cells[0].Value.ToString() == "")
                 {
-                    dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.GreenYellow;
-             
-              
+                    totalVazia += 1;
                 }
-          
+                else
+                {
+                    totalPaOcupada += 1;
+                }
             }
 
+            lbVazio.Text = totalVazia.ToString();
+            lbPaOcupada.Text = totalPaOcupada.ToString();
         }
+
+
     }
+}
+
+

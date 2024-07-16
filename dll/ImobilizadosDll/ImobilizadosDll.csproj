@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Consulta\Query.cs" />
     <Compile Include="Dao\Select.cs" />
     <Compile Include="Dao\UpdateDao.cs" />

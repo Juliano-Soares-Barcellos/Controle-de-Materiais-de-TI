@@ -89,5 +89,11 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             Imobilizados im = new Imobilizados();
             im.Show();
         }
+
+        private void cadastrarComputadorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroComputador cadastro = new CadastroComputador();
+            cadastro.Show();
+        }
     }
 }

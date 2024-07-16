@@ -45,7 +45,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     message = "O patrimonio " + AntesTroca[0].ToString() + " vai ir para a Pa " + AntesTroca[1].ToString() + ",\n" +
                  "A Pa " + AntesTroca[1].ToString() +" Esta Sem nenhuma maquina"+ "\n"
                  + "Deseja prosseguir? ";
-                    DialogResult result = CustomMessageBox.Show(message, caption);
+                    DialogResult result = MessageBox.Show(message, caption);
                     if (result == DialogResult.Yes)
                     {
 
@@ -60,7 +60,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                         "E o patrimonio "+ AntesTroca[3].ToString()+" vai para a Pa "+ AntesTroca[1].ToString()+"\n"
                         +"Deseja prosseguir? ";
                        //  DialogResult result = MessageBox.Show(message, caption, buttons);
-                          DialogResult result = CustomMessageBox.Show(message, caption);
+                          DialogResult result = MessageBox.Show(message, caption);
                     if (result == DialogResult.Yes)
                     {
                         ImobilizadosDll.Dao.UpdateDao.TrocaPa(AntesTroca[3].ToString(),AntesTroca[2].ToString(),empresa);
