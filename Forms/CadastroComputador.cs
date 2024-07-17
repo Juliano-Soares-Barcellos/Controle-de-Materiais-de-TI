@@ -13,13 +13,13 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 {
     public partial class CadastroComputador : Form
     {
-        public string textoServer = "Digite a tag de serviço";
-        public string textoPatrimonio = "Digite o Patrimonio";
-        public string textoValor = "Preencha o valor da compra";
-        public string textoModelo = "Selecione ou digite o modelo";
-        public string textoProcessador = "Digite o processador";
-        public string textoNota = "Digite sua nota fiscal";
-        public string textoSistemaOperacional = "Selecione seu sistema operacional";
+        private const string textoServer = "Digite a tag de serviço";
+        private const string textoPatrimonio = "Digite o Patrimonio";
+        private const string textoValor = "Digite o valor da compra";
+        private const string textoModelo = "Selecione ou digite o modelo";
+        private const string textoProcessador = "Digite o processador";
+        private const string textoNota = "Digite sua nota fiscal";
+        private const string textoSistemaOperacional = "Selecione seu sistema operacional";
         private string retornoTextEmBranco = "";
 
 
@@ -169,6 +169,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
             bool permiteLetras = mask == "AAAAAAAA" || mask == "AAAAA";
 
+
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !permiteLetras)
             {
                 e.Handled = true;
@@ -283,11 +284,51 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             return true;
         }
 
+        public Boolean validaTamanhoCaracter(string texto, MaskedTextBox textBox = null, ComboBox combo = null, string tag = null)
+        {
+            if (!string.IsNullOrEmpty(textBox.Text))
+            {
+                retornoTextEmBranco = $"{"Quantidade de caracteres invalida no"}{texto.Substring(11)}";
+                if (textBox.TextLength < 3 && string.IsNullOrEmpty(tag))
+                {
+                    return true;
+                }
+                else if (textBox.TextLength < 7 & !string.IsNullOrEmpty(tag))
+                {
+                    
+                    return true;
+                }
+            }
+            if (combo.Text.Length > 8)
+            {
+                retornoTextEmBranco = $"{"Quantidae de caracteres invalida no"}{texto.Substring(11)}";
+                return true;
+            }
+            return false;
+        }
+
+        public Boolean validaCaratereGenerico()
+        {
+           if(validaTamanhoCaracter(textoPatrimonio, textPatrimonio) != true
+                  || validaTamanhoCaracter(textoServer, textServerTag) != true
+                  || validaTamanhoCaracter(textoValor, maskedTextBox4) != true
+                  || validaTamanhoCaracter(textoProcessador, textProcessador) != true
+                  || validaTamanhoCaracter(textoSistemaOperacional, null, comboSistema) != true
+                  || validaTamanhoCaracter(textoModelo, null, comboModelo) != true)
+            {
+                MessageBox.Show(retornoTextEmBranco);
+                return false;
+            }
+            return true;
+        }
+
+
         private void label1_Click(object sender, EventArgs e)
         {
-           if(validaSeNaoTemTextEmBranco())
+           if(validaSeNaoTemTextEmBranco() & validaCaratereGenerico())
             {
-                MessageBox.Show("ok");
+                
+                
 
             }
 
