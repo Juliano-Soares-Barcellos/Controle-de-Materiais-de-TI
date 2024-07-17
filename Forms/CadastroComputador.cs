@@ -284,7 +284,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             return true;
         }
 
-        public Boolean validaTamanhoCaracter(string texto, MaskedTextBox textBox = null, ComboBox combo = null, string tag = null)
+        public Boolean validaTamanhoCaracter(string texto, MaskedTextBox textBox= null, ComboBox combo = null, string tag = null)
         {
             if (!string.IsNullOrEmpty(textBox.Text))
             {
@@ -299,10 +299,13 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                     return true;
                 }
             }
-            if (combo.Text.Length > 8)
+            if (combo.Text!=null)
             {
-                retornoTextEmBranco = $"{"Quantidae de caracteres invalida no"}{texto.Substring(11)}";
-                return true;
+                if (combo.Text.Length > 8)
+                {
+                    retornoTextEmBranco = $"{"Quantidae de caracteres invalida no"}{texto.Substring(11)}";
+                    return true;
+                }
             }
             return false;
         }
