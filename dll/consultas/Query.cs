@@ -60,6 +60,7 @@ namespace computadoresMapeadosEconsertado.consultas
 
         public String MapeamentoDePcs = "select * from computador right join pa on computador.fk_computador_Pa=pa.id_pa  inner join grupos_pa on pa.fk_grupo_id=grupos_pa.id_grupo   where fk_grupo_id=1 order by pa.pa asc;";
 
+        public string inserirComputador = "INSERT INTO computador(patrimonio,tag_servico,sistemasOperacionais,marca,processador,Valor,empresa,conservacao,DataCompra,fk_computador_Pa) VALUES (@patrimonio,@tag_servico,@sistemasOperacionais,@marca,@processador,@Valor,@empresa,@conservacao,@DataCompra,351);";
     }
 
 }

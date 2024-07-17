@@ -142,7 +142,7 @@
             this.maskedTextBox4.Name = "maskedTextBox4";
             this.maskedTextBox4.Size = new System.Drawing.Size(265, 15);
             this.maskedTextBox4.TabIndex = 1;
-            this.maskedTextBox4.Text = "Preencha o valor da compra";
+            this.maskedTextBox4.Text = "Digite o valor da compra";
             this.maskedTextBox4.Click += new System.EventHandler(this.maskedTextBox4_Click);
             // 
             // panel6
@@ -245,7 +245,7 @@
             this.comboSistema.Name = "comboSistema";
             this.comboSistema.Size = new System.Drawing.Size(265, 24);
             this.comboSistema.TabIndex = 7;
-            this.comboSistema.Text = "Selecione seu sistema operacional";
+            this.comboSistema.Text = "Selecione ou digite o sistema operacional";
             this.comboSistema.Click += new System.EventHandler(this.comboSistema_Click);
             // 
             // panel3

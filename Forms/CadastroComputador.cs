@@ -1,4 +1,5 @@
-﻿using ProjetoDeControleDeMateriaisMandadoParaConserto.Dao;
+﻿using MySql.Data.MySqlClient;
+using ProjetoDeControleDeMateriaisMandadoParaConserto.Dao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,14 +14,14 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 {
     public partial class CadastroComputador : Form
     {
-        public string textoServer = "Digite a tag de serviço";
-        public string textoPatrimonio = "Digite o Patrimonio";
-        public string textoValor = "Preencha o valor da compra";
-        public string textoModelo = "Selecione ou digite o modelo";
-        public string textoProcessador = "Digite o processador";
-        public string textoNota = "Digite sua nota fiscal";
-        public string textoSistemaOperacional = "Selecione seu sistema operacional";
-        private string retornoTextEmBranco = "";
+        private const string textoServer = "Digite a tag de serviço";
+        private const string textoPatrimonio = "Digite o Patrimonio";
+        private const string textoValor = "Digite o valor da compra";
+        private const string textoModelo = "Selecione ou digite o modelo";
+        private const string textoProcessador = "Digite o processador";
+        private const string textoNota = "Digite sua nota fiscal";
+        private const string textoSistemaOperacional = "Selecione ou digite o sistema operacional";
+        public string retornoTextEmBranco = "";
 
 
         public CadastroComputador()
@@ -283,11 +284,79 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             return true;
         }
 
+        public Boolean validaQuantidadeDeCaracteres(string texto,MaskedTextBox textBox=null ,ComboBox combo=null,string tag = null)
+        {
+            if (textBox != null && tag == null)
+            {
+                retornoTextEmBranco =$"{"Quantidade de caracteres invalidos no"}{texto.Substring(8)}";
+                return textBox.TextLength > 2 ? true : false;
+            }
+            else if(textBox != null && !string.IsNullOrEmpty(tag))
+            {
+                retornoTextEmBranco = $"{"Quantidade de caracteres invalidos na"}{texto.Substring(8)}";
+                return textBox.TextLength > 4 ? true : false;
+            }
+
+            if (combo != null)
+            {
+                retornoTextEmBranco = $"{"Quantidade de caracteres invalidos no"}{texto.Substring(21)}";
+                return combo.Text.Length > 6 ? true : false;
+            }
+            return false;
+        }
+
+        public Boolean validaQuantidadeCertaCaracteres()
+        {
+
+            if (validaQuantidadeDeCaracteres(textoPatrimonio, textPatrimonio) != true
+               || validaQuantidadeDeCaracteres(textoServer, textServerTag,null,"tag") != true
+               || validaQuantidadeDeCaracteres(textoValor, maskedTextBox4) != true
+               || validaQuantidadeDeCaracteres(textoProcessador, textProcessador) != true
+               || validaQuantidadeDeCaracteres(textoSistemaOperacional, null, comboSistema) != true
+               || validaQuantidadeDeCaracteres(textoModelo, null, comboModelo) != true)
+            {
+                MessageBox.Show(retornoTextEmBranco);
+                return false;
+            }
+            return true;
+        }
+        public void setarText()
+        {
+            textPatrimonio.Text = "";
+            textServerTag.Text = "";
+            comboSistema.Text = "";
+            comboModelo.Text = "";
+            textProcessador.Text = "";
+            maskedTextBox4.Text = "";
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
-           if(validaSeNaoTemTextEmBranco())
+            if (validaSeNaoTemTextEmBranco() && validaQuantidadeCertaCaracteres())
             {
-                MessageBox.Show("ok");
+                DateTime data = DateTime.Now;
+                MySqlParameter[] parametro = new MySqlParameter[] 
+                {
+                    new MySqlParameter("@patrimonio",textPatrimonio.Text),
+                    new MySqlParameter("@tag_servico", textServerTag.Text),
+                    new MySqlParameter("@sistemasOperacionais", comboSistema.Text),
+                    new MySqlParameter("@marca",comboModelo.Text),
+                    new MySqlParameter("@processador",textProcessador.Text),
+                    new MySqlParameter("@Valor",maskedTextBox4.Text),
+                    new MySqlParameter("@empresa","Maximidia"),
+                    new MySqlParameter("@conservacao","BOM"),
+                    new MySqlParameter("@DataCompra", data)
+                    
+                };
+                int rowns =computadoresMapeadosEconsertado.Dao.InsersaoDao.inserirComputadorNovo(parametro);
+
+                MessageBox.Show(rowns > 0 ? "Computador inserido com sucesso" : "Computador não inserido");
+                setarText();
+                verificaNaoTaEscritoVoltaProLocal();
+            }
+            else
+            {
+                MessageBox.Show("Computador não inserido");
 
             }
 

@@ -2,6 +2,7 @@
 using computadoresMapeadosEconsertado.Data;
 using computadoresMapeadosEconsertado.model;
 using Dapper;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,7 +49,31 @@ namespace computadoresMapeadosEconsertado.Dao
             }
         }
 
+        public static int inserirComputadorNovo(MySqlParameter[] parametros)
+        {
+            int rowns = 0;
+            var conexao = new banco().conexao();
+            try
+            {
+            Query query = new Query();
+                using (MySqlCommand comando = new MySqlCommand(query.inserirComputador, conexao))
+                {
+                    conexao.Open();
+                    comando.Parameters.AddRange(parametros);
+                    rowns=comando.ExecuteNonQuery();
+                    return rowns;
+                }
+            }catch(Exception e)
+            {
+                Console.Write(e.Message);
+            }
 
+            finally
+            {
+               conexao.Close();
+            }
+            return rowns;
+        }
 
     }
 }
