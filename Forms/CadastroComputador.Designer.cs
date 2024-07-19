@@ -245,7 +245,7 @@
             this.comboSistema.Name = "comboSistema";
             this.comboSistema.Size = new System.Drawing.Size(265, 24);
             this.comboSistema.TabIndex = 7;
-            this.comboSistema.Text = "Selecione seu sistema operacional";
+            this.comboSistema.Text = "Selecione ou digite o sistema operacional";
             this.comboSistema.Click += new System.EventHandler(this.comboSistema_Click);
             // 
             // panel3

@@ -59,6 +59,8 @@ namespace computadoresMapeadosEconsertado.consultas
         public String imobilizados = "";
 
         public String MapeamentoDePcs = "select * from computador right join pa on computador.fk_computador_Pa=pa.id_pa  inner join grupos_pa on pa.fk_grupo_id=grupos_pa.id_grupo   where fk_grupo_id=1 order by pa.pa asc;";
+        
+        public String inseriComputadorNovo = "insert into computador(patrimonio,tag_servico,sistemasOperacionais,marca,processador,valor,empresa,fk_contabil,conservacao,DataCompra,fk_computador_pa)values(@patrimonio,@tag_servico,@sistemasOperacionais,@modelo,@processador,@valor,'Maximidia',1,'BOM',@DataCompra,351);";
 
     }
 

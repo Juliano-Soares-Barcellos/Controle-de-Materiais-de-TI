@@ -1,4 +1,5 @@
-﻿using ProjetoDeControleDeMateriaisMandadoParaConserto.Dao;
+﻿using MySql.Data.MySqlClient;
+using ProjetoDeControleDeMateriaisMandadoParaConserto.Dao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,10 +70,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
         private void textPatrimonio_Click(object sender, EventArgs e)
         {
-
             verificaText(textPatrimonio, textoPatrimonio);
-
-
         }
 
         private void maskedTextBox4_Click(object sender, EventArgs e)
@@ -86,14 +84,12 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         }
         public void verificaComboBox(ComboBox combo, string texto)
         {
-           
             if (combo.Text.Equals(texto))
                 combo.Text = "";
         }
 
         public void verificaText(MaskedTextBox textBox, string texto)
         {
-           
             if (textBox.Text.Equals(texto))
             {
                 textBox.Text = "";
@@ -105,9 +101,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         {
             textBox.Mask = null;
             if (textBox.Text.Equals("") || textBox.Text == null )
-               
                 textBox.Text = texto;
-               
         }
 
         public void verificaComboLabel(ComboBox combo, string texto)
@@ -155,7 +149,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 case "processador":
                     return "AAAAA";
                 case "valor":
-                    return "000000000";
+                    return "0000.00";
                 default:
                     return "";
             }
@@ -166,10 +160,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         private void maskedTextBox1_KeyPress(object sender, KeyPressEventArgs e, MaskedTextBox textBox, string mask)
         {
             textBox.Mask = mask;
-
             bool permiteLetras = mask == "AAAAAAAA" || mask == "AAAAA";
-
-
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !permiteLetras)
             {
                 e.Handled = true;
@@ -188,7 +179,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
         private void ConfigurarTextBoxComTextoInicial(string textoInicial, MaskedTextBox textBox = null, ComboBox combo = null)
             {
-           
                 if  (textBox !=null)
                 {
                   textBox.Enter += (sender, e) => TextBox_Enter(sender, e, textoInicial);
@@ -241,12 +231,10 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 if (textBox.Text.Equals(texto) || textBox.Text.Equals(""))
                 {
                     retornoTextEmBranco = textBox.Text;
-
                     if (textBox.Text.Equals(""))
                     {
                         retornoTextEmBranco = "Atenção todos os campos são necessarios";
                     }
-                    
                     return false;
                 }
             }
@@ -255,12 +243,10 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 if (combo.Text.Equals("")  || combo.Text.Equals(texto))
                 {
                     retornoTextEmBranco = combo.Text;
-
                     if (combo.Text.Equals(""))
                     {
                         retornoTextEmBranco = "Atenção todos os campos são necessarios";
                     }
-
                     return false;
                 }
 
@@ -286,34 +272,37 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
         public Boolean validaTamanhoCaracter(string texto, MaskedTextBox textBox= null, ComboBox combo = null, string tag = null)
         {
-            if (!string.IsNullOrEmpty(textBox.Text))
+            if (textBox!=null)
             {
-                retornoTextEmBranco = $"{"Quantidade de caracteres invalida no"}{texto.Substring(11)}";
-                if (textBox.TextLength < 3 && string.IsNullOrEmpty(tag))
+                retornoTextEmBranco = $"{"Quantidade de caracteres invalida no "}{texto.Substring(8)}";
+
+                int tamanhoText = textBox.TextLength;
+
+                if (tamanhoText < 3 && string.IsNullOrEmpty(tag) )
                 {
-                    return true;
+                    return false;
                 }
-                else if (textBox.TextLength < 7 & !string.IsNullOrEmpty(tag))
+                else if (tamanhoText < 6  & !string.IsNullOrEmpty(tag))
                 {
-                    
-                    return true;
+                    return false;
                 }
             }
-            if (combo.Text!=null)
+            if (combo !=null)
             {
-                if (combo.Text.Length > 8)
+                retornoTextEmBranco = $"{"Quantidade de caracteres invalida no "}{texto.Substring(13)}";
+
+                if (combo.Text.Length < 6)
                 {
-                    retornoTextEmBranco = $"{"Quantidae de caracteres invalida no"}{texto.Substring(11)}";
-                    return true;
+                    return false;
                 }
             }
-            return false;
+            return true;
         }
 
         public Boolean validaCaratereGenerico()
         {
            if(validaTamanhoCaracter(textoPatrimonio, textPatrimonio) != true
-                  || validaTamanhoCaracter(textoServer, textServerTag) != true
+                  || validaTamanhoCaracter(textoServer, textServerTag,null,"tag") != true
                   || validaTamanhoCaracter(textoValor, maskedTextBox4) != true
                   || validaTamanhoCaracter(textoProcessador, textProcessador) != true
                   || validaTamanhoCaracter(textoSistemaOperacional, null, comboSistema) != true
@@ -324,20 +313,35 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             }
             return true;
         }
-
+      
 
         private void label1_Click(object sender, EventArgs e)
         {
            if(validaSeNaoTemTextEmBranco() & validaCaratereGenerico())
             {
-                
-                
+
+                MySqlParameter[] parametro = new MySqlParameter[]
+                {
+                    new MySqlParameter("@patrimonio",textPatrimonio.Text),
+                    new MySqlParameter("@tag_servico",textServerTag.Text),
+                    new MySqlParameter("@sistemasOperacionais",comboSistema.Text),
+                    new MySqlParameter("@modelo",comboModelo.Text),
+                    new MySqlParameter("@processador",textProcessador.Text),
+                    new MySqlParameter("@valor",maskedTextBox4.Text.Replace(',','.')),
+                    new MySqlParameter("@DataCompra", DateTime.Now)
+                };
+
+                int rowns = computadoresMapeadosEconsertado.Dao.InsersaoDao.inserirComputadorNovo(parametro);
+
+                MessageBox.Show(rowns==0? "Computador não inserido":"Computador inserido");
 
             }
 
+            MessageBox.Show("Computador não inserido");
+
         }
 
-      
+
     }
 }
 
