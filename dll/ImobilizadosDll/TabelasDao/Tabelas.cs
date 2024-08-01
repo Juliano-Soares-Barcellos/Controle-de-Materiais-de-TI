@@ -146,7 +146,7 @@ namespace ImobilizadosDll.TabelasDao
                 }
                 else
                 {
-                    //Arrumar,esta errado
+            
                     RetornoPcs = new List<object> { retornaDadosDoPcAtual.Patrimonio, pa, PA[0].Id_pa.ToString() };
                 }
                 return RetornoPcs;
@@ -155,6 +155,7 @@ namespace ImobilizadosDll.TabelasDao
             {
                 Console.WriteLine(e.Message);
             }
+            return null;
         }
 
         public static List<string> RetornaComboBoxPc(string empresa)
@@ -170,6 +171,7 @@ namespace ImobilizadosDll.TabelasDao
             {
                 PreenchaComboBox.Add(item.Fk_compComputador_Pa.Fk_gurupoModel.Grupos.ToLower());
             }
+            PreenchaComboBox.Add("todos");
             return PreenchaComboBox;
         }
 

@@ -18,7 +18,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         private DataTable tabela = new DataTable();
         private DataTable tabelaimob = new DataTable();
         MapeamentoPcsDao map = new MapeamentoPcsDao();
-        private List<String> Maximidia = new List<string> { "administrativo", "condenada", "coordenacao", "coordenacao", "operacao maximidia", "placar", "procurar", "supervisao", "todos", "Ti", "treinamento 2" };
+        private List<String> Maximidia = new List<string> { "administrativo", "condenada", "coordenacao", "coordenacao", "operacao maximidia", "placar", "procurar", "supervisao", "todos", "Ti", "treinamento 2","todos" };
         private List<String> ClubeMaxi = new List<string> { "administrativo", "condenada", "Diretoria", "operacao clube", "todos", "procurar", "supervisao clube","Ti" };
 
 
@@ -64,6 +64,8 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             dataGridView.DataSource = tabela;
             dataGridView.DefaultCellStyle.Font = new Font("Arial", 8);
             dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10);
+            quantidadeDeSistemas.DefaultCellStyle.Font = new Font("Arial", 8);
+            quantidadeDeSistemas.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10);
             setarLabel(tabela.Rows.Count, LabelString, LabelTotalComputador);
         }
 
@@ -92,6 +94,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
             this.dataGridView.GridColor = Color.BlueViolet;
         }
+
         private void MudaCorImob(object sender, DataGridViewRowPrePaintEventArgs e)
         {
 

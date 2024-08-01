@@ -264,7 +264,8 @@ namespace computadoresMapeadosEconsertado.Dao
             }
             else
             {
-                query = "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id ;";
+                 query = "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id ;";
+                //query = "select * from computador_teste inner join pa_teste on pa_teste.id_pa=computador_teste.fk_computador_Pa inner join grupos_pa_teste on grupos_pa_teste.id_grupo=pa_teste.fk_grupo_id ;";
                 patrimonios = computradorDAO.FiltroMapInitFiltroMapInit(query);
             }
             DataTable tabela = new DataTable();

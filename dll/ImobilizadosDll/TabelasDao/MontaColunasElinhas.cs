@@ -27,7 +27,7 @@ namespace ImobilizadosDll.TabelasDao
             data.Columns.Add("valor", typeof(string));
             data.Columns.Add("vida util", typeof(string));
             data.Columns.Add("depreciacao", typeof(string));
-            data.Columns.Add("grupos", typeof(string));
+            data.Columns.Add("local", typeof(string));
             data.Columns.Add("Classificacao", typeof(string));
             data.Columns.Add("empresa", typeof(string));
 
@@ -51,7 +51,7 @@ namespace ImobilizadosDll.TabelasDao
                 row["valor"] = valorFormatadoEmDinheiro(computador.Valor);
                 row["vida util"] = "5";
                 row["depreciacao"] = 20;
-                row["grupos"] = computador.Fk_compComputador_Pa.Fk_gurupoModel.Grupos;
+                row["local"] = computador.Fk_compComputador_Pa.Fk_gurupoModel.Grupos;
                 row["Classificacao"] = "1011 - EQUIPAMENTOS DE INFORMÁTICA";
                 row["empresa"] = computador.Empresa;
 
@@ -79,12 +79,12 @@ namespace ImobilizadosDll.TabelasDao
 
                 if (imob.grupo == null)
                 {
-                    row["grupos"] = "";
+                    row["local"] = "";
 
                 }
                 else
                 {
-                    row["grupos"] = imob.grupo.Grupos;
+                    row["local"] = imob.grupo.Grupos;
 
                 }
                 row["Classificacao"] = imob.contabil.Classificacao;
@@ -128,6 +128,7 @@ namespace ImobilizadosDll.TabelasDao
         }
         public ComputadorModel PegarDadosDoPcAntesDaTroca(string patrimonio, string empresa)
         {
+           
             try
             {
                 Query query = new Query();
@@ -141,6 +142,7 @@ namespace ImobilizadosDll.TabelasDao
             {
                 Console.WriteLine(e.StackTrace);
             }
+            return null;
         }
     }
 }

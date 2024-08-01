@@ -32,8 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -230,9 +228,9 @@
             // btnImob
             // 
             this.btnImob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnImob.Location = new System.Drawing.Point(676, 9);
+            this.btnImob.Location = new System.Drawing.Point(676, 6);
             this.btnImob.Name = "btnImob";
-            this.btnImob.Size = new System.Drawing.Size(75, 20);
+            this.btnImob.Size = new System.Drawing.Size(75, 23);
             this.btnImob.TabIndex = 5;
             this.btnImob.Text = "Buscar";
             this.btnImob.UseVisualStyleBackColor = true;
@@ -809,35 +807,34 @@
             // 
             // quantidadeDeSistemas
             // 
+            this.quantidadeDeSistemas.AllowUserToAddRows = false;
             this.quantidadeDeSistemas.AllowUserToDeleteRows = false;
             this.quantidadeDeSistemas.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
             this.quantidadeDeSistemas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.quantidadeDeSistemas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.quantidadeDeSistemas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.quantidadeDeSistemas.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.quantidadeDeSistemas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.quantidadeDeSistemas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.quantidadeDeSistemas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.quantidadeDeSistemas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.quantidadeDeSistemas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.quantidadeDeSistemas.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.quantidadeDeSistemas.DefaultCellStyle = dataGridViewCellStyle3;
             this.quantidadeDeSistemas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.quantidadeDeSistemas.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.quantidadeDeSistemas.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.quantidadeDeSistemas.Location = new System.Drawing.Point(0, 0);
             this.quantidadeDeSistemas.Name = "quantidadeDeSistemas";
             this.quantidadeDeSistemas.ReadOnly = true;
             this.quantidadeDeSistemas.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantidadeDeSistemas.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.quantidadeDeSistemas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.quantidadeDeSistemas.ShowEditingIcon = false;
             this.quantidadeDeSistemas.Size = new System.Drawing.Size(342, 107);
             this.quantidadeDeSistemas.TabIndex = 0;
             // 
@@ -856,8 +853,9 @@
             // 
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Black;
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Black;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;

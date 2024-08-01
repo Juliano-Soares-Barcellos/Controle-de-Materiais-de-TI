@@ -243,7 +243,7 @@ namespace computadoresMapeadosEconsertado.Dao
             return null;
         }
 
-        public List<computadorModel> FiltroMapInitFiltroMapInit( string query)
+        public List<computadorModel> FiltroMapInitFiltroMapInit(string query)
         {
             try
             {
@@ -269,7 +269,33 @@ namespace computadoresMapeadosEconsertado.Dao
             }
             return null;
         }
-        //
+
+        //public List<computadorModel> FiltroMapInitFiltroMapInit(string query)
+        //{
+        //    try
+        //    {
+        //        using (var conexao = new banco().conexao())
+        //        {
+        //            conexao.Open();
+        //            var resultados = conexao.Query<computadorModel, paModel, grupos_pa, computadorModel>(
+        //                query,
+        //                (computador_teste, pa_teste, grupo_teste) =>
+        //                {
+        //                    computador_teste.fk_compComputador_Pa = pa_teste;
+        //                    pa_teste.Fk_gurupoModel = grupo_teste;
+        //                    return computador_teste;
+        //                },
+        //                splitOn: "id_pa,id_grupo"
+        //            );
+        //            return resultados.ToList();
+        //        }
+        //    }
+        //    catch (MySqlException e)
+        //    {
+        //        Console.WriteLine(e);
+        //    }
+        //    return null;
+        //}
         public string condicao(string query)
         {
             Query q = new Query();
