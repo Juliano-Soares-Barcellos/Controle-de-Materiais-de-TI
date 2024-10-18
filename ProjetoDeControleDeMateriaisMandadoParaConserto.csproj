@@ -289,8 +289,6 @@
   <ItemGroup>
     <None Include="Resources\Untitled%402x.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="estilizacao\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

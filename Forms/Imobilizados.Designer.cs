@@ -61,7 +61,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.Tab_Control = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.BtnPatrimonio = new System.Windows.Forms.Button();
@@ -83,6 +83,16 @@
             this.BtnSetor = new System.Windows.Forms.Button();
             this.comboSetor = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.Digi = new System.Windows.Forms.Label();
+            this.TextoMemoria = new System.Windows.Forms.TextBox();
+            this.BtnMemoria = new System.Windows.Forms.Button();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.TextoProcessador = new System.Windows.Forms.TextBox();
+            this.BtnProcessador = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -124,7 +134,7 @@
             this.tabPage2.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.tabControl2.SuspendLayout();
+            this.Tab_Control.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -134,6 +144,10 @@
             this.tabPage6.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.tabPage10.SuspendLayout();
+            this.panel27.SuspendLayout();
+            this.tabPage11.SuspendLayout();
+            this.panel28.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel17.SuspendLayout();
@@ -182,7 +196,7 @@
             this.tabPage1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage1.Size = new System.Drawing.Size(1116, 611);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Imobilizados";
@@ -207,7 +221,7 @@
             this.tabPage7.Controls.Add(this.panel21);
             this.tabPage7.Location = new System.Drawing.Point(4, 24);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage7.Size = new System.Drawing.Size(1098, 37);
             this.tabPage7.TabIndex = 0;
             this.tabPage7.Text = "Patrimonio";
@@ -228,7 +242,7 @@
             // btnImob
             // 
             this.btnImob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnImob.Location = new System.Drawing.Point(676, 6);
+            this.btnImob.Location = new System.Drawing.Point(675, 6);
             this.btnImob.Name = "btnImob";
             this.btnImob.Size = new System.Drawing.Size(75, 23);
             this.btnImob.TabIndex = 5;
@@ -260,7 +274,7 @@
             this.tabPage8.Controls.Add(this.panel22);
             this.tabPage8.Location = new System.Drawing.Point(4, 24);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage8.Size = new System.Drawing.Size(1098, 37);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "item";
@@ -283,7 +297,7 @@
             this.btnItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnItem.Location = new System.Drawing.Point(708, 9);
             this.btnItem.Name = "btnItem";
-            this.btnItem.Size = new System.Drawing.Size(75, 21);
+            this.btnItem.Size = new System.Drawing.Size(75, 20);
             this.btnItem.TabIndex = 6;
             this.btnItem.Text = "Buscar";
             this.btnItem.UseVisualStyleBackColor = true;
@@ -315,7 +329,7 @@
             this.tabPage9.Controls.Add(this.label9);
             this.tabPage9.Location = new System.Drawing.Point(4, 24);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage9.Size = new System.Drawing.Size(1098, 37);
             this.tabPage9.TabIndex = 2;
             this.tabPage9.Text = "Setor";
@@ -387,7 +401,7 @@
             this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.checkBox2.AutoSize = true;
             this.checkBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(491, 9);
+            this.checkBox2.Location = new System.Drawing.Point(492, 9);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(117, 20);
             this.checkBox2.TabIndex = 0;
@@ -398,13 +412,10 @@
             // 
             // panel23
             // 
-            this.panel23.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel23.Controls.Add(this.dataGridViewImob);
             this.panel23.Location = new System.Drawing.Point(-2, 136);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(1110, 462);
+            this.panel23.Size = new System.Drawing.Size(1112, 462);
             this.panel23.TabIndex = 1;
             // 
             // dataGridViewImob
@@ -431,20 +442,20 @@
             this.dataGridViewImob.ReadOnly = true;
             this.dataGridViewImob.RowHeadersVisible = false;
             this.dataGridViewImob.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewImob.Size = new System.Drawing.Size(1110, 462);
+            this.dataGridViewImob.Size = new System.Drawing.Size(1112, 462);
             this.dataGridViewImob.TabIndex = 0;
             // 
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
             this.tabPage2.Controls.Add(this.panel13);
-            this.tabPage2.Controls.Add(this.tabControl2);
+            this.tabPage2.Controls.Add(this.Tab_Control);
             this.tabPage2.Controls.Add(this.panel9);
             this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage2.Size = new System.Drawing.Size(1116, 611);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Computadores";
@@ -495,19 +506,22 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // tabControl2
+            // Tab_Control
             // 
-            this.tabControl2.Controls.Add(this.tabPage3);
-            this.tabControl2.Controls.Add(this.tabPage4);
-            this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Controls.Add(this.tabPage6);
-            this.tabControl2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl2.Location = new System.Drawing.Point(5, 48);
-            this.tabControl2.Multiline = true;
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(356, 74);
-            this.tabControl2.TabIndex = 2;
+            this.Tab_Control.Controls.Add(this.tabPage3);
+            this.Tab_Control.Controls.Add(this.tabPage4);
+            this.Tab_Control.Controls.Add(this.tabPage5);
+            this.Tab_Control.Controls.Add(this.tabPage6);
+            this.Tab_Control.Controls.Add(this.tabPage10);
+            this.Tab_Control.Controls.Add(this.tabPage11);
+            this.Tab_Control.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Tab_Control.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tab_Control.Location = new System.Drawing.Point(5, 48);
+            this.Tab_Control.Multiline = true;
+            this.Tab_Control.Name = "Tab_Control";
+            this.Tab_Control.SelectedIndex = 0;
+            this.Tab_Control.Size = new System.Drawing.Size(389, 74);
+            this.Tab_Control.TabIndex = 2;
             // 
             // tabPage3
             // 
@@ -516,8 +530,8 @@
             this.tabPage3.Controls.Add(this.panel4);
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(348, 46);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Size = new System.Drawing.Size(381, 46);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Patrimonio";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -532,14 +546,14 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(342, 40);
+            this.panel4.Size = new System.Drawing.Size(375, 40);
             this.panel4.TabIndex = 0;
             // 
             // BtnPatrimonio
             // 
             this.BtnPatrimonio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnPatrimonio.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPatrimonio.Location = new System.Drawing.Point(271, 12);
+            this.BtnPatrimonio.Location = new System.Drawing.Point(291, 12);
             this.BtnPatrimonio.Name = "BtnPatrimonio";
             this.BtnPatrimonio.Size = new System.Drawing.Size(58, 22);
             this.BtnPatrimonio.TabIndex = 2;
@@ -556,7 +570,7 @@
             this.textPatrimonioPc.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPatrimonioPc.Location = new System.Drawing.Point(177, 14);
             this.textPatrimonioPc.Name = "textPatrimonioPc";
-            this.textPatrimonioPc.Size = new System.Drawing.Size(75, 20);
+            this.textPatrimonioPc.Size = new System.Drawing.Size(108, 20);
             this.textPatrimonioPc.TabIndex = 1;
             // 
             // label3
@@ -574,7 +588,7 @@
             this.tabPage4.Controls.Add(this.panel10);
             this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(348, 46);
+            this.tabPage4.Size = new System.Drawing.Size(381, 46);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "P\'A";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -588,7 +602,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(348, 46);
+            this.panel10.Size = new System.Drawing.Size(381, 46);
             this.panel10.TabIndex = 0;
             // 
             // label4
@@ -608,13 +622,13 @@
             this.textPa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPa.Location = new System.Drawing.Point(114, 13);
             this.textPa.Name = "textPa";
-            this.textPa.Size = new System.Drawing.Size(122, 21);
+            this.textPa.Size = new System.Drawing.Size(170, 21);
             this.textPa.TabIndex = 2;
             // 
             // BtnPa
             // 
             this.BtnPa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPa.Location = new System.Drawing.Point(258, 13);
+            this.BtnPa.Location = new System.Drawing.Point(303, 12);
             this.BtnPa.Name = "BtnPa";
             this.BtnPa.Size = new System.Drawing.Size(58, 22);
             this.BtnPa.TabIndex = 3;
@@ -627,7 +641,7 @@
             this.tabPage5.Controls.Add(this.panel11);
             this.tabPage5.Location = new System.Drawing.Point(4, 24);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(348, 46);
+            this.tabPage5.Size = new System.Drawing.Size(381, 46);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Server Tag";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -641,7 +655,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(348, 46);
+            this.panel11.Size = new System.Drawing.Size(381, 46);
             this.panel11.TabIndex = 0;
             // 
             // label5
@@ -658,13 +672,13 @@
             // 
             this.textTag.Location = new System.Drawing.Point(177, 14);
             this.textTag.Name = "textTag";
-            this.textTag.Size = new System.Drawing.Size(87, 21);
+            this.textTag.Size = new System.Drawing.Size(126, 21);
             this.textTag.TabIndex = 3;
             // 
             // BtnTag
             // 
             this.BtnTag.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnTag.Location = new System.Drawing.Point(270, 14);
+            this.BtnTag.Location = new System.Drawing.Point(309, 14);
             this.BtnTag.Name = "BtnTag";
             this.BtnTag.Size = new System.Drawing.Size(53, 21);
             this.BtnTag.TabIndex = 4;
@@ -677,7 +691,7 @@
             this.tabPage6.Controls.Add(this.panel6);
             this.tabPage6.Location = new System.Drawing.Point(4, 24);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(348, 46);
+            this.tabPage6.Size = new System.Drawing.Size(381, 46);
             this.tabPage6.TabIndex = 3;
             this.tabPage6.Text = "Setor";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -688,7 +702,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(348, 46);
+            this.panel6.Size = new System.Drawing.Size(381, 46);
             this.panel6.TabIndex = 0;
             // 
             // panel12
@@ -700,7 +714,7 @@
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(0, 0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(348, 46);
+            this.panel12.Size = new System.Drawing.Size(381, 46);
             this.panel12.TabIndex = 0;
             // 
             // BtnSetor
@@ -733,6 +747,109 @@
             this.label6.TabIndex = 3;
             this.label6.Text = "Selecione o setor :";
             // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.panel27);
+            this.tabPage10.Location = new System.Drawing.Point(4, 24);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage10.Size = new System.Drawing.Size(381, 46);
+            this.tabPage10.TabIndex = 4;
+            this.tabPage10.Text = "Memoria";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // panel27
+            // 
+            this.panel27.BackColor = System.Drawing.SystemColors.Control;
+            this.panel27.Controls.Add(this.Digi);
+            this.panel27.Controls.Add(this.TextoMemoria);
+            this.panel27.Controls.Add(this.BtnMemoria);
+            this.panel27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel27.Location = new System.Drawing.Point(3, 3);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(375, 40);
+            this.panel27.TabIndex = 1;
+            // 
+            // Digi
+            // 
+            this.Digi.AutoSize = true;
+            this.Digi.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Digi.Location = new System.Drawing.Point(3, 16);
+            this.Digi.Name = "Digi";
+            this.Digi.Size = new System.Drawing.Size(145, 19);
+            this.Digi.TabIndex = 2;
+            this.Digi.Text = "Digite a Memoria :";
+            this.Digi.Click += new System.EventHandler(this.Digi_Click);
+            // 
+            // TextoMemoria
+            // 
+            this.TextoMemoria.Location = new System.Drawing.Point(154, 14);
+            this.TextoMemoria.Name = "TextoMemoria";
+            this.TextoMemoria.Size = new System.Drawing.Size(137, 21);
+            this.TextoMemoria.TabIndex = 3;
+            // 
+            // BtnMemoria
+            // 
+            this.BtnMemoria.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMemoria.Location = new System.Drawing.Point(308, 14);
+            this.BtnMemoria.Name = "BtnMemoria";
+            this.BtnMemoria.Size = new System.Drawing.Size(53, 21);
+            this.BtnMemoria.TabIndex = 4;
+            this.BtnMemoria.Text = "Buscar";
+            this.BtnMemoria.UseVisualStyleBackColor = true;
+            this.BtnMemoria.Click += new System.EventHandler(this.BtnMemoria_Click);
+            // 
+            // tabPage11
+            // 
+            this.tabPage11.Controls.Add(this.panel28);
+            this.tabPage11.Location = new System.Drawing.Point(4, 24);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage11.Size = new System.Drawing.Size(381, 46);
+            this.tabPage11.TabIndex = 5;
+            this.tabPage11.Text = "Processador";
+            this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // panel28
+            // 
+            this.panel28.BackColor = System.Drawing.SystemColors.Control;
+            this.panel28.Controls.Add(this.label10);
+            this.panel28.Controls.Add(this.TextoProcessador);
+            this.panel28.Controls.Add(this.BtnProcessador);
+            this.panel28.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel28.Location = new System.Drawing.Point(3, 3);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(375, 40);
+            this.panel28.TabIndex = 2;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 16);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(179, 19);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Digite o Processador :";
+            // 
+            // TextoProcessador
+            // 
+            this.TextoProcessador.Location = new System.Drawing.Point(188, 14);
+            this.TextoProcessador.Name = "TextoProcessador";
+            this.TextoProcessador.Size = new System.Drawing.Size(99, 21);
+            this.TextoProcessador.TabIndex = 3;
+            // 
+            // BtnProcessador
+            // 
+            this.BtnProcessador.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProcessador.Location = new System.Drawing.Point(308, 14);
+            this.BtnProcessador.Name = "BtnProcessador";
+            this.BtnProcessador.Size = new System.Drawing.Size(53, 21);
+            this.BtnProcessador.TabIndex = 4;
+            this.BtnProcessador.Text = "Buscar";
+            this.BtnProcessador.UseVisualStyleBackColor = true;
+            this.BtnProcessador.Click += new System.EventHandler(this.BtnProcessador_Click);
+            // 
             // panel9
             // 
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -750,9 +867,9 @@
             this.panel16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel16.Controls.Add(this.panel17);
-            this.panel16.Location = new System.Drawing.Point(386, 64);
+            this.panel16.Location = new System.Drawing.Point(393, 62);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(318, 46);
+            this.panel16.Size = new System.Drawing.Size(365, 46);
             this.panel16.TabIndex = 7;
             // 
             // panel17
@@ -761,25 +878,25 @@
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel17.Location = new System.Drawing.Point(0, 0);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(318, 46);
+            this.panel17.Size = new System.Drawing.Size(365, 46);
             this.panel17.TabIndex = 0;
             // 
             // panel18
             // 
-            this.panel18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel18.Controls.Add(this.LabelTotalComputador);
             this.panel18.Controls.Add(this.LabelString);
-            this.panel18.Location = new System.Drawing.Point(3, 3);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel18.Location = new System.Drawing.Point(0, 0);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(315, 42);
+            this.panel18.Size = new System.Drawing.Size(365, 46);
             this.panel18.TabIndex = 7;
             // 
             // LabelTotalComputador
             // 
             this.LabelTotalComputador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.LabelTotalComputador.AutoSize = true;
-            this.LabelTotalComputador.Location = new System.Drawing.Point(243, 13);
+            this.LabelTotalComputador.Location = new System.Drawing.Point(266, 13);
             this.LabelTotalComputador.Name = "LabelTotalComputador";
             this.LabelTotalComputador.Size = new System.Drawing.Size(50, 22);
             this.LabelTotalComputador.TabIndex = 6;
@@ -789,7 +906,7 @@
             // 
             this.LabelString.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.LabelString.AutoSize = true;
-            this.LabelString.Location = new System.Drawing.Point(1, 16);
+            this.LabelString.Location = new System.Drawing.Point(12, 12);
             this.LabelString.Name = "LabelString";
             this.LabelString.Size = new System.Drawing.Size(218, 22);
             this.LabelString.TabIndex = 5;
@@ -800,7 +917,7 @@
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.Controls.Add(this.quantidadeDeSistemas);
-            this.panel8.Location = new System.Drawing.Point(729, 3);
+            this.panel8.Location = new System.Drawing.Point(764, 3);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(342, 107);
             this.panel8.TabIndex = 4;
@@ -820,7 +937,7 @@
             this.quantidadeDeSistemas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10.25F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -901,7 +1018,7 @@
             this.ComboEmpresa.Items.AddRange(new object[] {
             "Maximidia",
             "Clube Maxivida"});
-            this.ComboEmpresa.Location = new System.Drawing.Point(530, 6);
+            this.ComboEmpresa.Location = new System.Drawing.Point(558, 6);
             this.ComboEmpresa.Name = "ComboEmpresa";
             this.ComboEmpresa.Size = new System.Drawing.Size(121, 21);
             this.ComboEmpresa.TabIndex = 3;
@@ -974,6 +1091,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -1013,7 +1131,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1127, 739);
             this.Controls.Add(this.panel1);
-            this.MinimumSize = new System.Drawing.Size(1143, 200);
+            this.MinimumSize = new System.Drawing.Size(1142, 199);
             this.Name = "Imobilizados";
             this.Text = "Imobilizados";
             this.Load += new System.EventHandler(this.Imobilizados_Load);
@@ -1037,7 +1155,7 @@
             this.tabPage2.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.tabControl2.ResumeLayout(false);
+            this.Tab_Control.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -1051,6 +1169,12 @@
             this.panel6.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.tabPage10.ResumeLayout(false);
+            this.panel27.ResumeLayout(false);
+            this.panel27.PerformLayout();
+            this.tabPage11.ResumeLayout(false);
+            this.panel28.ResumeLayout(false);
+            this.panel28.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
@@ -1105,7 +1229,7 @@
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabControl Tab_Control;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button BtnPatrimonio;
@@ -1152,5 +1276,15 @@
         private System.Windows.Forms.ToolStripMenuItem espelhoOperaçãoMaximidiaToolStripMenuItem;
         private Installer1 installer13;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.Panel panel27;
+        private System.Windows.Forms.Label Digi;
+        private System.Windows.Forms.TextBox TextoMemoria;
+        private System.Windows.Forms.Button BtnMemoria;
+        private System.Windows.Forms.TabPage tabPage11;
+        private System.Windows.Forms.Panel panel28;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox TextoProcessador;
+        private System.Windows.Forms.Button BtnProcessador;
     }
 }

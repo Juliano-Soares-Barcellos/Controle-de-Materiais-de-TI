@@ -46,15 +46,19 @@ namespace computadoresMapeadosEconsertado.consultas
 
         public String gruposFiltroCompMapeamento= "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and grupos = @Resfiltro;";
 
+        public String memoria= "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and tipo_memoria Like @Resfiltro;";
+
+        public String processador= "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and Processador Like @Resfiltro;";
+
         public String paFiltroCompMapeamento= "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and pa = @Resfiltro;";
 
         public String TalkfiltroCompMapeamento= "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and Talk_id = @Resfiltro;";
 
         public String PatrifiltroCompMapeamento= "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and patrimonio = @Resfiltro;";
 
-        public String TodfiltroCompMapeamento = "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa";
+        public String TodfiltroCompMapeamento = "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa= @empresa and grupos not in ('condenada','Deposito');";
 
-        public String TodClub = "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa = 'clube maxivida' or grupos like '%clube%';";
+        public String TodClub = "select * from computador inner join pa on pa.id_pa=computador.fk_computador_Pa inner join grupos_pa on grupos_pa.id_grupo=pa.fk_grupo_id where empresa = 'clube maxivida' or grupos like '%clube%' and grupos not in ('condenada','Deposito');";
 
         public String imobilizados = "";
 

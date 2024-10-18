@@ -91,7 +91,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.94444F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 285F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 352F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 364F));
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.quantidadeSistemas, 4, 0);
@@ -100,7 +100,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(978, 130);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(972, 130);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel3
@@ -116,7 +116,7 @@
             this.panel3.Location = new System.Drawing.Point(6, 6);
             this.panel3.MaximumSize = new System.Drawing.Size(380, 118);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(252, 118);
+            this.panel3.Size = new System.Drawing.Size(237, 118);
             this.panel3.TabIndex = 14;
             // 
             // Cempresa
@@ -130,7 +130,7 @@
             "Maximidia"});
             this.Cempresa.Location = new System.Drawing.Point(184, 18);
             this.Cempresa.Name = "Cempresa";
-            this.Cempresa.Size = new System.Drawing.Size(62, 21);
+            this.Cempresa.Size = new System.Drawing.Size(47, 21);
             this.Cempresa.TabIndex = 5;
             // 
             // LabelCMap
@@ -160,7 +160,7 @@
             "patrimonio"});
             this.Cfiltro.Location = new System.Drawing.Point(184, 58);
             this.Cfiltro.Name = "Cfiltro";
-            this.Cfiltro.Size = new System.Drawing.Size(62, 21);
+            this.Cfiltro.Size = new System.Drawing.Size(47, 21);
             this.Cfiltro.TabIndex = 3;
             // 
             // label2
@@ -183,7 +183,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BotaoFiltrar.Location = new System.Drawing.Point(198, 85);
             this.BotaoFiltrar.Name = "BotaoFiltrar";
-            this.BotaoFiltrar.Size = new System.Drawing.Size(39, 23);
+            this.BotaoFiltrar.Size = new System.Drawing.Size(24, 23);
             this.BotaoFiltrar.TabIndex = 6;
             this.BotaoFiltrar.Text = "Enter";
             this.BotaoFiltrar.UseVisualStyleBackColor = true;
@@ -198,7 +198,7 @@
             this.panel4.Controls.Add(this.MaskBox);
             this.panel4.Controls.Add(this.CombSetores);
             this.panel4.Controls.Add(this.EnterTab);
-            this.panel4.Location = new System.Drawing.Point(322, 6);
+            this.panel4.Location = new System.Drawing.Point(304, 6);
             this.panel4.MaximumSize = new System.Drawing.Size(500, 118);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(279, 118);
@@ -263,7 +263,7 @@
             this.quantidadeSistemas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.quantidadeSistemas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.quantidadeSistemas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.quantidadeSistemas.Location = new System.Drawing.Point(625, 6);
+            this.quantidadeSistemas.Location = new System.Drawing.Point(607, 6);
             this.quantidadeSistemas.MaximumSize = new System.Drawing.Size(600, 118);
             this.quantidadeSistemas.Name = "quantidadeSistemas";
             this.quantidadeSistemas.ReadOnly = true;

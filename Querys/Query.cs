@@ -28,7 +28,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Querys
 
         public String FiltroPorSistema = "SELECT c.data,c.Descricao,entrada.Nome,entrada.Marca,entrada.SistemaOperacional,entrada.Programas,d.DataSaida,d.Descricao FROM computadorentrada AS entrada left JOIN datadeentrada AS c ON  c.data_id =entrada.id LEFT JOIN computadorsaida  AS d ON d.computadorEntrada_id=c.id where entrada.SistemaOperacional=@sistema;";
 
-        public String filtrossd = "SELECT c.data, c.Descricao, entrada.Nome, entrada.Marca, entrada.SistemaOperacional, entrada.Programas, d.DataSaida, d.Descricao FROM computadorentrada AS entrada left JOIN datadeentrada AS c ON c.data_id = entrada.id LEFT JOIN computadorsaida AS d ON d.computadorEntrada_id= c.id where d.Descricao like '%ssd%';";
+        public String filtrossd = " SELECT * FROM computador INNER JOIN pa ON pa.id_pa = computador.fk_computador_Pa INNER JOIN grupos_pa ON grupos_pa.id_grupo = pa.fk_grupo_id inner join computador_conserto on computador.id_computador=computador_conserto.fk_computador where Descricao_problema_resolvido like '%ssd%';";//"SELECT c.data, c.Descricao, entrada.Nome, entrada.Marca, entrada.SistemaOperacional, entrada.Programas, d.DataSaida, d.Descricao FROM computadorentrada AS entrada left JOIN datadeentrada AS c ON c.data_id = entrada.id LEFT JOIN computadorsaida AS d ON d.computadorEntrada_id= c.id where d.Descricao like '%ssd%';";
 
         public String FiltroGrafico = "select count(conserto.data),conserto.data from produto inner join conserto on  produto.id=conserto.Produto_id where conserto.data  BETWEEN @data1 AND @data2  group by conserto.data;";
 

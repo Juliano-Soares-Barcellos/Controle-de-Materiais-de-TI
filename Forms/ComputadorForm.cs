@@ -159,17 +159,19 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
             this.Apagar();
-            //TabelaDao t = new TabelaDao();
-            //select = t.ssd();
+            TabelaDao t = new TabelaDao();
+            List<Object[]> select = t.ssd();
+            DataTable tabela = new DataTable();
+           
 
-            //foreach (var item in select)
-            //{
-            //    retornaTudoConserto.Rows.Add(item);
-            //}
+            foreach (var item in select)
+            {
+                tabela.Rows.Add(item);
+            }
 
-            //Tabela.DataSource = retornaTudoConserto;
-            //Tabela.RowPrePaint += new DataGridViewRowPrePaintEventHandler(MudaCor);
-            //checkBox2.Checked = false;
+            Tabela.DataSource = retornaTudoConserto;
+            Tabela.RowPrePaint += new DataGridViewRowPrePaintEventHandler(MudaCor);
+            checkBox2.Checked = false;
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
@@ -183,6 +185,11 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         }
 
         private void Tabela_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

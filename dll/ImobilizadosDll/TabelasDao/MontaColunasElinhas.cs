@@ -14,6 +14,7 @@ namespace ImobilizadosDll.TabelasDao
     public class MontaColunasElinhas
     {
         CultureInfo cultura = new CultureInfo("pt-BR");
+       
 
         public DataTable MinhasColunas()
         {
@@ -43,7 +44,7 @@ namespace ImobilizadosDll.TabelasDao
                 row = tabela.NewRow();
 
                 row["patrimonio"] = computador.Patrimonio;
-                row["item"] = "Computador : " + computador.Tag_servico;
+                row["item"] = "Computador " + computador.Tag_servico;
                 row["Estado da Conservação"] = computador.Conservacao;
                 row["data da compra"] = dataNormal(computador.DataCompra);
                 row["Nota fiscal"] = computador.Nota_fiscal;

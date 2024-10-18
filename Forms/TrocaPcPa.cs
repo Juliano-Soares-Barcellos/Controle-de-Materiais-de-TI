@@ -46,7 +46,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                  "A Pa " + AntesTroca[1].ToString() +" Esta Sem nenhuma maquina"+ "\n"
                  + "Deseja prosseguir? ";
                     DialogResult result = MessageBox.Show(message, caption);
-                    if (result == DialogResult.Yes)
+                    if (result == DialogResult.OK)
                     {
 
                         ImobilizadosDll.Dao.UpdateDao.TrocaPa(AntesTroca[0].ToString(), AntesTroca[2].ToString(), empresa);
@@ -61,7 +61,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                         +"Deseja prosseguir? ";
                        //  DialogResult result = MessageBox.Show(message, caption, buttons);
                           DialogResult result = MessageBox.Show(message, caption);
-                    if (result == DialogResult.Yes)
+                    if (result == DialogResult.OK)
                     {
                         ImobilizadosDll.Dao.UpdateDao.TrocaPa(AntesTroca[3].ToString(),AntesTroca[2].ToString(),empresa);
                         ImobilizadosDll.Dao.UpdateDao.TrocaPa(AntesTroca[0].ToString(), AntesTroca[5].ToString(), empresa);

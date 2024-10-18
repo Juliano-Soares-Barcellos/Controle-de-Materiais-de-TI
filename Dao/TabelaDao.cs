@@ -143,7 +143,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
 
         public List<Object[]> ssd()
         {
-            con = new Banco().Conexaopcs();
+            con = new Banco().Conexao();
             con.Open();
 
             List<Object[]> resultados = new List<Object[]>();

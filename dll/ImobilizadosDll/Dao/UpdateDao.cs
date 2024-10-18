@@ -17,7 +17,7 @@ namespace ImobilizadosDll.Dao
             var parametros = new
             {
                 empresa = empresa,
-                FK_estrangeira = FK_estrangeira,
+                estrangeira = FK_estrangeira,
                 patrimonio = patrimonio,
             };
             using (var conexao = new Banco().conexao())

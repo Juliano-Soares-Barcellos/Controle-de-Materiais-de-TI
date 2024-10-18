@@ -272,6 +272,7 @@ namespace computadoresMapeadosEconsertado.Dao
 
             try
             {
+                tabela.Columns.Add("Nome da Maquina", typeof(string));  
                 tabela.Columns.Add("Tag de Serviço", typeof(string));  
                 tabela.Columns.Add("Patrimonio", typeof(int));
                 tabela.Columns.Add("Empresa", typeof(string));
@@ -284,6 +285,8 @@ namespace computadoresMapeadosEconsertado.Dao
                 tabela.Columns.Add("Data da Compra", typeof(string));
                 tabela.Columns.Add("Valor do item", typeof(string));
                 tabela.Columns.Add("Valor Residual", typeof(string));
+                tabela.Columns.Add("Processador", typeof(string));
+                tabela.Columns.Add("Memoria", typeof(string));
 
                 foreach (var item in patrimonios)
                 {
@@ -294,6 +297,7 @@ namespace computadoresMapeadosEconsertado.Dao
                     string dataSemHoras = item.DataCompra.ToString("dd/MM/yyyy");
 
 
+                    linha["Nome da Maquina"] = item.NomeDaMaquina;
                     linha["Tag de Serviço"] = item.tag_servico;
                     linha["Patrimonio"] = item.patrimonio;
                     linha["Empresa"] = item.empresa;
@@ -306,7 +310,8 @@ namespace computadoresMapeadosEconsertado.Dao
                     linha["Data da Compra"] = dataSemHoras;
                     linha["Valor do item"] = item.valor.ToString("C",cultura);
                     linha["Valor Residual"] = ValorDepreciadoEmFormaDinheiro;
-
+                    linha["processador"] = item.processador;
+                    linha["Memoria"] = item.Tipo_Memoria == null? "" : item.Tipo_Memoria;
                     tabela.Rows.Add(linha);
                 }   
             }
@@ -331,7 +336,8 @@ namespace computadoresMapeadosEconsertado.Dao
                 tabela.Columns.Add("Patrimonio", typeof(string));
                 tabela.Columns.Add("Pa", typeof(int));
                 tabela.Columns.Add("Id da Pa", typeof(string));
-                
+                tabela.Columns.Add("Programas", typeof(string));
+
                 foreach (var item in patrimonios)
                 {
                     DataRow linha = tabela.NewRow();
@@ -339,6 +345,7 @@ namespace computadoresMapeadosEconsertado.Dao
                     linha["Patrimonio"] = item.patrimonio==0 ? "" : item.patrimonio.ToString();
                     linha["Pa"] = item.fk_compComputador_Pa.pa;
                     linha["Id da Pa"] = item.fk_compComputador_Pa.talk_id;
+                    linha["Programas"] = item.programa;
                     
                     tabela.Rows.Add(linha);
                 }

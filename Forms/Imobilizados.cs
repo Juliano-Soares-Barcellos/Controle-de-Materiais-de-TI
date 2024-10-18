@@ -20,8 +20,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         MapeamentoPcsDao map = new MapeamentoPcsDao();
         private List<String> Maximidia = new List<string> { "administrativo", "condenada", "coordenacao", "coordenacao", "operacao maximidia", "placar", "procurar", "supervisao", "todos", "Ti", "treinamento 2","todos" };
         private List<String> ClubeMaxi = new List<string> { "administrativo", "condenada", "Diretoria", "operacao clube", "todos", "procurar", "supervisao clube","Ti" };
-
-
         public Imobilizados()
         {
             InitializeComponent();
@@ -31,9 +29,6 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
             dataGridViewImob.RowPrePaint += new DataGridViewRowPrePaintEventHandler(MudaCorImob);
         }
        
-
-        
-
         private void BtnPatrimonio_Click(object sender, EventArgs e)
         {
             if (ComboEmpresa.SelectedIndex < 0)
@@ -275,7 +270,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             string empresa = ComboEmpresa.SelectedIndex < 0 ? ComboEmpresa.SelectedText : ComboEmpresa.SelectedItem.ToString();
-            string Combogrupos = comboSetor1.SelectedIndex < 0 ? comboSetor1.SelectedText : comboSetor1.SelectedItem.ToString();
+            string Combogrupos = comboSetor1.SelectedIndex < 0  ? comboSetor1.SelectedText : comboSetor1.SelectedItem.ToString();
 
             if (ComboEmpresa.SelectedIndex < 0)
             {
@@ -355,6 +350,60 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 checkBox3.Checked = false;
                  carregaTabelaPC();
             }
+        }
+
+        private void Digi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnMemoria_Click(object sender, EventArgs e)
+        {
+            if (ComboEmpresa.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor Escolha a empresa");
+            }
+            else if (string.IsNullOrEmpty(TextoMemoria.Text.ToString()))
+            {
+                MessageBox.Show("Por Favor digite a Server Tag");
+
+            }
+            else
+            {
+                string texto = "%" + TextoMemoria.Text.ToString() + "%";
+                tabela = computadoresMapeadosEconsertado.Dao.montarTabelasDao.Patrimonio(ComboEmpresa.SelectedItem.ToString(), texto.ToUpper(), "memoria");
+                quantidadeDeSistemas.DataSource = map.QuantiSistemas(tabela);
+                dataGridView.DataSource = tabela;
+                ComboEmpresa.SelectedIndex = -1;
+                
+                setarLabel(tabela.Rows.Count, LabelString, LabelTotalComputador);
+            }
+
+
+
+        }
+
+        private void BtnProcessador_Click(object sender, EventArgs e)
+        {
+            if (ComboEmpresa.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor Escolha a empresa");
+            }
+            else if (string.IsNullOrEmpty(TextoProcessador.Text.ToString()))
+            {
+                MessageBox.Show("Por Favor digite o processador");
+
+            }
+            else
+            {
+                string Text = "%" + TextoProcessador.Text.ToString() + "%";
+                tabela = computadoresMapeadosEconsertado.Dao.montarTabelasDao.Patrimonio(ComboEmpresa.SelectedItem.ToString(), Text.ToUpper(), "processador");
+                quantidadeDeSistemas.DataSource = map.QuantiSistemas(tabela);
+                dataGridView.DataSource = tabela;
+                ComboEmpresa.SelectedIndex = -1;
+                setarLabel(tabela.Rows.Count, LabelString, LabelTotalComputador);
+            }
+
         }
     }
 }

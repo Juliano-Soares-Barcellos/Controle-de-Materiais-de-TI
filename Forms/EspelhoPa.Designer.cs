@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lbPaOcupada = new System.Windows.Forms.Label();
             this.lbVazio = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,6 +44,9 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lbPaOcupada);
             this.panel1.Controls.Add(this.lbVazio);
             this.panel1.Controls.Add(this.label2);
@@ -50,13 +55,31 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(268, 538);
+            this.panel1.Size = new System.Drawing.Size(445, 538);
             this.panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(241, 467);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Quatidade PA Completa";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(63, 467);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Quatidade PA vazia";
             // 
             // lbPaOcupada
             // 
             this.lbPaOcupada.AutoSize = true;
-            this.lbPaOcupada.Location = new System.Drawing.Point(162, 501);
+            this.lbPaOcupada.Location = new System.Drawing.Point(285, 501);
             this.lbPaOcupada.Name = "lbPaOcupada";
             this.lbPaOcupada.Size = new System.Drawing.Size(35, 13);
             this.lbPaOcupada.TabIndex = 4;
@@ -65,7 +88,7 @@
             // lbVazio
             // 
             this.lbVazio.AutoSize = true;
-            this.lbVazio.Location = new System.Drawing.Point(50, 501);
+            this.lbVazio.Location = new System.Drawing.Point(100, 501);
             this.lbVazio.Name = "lbVazio";
             this.lbVazio.Size = new System.Drawing.Size(35, 13);
             this.lbVazio.TabIndex = 3;
@@ -74,17 +97,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 44);
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(155, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(82, 15);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Pas vazias";
+            this.label2.Text = "Pas vazias :";
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.GreenYellow;
+            this.panel3.BackColor = System.Drawing.Color.Yellow;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(70, 44);
+            this.panel3.Location = new System.Drawing.Point(264, 44);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(15, 13);
             this.panel3.TabIndex = 1;
@@ -97,13 +121,13 @@
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(9, 71);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(251, 376);
+            this.panel2.Size = new System.Drawing.Size(428, 376);
             this.panel2.TabIndex = 0;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -118,14 +142,14 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(251, 376);
+            this.dataGridView1.Size = new System.Drawing.Size(428, 376);
             this.dataGridView1.TabIndex = 0;
             // 
             // EspelhoPa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(268, 538);
+            this.ClientSize = new System.Drawing.Size(445, 538);
             this.Controls.Add(this.panel1);
             this.Name = "EspelhoPa";
             this.Text = "EspelhoPa";
@@ -146,5 +170,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbVazio;
         private System.Windows.Forms.Label lbPaOcupada;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
     }
 }

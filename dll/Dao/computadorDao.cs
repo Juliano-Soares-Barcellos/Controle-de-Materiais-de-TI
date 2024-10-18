@@ -163,6 +163,7 @@ namespace computadoresMapeadosEconsertado.Dao
 
         public List<computadorComConsertos> BuscaPeloSistema(string sistemasOperacionais)
         {
+            
             using (var conexao = new banco().conexao())
             {
                 var resultados = conexao.Query<computadorModel, paModel, grupos_pa, computador_conserto, computadorComConsertos>(
@@ -322,6 +323,12 @@ namespace computadoresMapeadosEconsertado.Dao
 
                 case "tag_servico":
                     return q.TagFiltroCompMapeamento;
+
+                case "memoria":
+                    return q.memoria;
+
+                case "processador":
+                    return q.processador;
                 default:
                     return null;
             }

@@ -36,7 +36,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
                 dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() == "")
 
             {
-                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.GreenYellow;
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
              }
 
             else
@@ -64,6 +64,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Forms
 
             lbVazio.Text = totalVazia.ToString();
             lbPaOcupada.Text = totalPaOcupada.ToString();
+           
         }
 
 

@@ -13,6 +13,7 @@ namespace computadoresMapeadosEconsertado.model
         public int patrimonio { get; set; }
 
         public string marca { get; set; }
+        public string NomeDaMaquina { get; set; }
 
         public string programa { get; set; }
 
@@ -24,11 +25,14 @@ namespace computadoresMapeadosEconsertado.model
 
         public string empresa { get; set; }
 
+        public string processador { get; set; }
+
         public Double valor { get; set; }
 
         public DateTime DataCompra { get; set; }
 
         public string Conservacao { get; set; }
+        public string Tipo_Memoria { get; set; }
 
         public computadorModel()
         {
