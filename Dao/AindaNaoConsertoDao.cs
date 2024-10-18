@@ -69,7 +69,7 @@ namespace ProjetoDeControleDeMateriaisMandadoParaConserto.Dao
                         }
 
                         row.Add(dataAtual.ToString("yyyy-MM-dd"));
-
+                        
                         writer.WriteLine(String.Join(";", row));
                     }
 
